@@ -1,1 +1,4 @@
-"# go_essentials" 
+# go_essentials
+
+code sequence :
+ - helloWorld.go
