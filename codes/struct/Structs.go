@@ -2,9 +2,14 @@ package main
 
 import "fmt"
 
+type contactInfo struct {
+	email   string
+	zipCode int
+}
 type Person struct {
-	name string
-	age  int
+	name        string
+	age         int
+	contactInfo // this declaration is same as contactInfo contactInfo, we can use this shortcut
 }
 
 func (p Person) welcome() {
@@ -20,7 +25,7 @@ func (p Person) showAge() {
 }
 
 func main() {
-	abhishek := Person{"Abhishek", 25}
+	abhishek := Person{"Abhishek", 25, contactInfo{}}
 	kushal := Person{name: "Kushal", age: 25}
 	fmt.Println(abhishek, kushal)
 	abhishek.welcome()
@@ -36,7 +41,7 @@ func main() {
 	fmt.Println(nasim)
 }
 
-// passing by refference
+// passing by value
 func setName(p Person, name string) {
 	p.name = name
 }
