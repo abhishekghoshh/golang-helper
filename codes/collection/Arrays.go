@@ -8,7 +8,6 @@ func main() {
 	arr[0] = 55
 	fmt.Println(arr)
 
-	//this is a slice
 	arr1 := [5]int{0, 2, 4, 6, 8}
 	fmt.Println(arr1[1])
 
