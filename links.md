@@ -7,6 +7,7 @@ Resource Links :
  - https://www.javatpoint.com/go-tutorial
  - https://www.codingninjas.com/codestudio/library/strings-794
  - https://go.dev/learn/
+ - https://tutorialedge.net/golang
 
 Youtube links :
  - https://www.youtube.com/watch?v=Q0sKAMal4WQ
