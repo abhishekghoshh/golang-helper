@@ -9,11 +9,6 @@ Resource Links :
  - https://go.dev/learn/
  - https://tutorialedge.net/golang
 
-Youtube links :
- - https://www.youtube.com/watch?v=Q0sKAMal4WQ
- - https://www.youtube.com/watch?v=yyUHQIec83I
- - https://www.youtube.com/watch?v=YS4e4q9oBaU
-
 Medium resources:
  - https://medium.com/@fonseka.live/getting-started-with-go-modules-b3dac652066d
  - https://medium.com/@tyler_brewer2/bits-bytes-and-byte-slices-in-go-8a99012dcc8f
@@ -32,4 +27,4 @@ Medium resources:
  - https://levelup.gitconnected.com/golang-technique-custom-struct-tag-technique-in-go-8667bf7da457
  - https://faun.pub/dependency-injection-in-go-the-better-way-833e2cc65fab
  - https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883
- - https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883
+ - https://medium.com/this-code/17-golang-packages-you-should-know-c7f156b1270e

@@ -3,14 +3,17 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
+	"time"
 )
 
 func main() {
 	//data := "{\"employee\":{\"name\":\"Abhishek Ghosh\",\"salary\":10000,\"married\":false}}"
-	filename := "data.json"
+	//filename := "data.json"
 
 	//saveToFile(filename, data)
-	fmt.Println(retrieveFromFile(filename))
+	//fmt.Println(retrieveFromFile(filename))
+	fmt.Println(appendToFile("data.txt", time.Now().String()))
 
 }
 func saveToFile(filename, data string) error {
@@ -29,4 +32,22 @@ func retrieveFromFile(filename string) string {
 		return ""
 	}
 	return string(bs)
+}
+func appendToFile(filename, newData string) string {
+
+	f, err := os.OpenFile(filename, os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	if _, err = f.WriteString(newData + "\n"); err != nil {
+		panic(err)
+	}
+
+	data, err_ := ioutil.ReadFile(filename)
+	if err_ != nil {
+		fmt.Println(err)
+	}
+	return string(data)
 }
