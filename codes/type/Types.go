@@ -10,6 +10,5 @@ func (c color) describe(description string) string {
 
 func main() {
 	c := color("Red")
-
 	fmt.Println(c.describe("is an awesome color"))
 }
