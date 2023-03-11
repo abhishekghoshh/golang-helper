@@ -17,8 +17,9 @@ type Person struct {
 var persons []Person
 
 func main() {
-	http.HandleFunc("/persons", getPersons)
-	log.Fatal(http.ListenAndServe("localhost:8081", nil))
+	mux := http.NewServeMux()
+	mux.HandleFunc("/persons", getPersons)
+	log.Fatal(http.ListenAndServe("localhost:8081", mux))
 }
 
 func getPersons(w http.ResponseWriter, r *http.Request) {
