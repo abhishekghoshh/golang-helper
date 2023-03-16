@@ -32,6 +32,7 @@ func squareSum(from, to int, ch chan int) {
 	ch <- result
 }
 
+// https://gobyexample.com/channels
 func main() {
 	ch1 := make(chan bool)
 	ch2 := make(chan bool)

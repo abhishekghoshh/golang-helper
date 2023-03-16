@@ -13,7 +13,7 @@ type city struct {
 }
 
 func createCity(record city) {
-	time.Sleep(5 * time.Millisecond)
+	time.Sleep(2 * time.Millisecond)
 	f, err := os.OpenFile("cities-copy.csv", os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		panic(err)

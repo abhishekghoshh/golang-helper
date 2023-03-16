@@ -22,6 +22,20 @@ func main() {
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
+	fmt.Println("response is", resp)
+	// response body is Body io.ReadCloser
+	// so we can not directly print the response
+	// fmt.Println("response.body is", resp.Body)
+
+	bs := make([]byte, 99999)
+	n, err := resp.Body.Read(bs)
+	fmt.Println("got", n, "bytes", " error is", err)
+	fmt.Print(string(bs))
+
+	fmt.Println(io.Copy(os.Stdout, resp.Body))
+
+	fmt.Println("With logwritter")
 	lw := logWriter{}
-	io.Copy(lw, resp.Body)
+	fmt.Println(io.Copy(lw, resp.Body))
+
 }

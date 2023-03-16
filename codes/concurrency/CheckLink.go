@@ -15,6 +15,42 @@ func main() {
 		"http://amazon.com",
 	}
 
+	// type1(links)
+
+	// type2(links)
+
+	type3(links)
+}
+
+func type3(links []string) {
+	c := make(chan string, len(links))
+
+	for _, link := range links {
+		go checkLink(link, c)
+	}
+	for l := range c {
+		go func(link string) {
+			time.Sleep(2 * time.Second)
+			checkLink(link, c)
+		}(l)
+	}
+}
+
+func type2(links []string) {
+	c := make(chan string)
+
+	for _, link := range links {
+		go checkLink(link, c)
+	}
+	for l := range c {
+		go func(link string) {
+			time.Sleep(2 * time.Second)
+			checkLink(link, c)
+		}(l)
+	}
+}
+
+func type1(links []string) {
 	c := make(chan string)
 
 	for _, link := range links {
@@ -22,10 +58,8 @@ func main() {
 	}
 
 	for l := range c {
-		go func(link string) {
-			time.Sleep(2 * time.Second)
-			checkLink(link, c)
-		}(l)
+		time.Sleep(2 * time.Second)
+		go checkLink(l, c)
 	}
 }
 
@@ -36,7 +70,6 @@ func checkLink(link string, c chan string) {
 		c <- link
 		return
 	}
-
 	fmt.Println(link, "is up!")
 	c <- link
 }

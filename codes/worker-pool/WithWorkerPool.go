@@ -13,7 +13,7 @@ type city struct {
 	country string
 }
 
-func readCities(citiesChan chan []city) {
+func readCities(cityListChan chan<- []city) {
 	var cities []city
 	cityCsv, err := os.Open("cities.csv")
 	if err != nil {
@@ -34,11 +34,11 @@ func readCities(citiesChan chan []city) {
 			country: line[1],
 		})
 	}
-	citiesChan <- cities
+	cityListChan <- cities
 }
 
 func createCity(record city, worker int) {
-	time.Sleep(5 * time.Millisecond)
+	time.Sleep(2 * time.Millisecond)
 	f, err := os.OpenFile("cities-copy.csv", os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		panic(err)
@@ -48,38 +48,45 @@ func createCity(record city, worker int) {
 		panic(err)
 	}
 }
-func worker(cityChan chan city, worker int, jobStatus chan int) {
+func worker(cityChan <-chan city, worker int, jobChan chan bool) {
 	for record := range cityChan {
 		createCity(record, worker)
 	}
-	jobStatus <- worker
+	jobChan <- true
 }
 func main() {
 	startTime := time.Now()
 
-	citiesChan := make(chan []city)
-	go readCities(citiesChan)
+	cityListChan := make(chan []city)
+	go readCities(cityListChan)
 
-	const workers = 10
-	jobs := make(chan city, 1600)
-	jobStatus := make(chan int, workers)
+	const workers = 20
+	cityChan := make(chan city, 1600)
+	jobChan := make(chan bool, workers)
+
 	for w := 1; w <= workers; w++ {
-		go worker(jobs, w, jobStatus)
+		go worker(cityChan, w, jobChan)
 	}
 	fmt.Println("Trasferring data from one channel to different channel")
 	counter := 0
-	for _, cityChan := range <-citiesChan {
+	for _, oneCity := range <-cityListChan {
 		counter++
-		jobs <- cityChan
+		cityChan <- oneCity
 	}
 
-	for cnt := 0; cnt <= 5; {
-		select {
-		case <-jobStatus:
-			cnt++
+	// blocking call to check if the previous go routines are done or not
+	isClosed := false
+	for true {
+		if len(cityChan) == 0 && !isClosed {
+			close(cityChan)
+			isClosed = true
+		}
+		if len(jobChan) == workers {
+			close(jobChan)
+			break
 		}
 	}
 
-	fmt.Println("\nrecord saved : ", counter)
+	fmt.Println("record saved : ", counter)
 	fmt.Println("total time elapsed ", time.Since(startTime))
 }
