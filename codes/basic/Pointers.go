@@ -8,6 +8,8 @@ func changeToNum(num, val int) {
 func changeToNumWithPointer(ptr *int, val int) {
 	*ptr = val
 }
+
+// https://gobyexample.com/pointers
 func main() {
 	x := 12
 	p := &x
@@ -19,4 +21,7 @@ func main() {
 
 	changeToNumWithPointer(p, 8)
 	fmt.Println(p, " -> ", x)
+
+	var intPtr *int
+	fmt.Println(intPtr)
 }

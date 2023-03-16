@@ -25,7 +25,8 @@ Medium resources:
  - https://faun.pub/dependency-injection-in-go-the-better-way-833e2cc65fab
  - https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883
  - https://medium.com/this-code/17-golang-packages-you-should-know-c7f156b1270e
- - https://blog.devgenius.io/state-pattern-in-go-eeb05739d12d
+ - https://tomaszs2.medium.com/go-guide-frameworks-libraries-ide-clouds-resources-mentors-a97e17268d7e
+
 
 Design-pattern
  - https://refactoring.guru/design-patterns
