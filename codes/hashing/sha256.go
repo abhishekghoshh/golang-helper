@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// https://gobyexample.com/sha256-hashes
 func main() {
 	str := "sha256 this string"
 	hsh := sha256.New()

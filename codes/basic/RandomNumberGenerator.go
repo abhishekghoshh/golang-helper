@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// https://gobyexample.com/random-numbers
 func main() {
 	// Intn returns, as an
 	// int, a non-negative
