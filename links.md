@@ -23,14 +23,9 @@ Medium resources:
  - https://medium.com/@func25/what-senior-go-programmers-are-considering-da77b1546c77
  - https://levelup.gitconnected.com/golang-technique-custom-struct-tag-technique-in-go-8667bf7da457
  - https://faun.pub/dependency-injection-in-go-the-better-way-833e2cc65fab
+ - https://medium.com/@MTrax/golang-the-ultimate-guide-to-dependency-injection-4556b97f9cbd
  - https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883
  - https://medium.com/this-code/17-golang-packages-you-should-know-c7f156b1270e
  - https://tomaszs2.medium.com/go-guide-frameworks-libraries-ide-clouds-resources-mentors-a97e17268d7e
+ - https://medium.com/@func25/gin-and-golang-concepts-8a970d8b6180
 
-
-Design-pattern
- - https://refactoring.guru/design-patterns
- - https://devcharmander.medium.com/design-patterns-in-golang-the-builder-dac468a71194
- - https://blog.devgenius.io/factory-patterns-in-go-d9a93ed47d96
- - https://medium.com/@josueparra2892/state-pattern-in-go-eeb05739d12d
- - https://medium.com/@josueparra2892/bridge-pattern-in-go-bba508449db
