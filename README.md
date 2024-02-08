@@ -1,14 +1,21 @@
 # All golang basic learning in one place
 
-## Resources
+### Resources
+- [my cheetsheet](/cheetsheet.md)
 - [gobyexample](https://gobyexample.com/)
 
 
 Go is an open-source programming language that makes it easy to build simple, reliable, and efficient software.</br>
 Go was designed at Google in 2007 to improve programming productivity in an era of multicore, networked machines and large codebases.</br>
 The language is often referred to as Golang because of its domain name, golang.org, but its proper name is Go.</br>
+How do we run GO projects in CMD :</br>
+- **go build** : Compiles a bunch of go source code files
+- **go run** : Compiles and executes one or two files
+- **go fmt** : Formats all the code in each file in the current directory
+- **go install** : Compiles and "installs" a package. 
+- **go get** : Downloads the raw source code of someone else's package
+- **go test** : Runs any tests associated with the current project
 
 
-
-## Codes
+### Codes
 - [basics](/codes/basic/)
