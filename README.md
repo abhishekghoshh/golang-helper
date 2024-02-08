@@ -1,4 +1,4 @@
-# All golang basic learning in one place
+# Golang Basics
 
 ### Resources
 - [my cheetsheet](/cheetsheet.md)
