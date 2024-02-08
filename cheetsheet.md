@@ -224,3 +224,148 @@ func sum(a, b int){
    fmt.Println(a+b)
 }
 ```
+```
+package main
+import "fmt"
+func welcome(name string) {
+   fmt.Println("Welcome", name)
+}
+func main() {
+    welcome("David")
+    welcome("James")
+}
+```
+A useful feature of Go is that functions can return multiple values. The swap() function takes two integer arguments and returns them in swapped order. </br>
+Note that the return type of each value should be declared: in our case it is (int, int). We can call our function and assign it result to variables: </br>
+```
+func swap(x, y int) (int, int) {
+    return y, x
+}
+
+func main() {
+    a, b := swap(42, 8)
+    fmt.Println(a)
+    fmt.Println(b)
+}
+```
+Returning multiple values from a function is handy! For example, it can be used to return both the result and the error values of an operation.
+```
+func welcome() {
+    fmt.Println("Welcome")
+}
+
+func main() {
+    defer welcome()
+    fmt.Println("Hey")
+}
+```
+```
+func main() {
+    fmt.Println("start")
+
+    for i := 0; i < 5; i++ {
+        defer fmt.Println(i)
+    }
+    fmt.Println("end")
+}
+```
+A `Defer` statement ensures that the function is called only after the surrounding function returns. The code will first output "Hey" and only after that output the result of the welcome() function. This happens because the call to welcome() is deferred, meaning it waits until `main()` finishes execution and only then calls it. defer is often used for clean-up, for example, to release resources used by the code, such as files, connections, etc. If you have deferred multiple function calls, they will execute in last-in-first-out order. The defer calls are stacked on top of each other, which is why they are executed in last-in-first-out order.</br>
+Scope is where a variable can be used. There are two main scopes in Go: local and global.</br>
+A variable defined in the function is called a local variable. Their scope is only in the function body, which means they only exist within their function</br>
+```
+func test() {
+  var x = 8
+}
+```
+Now, x is a local variable and is available only in the body of the test() function. Trying to access it in another function, for example main(), will cause an error. <>
+A variable defined outside the local scope is called a global variable. Global variables can be used throughout the package.</br>
+```
+var x = 8
+func test() {
+  fmt.Println(x)
+}
+func main() {
+  fmt.Println(x)
+}
+```
+The variable x is declared outside of the functions, making it a global variable, which is accessible anywhere in the package. </br>
+Global variables are often considered a bad practice. It is better to pass variables as function arguments.</br>
+
+
+
+## Pointers
+
+All of the values that we define in our program are stored in the computer memory and have their own unique memory address. </br>
+Pointers are special variables that hold the memory address of values.</br>
+In Go, we declare a pointer using a `*` </br>
+`var p *int`   	Now, p is a pointer to an integer value. </br>
+We know how to define a pointer, but how do we assign it a memory address? This is done using the & operator, which returns the memory address of a variable.</br>
+```
+x := 42
+p := &x
+```
+Now `p` is a pointer and holds the memory address of `x`. </br>
+If we want to access the underlying value of a pointer, we can use the `*` operator </br>
+```
+x := 42
+p := &x
+fmt.Println(*p)
+```
+The `*` operator can also be used to change the value of the memory address the pointer holds: </br>
+```
+x := 42
+p := &x
+*p = 8
+fmt.Println(*p)
+fmt.Println(x)
+```
+The `*` operator is called the dereferencing operator. </br>
+We have used pointers with functions in a previous lesson, when taking input from the user: </br>
+```
+var input string
+fmt.Scanln(&input)
+fmt.Println(input)
+```
+Here, we pass the memory address of the input variable (a pointer to input) to the `Scanln()` function, which uses it to store the input value.</br>
+We can pass pointers as function parameters.</br>
+```
+func change(val int) {
+  val = 8
+}
+func change_ptr(ptr *int) {
+  *ptr = 8
+}
+func main() {
+  x := 42
+  change(x)
+  fmt.Println(x)
+  change_ptr(&x)
+  fmt.Println(x)
+}
+```
+The `change()` function takes an integer argument and changes its value. The `change_ptr()` function does the same using a pointer.</br>
+When you run the code, you will see that the change() function did not change the value of our x variable, because the argument is just a copy of its value, while the `change_ptr()` did change the actual value of `x`, because it used its memory address as the argument. </br>
+Note that we need to pass the memory address using the & operator to functions that take a pointer as their argument.</br>
+
+
+
+## Structs
+
+Go does not support classes. Instead, it has structs. Structs are collections of fields that allow you to group data together.</br>
+let's make a struct to store the data of Contacts </br>
+```
+type Contact struct {
+  name string
+  age  int
+} 
+```
+Our Contact struct has two fields, a string and an integer. Now, we can create a new Contact using the following syntax:</br>
+
+`x := Contact{"James", 42}` </br>
+
+x is now a structs object that is initialized with the data provided in the curly braces.</br>
+
+We can also provide the names of the fields when creating a new struct. This makes it easier to read the code. For example:</br>
+`x := Contact{name: "James", age: 42}` </br>
+
+We can access the struct fields using the name of the struct and a dot:
