@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "/src/go";
+option java_package = "/src/java";
+// option py_package = "/src/python";
+
+message Address {
+  string buildingName = 1;
+  string streetName = 2;
+  string areaName = 3;
+  string cityName = 4;
+  string districtName = 5;
+  string stateName = 6;
+  string countryName = 7;
+  int32 pinCode = 8;
+}
