@@ -1,0 +1,21 @@
+FROM golang:latest
+
+WORKDIR /app
+
+COPY go.mod ./
+COPY go.sum ./
+
+RUN export GO111MODULE=1
+RUN go mod download && go mod verify
+
+COPY main.go ./
+COPY app/ ./app/
+COPY resources/ ./resources/
+
+RUN go build -o /app
+RUN ["chmod", "775", "/app/crud"]
+
+EXPOSE 8080
+
+ENTRYPOINT ["/app/crud"]
+

@@ -1,0 +1,9 @@
+apiVersion : v1
+kind : ConfigMap
+metadata:
+  name : mysql-configmap
+  
+data:
+  MYSQL_DATABASE: students
+  MYSQL_USER: abhishek
+  MYSQL_PASSWORD: AbhishekGhosh@thoughtworks

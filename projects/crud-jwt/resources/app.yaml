@@ -1,0 +1,27 @@
+---
+application:
+  profiles: ${APPLICATION_PROFILES:dev}
+
+server:
+  address: ${SERVER_ADDRESS:0.0.0.0}
+  port: ${SERVER_PORT:8080}
+
+db:
+  connection:
+    user: ${DB_USER:abhishek}
+    password: ${DB_PASSWORD:abhishek}
+    address: ${DB_ADDRESS:127.0.0.1}
+    port: ${DB_PORT:3306}
+    database: ${DB_NAME:students}
+    maxLifeTime: ${DB_CONNECTION_MAX_LIFETIME:3}
+    maxOpenConnection: ${DB_MAX_OPEN_CONNECTION:10}
+    maxIdleConnection: ${DB_MAX_IDLE_CONNECTION:10}
+  
+encoder:
+  secret: ${ENCODER_SECRET:abc&1*~#^2^#s0^=^^7%b34i}
+user:
+  jwt:
+    accessTokenSecret: access-token-secret
+    accessTokenDuration: 10m
+    refreshTokenSecret: refresh-token-secret
+    refreshTokenDuration: 1h

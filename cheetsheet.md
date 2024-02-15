@@ -1394,6 +1394,7 @@ For struct:
 #### When to use?
 When to use structs? If we have close set of keys means the fixed data size with keys we will be using structs. Using structs are safe way and easy way while working with JSON data also. </br>
 When to use maps? If we are creating some kind of relationship between keys and values and we don't really know what that collection of values going to be at compile time or as we are writing our code then we got the great use-case of using a map. </br>
+
 Most of cases, vast majority of time we mostly, use structs than maps. But it all depends on nature and type of the application and requirement of the project. </br>
 
 **Note** : Small case means that is private field or member, Cap case means that is public field or member

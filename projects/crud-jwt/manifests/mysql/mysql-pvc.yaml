@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  labels:
+    app: crud
+spec:
+  selector:
+    matchLabels:
+      app: crud
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: mysql-storageclass
+  accessModes:
+    - ReadWriteMany

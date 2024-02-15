@@ -1,0 +1,10 @@
+---
+server:
+  address: 127.0.0.1
+  port: 8090
+db:
+  connection:
+    port: 3307
+user:
+  jwt:
+    accessTokenDuration: 10m
