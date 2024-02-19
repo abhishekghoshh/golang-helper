@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-func main() {
+func Reflections() {
 	x := 100
 	v := reflect.ValueOf(x)
 	t := v.Type()

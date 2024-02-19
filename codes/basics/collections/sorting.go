@@ -1,4 +1,4 @@
-package main
+package collections
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/sorting
-func main() {
+func Sorting() {
 	strs := []string{"c", "a", "b"}
 	sort.Strings(strs)
 	fmt.Println("Strings:", strs)

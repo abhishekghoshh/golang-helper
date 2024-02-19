@@ -1,6 +1,22 @@
-package main
+package collections
 
 import "fmt"
+
+// https://gobyexample.com/generics
+func LinkedLists() {
+	lst := List[int]{}
+	lst.Push(10)
+	lst.Push(13)
+	lst.Push(23)
+	fmt.Println("list:", lst.GetAll())
+
+	strngs := List[string]{}
+	strngs.Push("Abhishek Ghosh")
+	strngs.Push("Nasim Molla")
+	strngs.Push("Bishal Mukherjee")
+	strngs.Push("Abhishek Pal")
+	fmt.Println(strngs.GetAll())
+}
 
 type List[T any] struct {
 	head, tail *element[T]
@@ -27,20 +43,4 @@ func (lst *List[T]) GetAll() []T {
 		elems = append(elems, e.val)
 	}
 	return elems
-}
-
-// https://gobyexample.com/generics
-func main() {
-	lst := List[int]{}
-	lst.Push(10)
-	lst.Push(13)
-	lst.Push(23)
-	fmt.Println("list:", lst.GetAll())
-
-	strngs := List[string]{}
-	strngs.Push("Abhishek Ghosh")
-	strngs.Push("Nasim Molla")
-	strngs.Push("Bishal Mukherjee")
-	strngs.Push("Abhishek Pal")
-	fmt.Println(strngs.GetAll())
 }

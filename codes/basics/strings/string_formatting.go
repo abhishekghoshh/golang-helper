@@ -1,4 +1,4 @@
-package main
+package strings
 
 import (
 	"fmt"
@@ -6,11 +6,8 @@ import (
 )
 
 // https://gobyexample.com/string-formatting
-type point struct {
-	x, y int
-}
 
-func main() {
+func StringFormatting() {
 	p := point{1, 2}
 	fmt.Printf("struct1: %v\n", p)
 	fmt.Printf("struct2: %+v\n", p)
@@ -56,4 +53,8 @@ func main() {
 	fmt.Println(s)
 
 	fmt.Fprintf(os.Stderr, "io: an %s\n", "error")
+}
+
+type point struct {
+	x, y int
 }

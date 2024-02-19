@@ -1,8 +1,8 @@
-package main
+package collections
 
 import "fmt"
 
-func main() {
+func Slices() {
 
 	s := make([]string, 3)
 	fmt.Println("emp:", s)

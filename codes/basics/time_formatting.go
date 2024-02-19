@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/time-formatting-parsing
-func main() {
+func TimeFormatting() {
 	p := fmt.Println
 
 	t := time.Now()

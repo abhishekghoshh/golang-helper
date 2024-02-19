@@ -1,8 +1,8 @@
-package main
+package collections
 
 import "fmt"
 
-func main() {
+func Ranges() {
 	arr := make([]int, 5)
 
 	for i, item := range arr {

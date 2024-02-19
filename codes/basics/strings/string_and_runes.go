@@ -1,4 +1,4 @@
-package main
+package strings
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/strings-and-runes
-func main() {
+func StringAndRunes() {
 	const s = "สวัสดี"
 	fmt.Println("Len:", len(s))
 	for i := 0; i < len(s); i++ {

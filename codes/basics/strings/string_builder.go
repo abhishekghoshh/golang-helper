@@ -1,4 +1,4 @@
-package main
+package strings
 
 import (
 	"bytes"
@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func StringBuilers() {
 	startTime := time.Now()
 	var s string
 	for i := 0; i < 100000; i++ {

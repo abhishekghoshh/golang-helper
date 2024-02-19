@@ -1,4 +1,4 @@
-package main
+package strings
 
 import (
 	"os"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/text-templates
-func main() {
+func TestTemplates() {
 
 	t1 := template.New("t1")
 	t1, err := t1.Parse("Value is {{.}}\n")

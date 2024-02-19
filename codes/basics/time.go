@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/time
-func main() {
+func Times() {
 	print := fmt.Println
 
 	now := time.Now()

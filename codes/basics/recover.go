@@ -8,7 +8,7 @@ func Panic() {
 
 // https://gobyexample.com/panic
 // https://gobyexample.com/recover
-func main() {
+func Recover() {
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Println("Recovered. Error:", r)

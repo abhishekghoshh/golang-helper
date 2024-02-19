@@ -1,8 +1,8 @@
-package main
+package collections
 
 import "fmt"
 
-func main() {
+func Maps() {
 	mp := make(map[string]int)
 	mp["abhishek"] = 25
 	mp["kushal"] = 25

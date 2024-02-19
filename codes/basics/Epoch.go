@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/epoch
-func main() {
+func Epochs() {
 	now := time.Now()
 	fmt.Println(now)
 

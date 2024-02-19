@@ -8,7 +8,7 @@ import (
 )
 
 // https://gobyexample.com/random-numbers
-func main() {
+func RandomNumberGenerator() {
 	// Intn returns, as an
 	// int, a non-negative
 	// pseudo-random number in

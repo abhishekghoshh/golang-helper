@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/url-parsing
-func main() {
+func URLParsing() {
 
 	s := "postgres://user:pass@host.com:5432/path?k=v#f"
 

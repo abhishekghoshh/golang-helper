@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/number-parsing
-func main() {
+func NumberParsing() {
 
 	f, _ := strconv.ParseFloat("1.234", 64)
 	fmt.Println(f)

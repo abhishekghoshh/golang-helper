@@ -18,3 +18,5 @@
   - [errors](./codes/basics/introduction/errors.go)
   - [readers](./codes/basics/introduction/readers.go)
   - [generics](./codes/basics/introduction/generics.go)
+- string
+- collection

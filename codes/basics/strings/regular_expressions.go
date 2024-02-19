@@ -1,4 +1,4 @@
-package main
+package strings
 
 import (
 	"bytes"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/regular-expressions
-func main() {
+func RegularExperssions() {
 
 	match, _ := regexp.MatchString("p([a-z]+)ch", "peach")
 	fmt.Println(match)

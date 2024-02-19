@@ -1,8 +1,8 @@
-package main
+package collections
 
 import "fmt"
 
-func main() {
+func Arrays() {
 	//Now a is an array of 5 integers.
 	var arr [5]int
 	arr[0] = 55

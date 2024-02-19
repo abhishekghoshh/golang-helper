@@ -1,6 +1,6 @@
 package main
 
-import "basics/introduction"
+import "basics/strings"
 
 func main() {
 	// introduction.HellowWorld()
@@ -18,5 +18,7 @@ func main() {
 	// introduction.Interfaces()
 	// introduction.Errors()
 	// introduction.Readers()
-	introduction.Generics()
+	// introduction.Generics()
+
+	strings.StringAndRunes()
 }
