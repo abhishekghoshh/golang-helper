@@ -1,15 +1,33 @@
-package main
+package introduction
 
 import "fmt"
 
-func print[T any](args ...T) {
+func Generics() {
+	printAll(1, 2, 3, 4)
+	printAll("Abhishek", "Nasim", "Bishal")
+
+	DoWork(worker("Abhishek"))
+
+	fmt.Println(Equal(1, 4))
+
+	var m = map[int]string{
+		1: "2",
+		2: "4",
+		4: "8",
+	}
+	fmt.Println("keys:", MapKeys(m))
+
+	_ = MapKeys[int, string](m)
+}
+
+func printAll[T any](args ...T) {
 	for _, v := range args {
 		fmt.Print(v, " ")
 	}
 	fmt.Println()
 }
 
-type Person interface {
+type Worker interface {
 	Work()
 }
 
@@ -19,7 +37,7 @@ func (w worker) Work() {
 	fmt.Printf("%s is working\n", w)
 }
 
-func DoWork[T Person](things ...T) {
+func DoWork[T Worker](things ...T) {
 	for _, v := range things {
 		v.Work()
 	}
@@ -34,17 +52,4 @@ func MapKeys[K comparable, V any](m map[K]V) []K {
 		r = append(r, k)
 	}
 	return r
-}
-
-func main() {
-	print(1, 2, 3, 4)
-	print("Abhishek", "Nasim", "Bishal")
-
-	DoWork(worker("Abhishek"))
-
-	fmt.Println(Equal(1, 4))
-
-	var m = map[int]string{1: "2", 2: "4", 4: "8"}
-	fmt.Println("keys:", MapKeys(m))
-	_ = MapKeys[int, string](m)
 }

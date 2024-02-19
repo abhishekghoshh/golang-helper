@@ -6,6 +6,7 @@ func Panic() {
 	panic("a problem")
 }
 
+// https://gobyexample.com/panic
 // https://gobyexample.com/recover
 func main() {
 	defer func() {

@@ -2,6 +2,7 @@
 
 ### Resources
 - [my cheetsheet](/cheetsheet.md)
+- [my code samples](/codes_samples.md)
 - [gobyexample](https://gobyexample.com/)
 
 

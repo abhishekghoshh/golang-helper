@@ -1,5 +1,4 @@
-
-### Basics
+# Cheetsheet for GOLANG
 
 Sample GO code
 ```
