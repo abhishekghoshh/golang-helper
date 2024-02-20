@@ -1,9 +1,4 @@
-# Google Protocol Buffers
-
-#### Allways remember to add or export this use your local golang module inside project
-```
-export GO111MODULE=on
-```
+# cheetsheet for Protocol buffer
 
 In order to perform code generation, you will need to install `protoc`  on your computer.</br>
 It is actually very easy, open a command line interface and type `brew install protobuf` </br>
@@ -80,11 +75,18 @@ protoc --python_out=. proto/*.proto
 
 
 
-## Udemy
-- [Complete Guide to Protocol Buffers 3](https://www.udemy.com/course/protocol-buffers/)
-- [gRPC Golang Master Class: Build Modern API & Microservices](https://www.udemy.com/course/grpc-golang/)
+#### This is a sample proto file
+first we have to mention the syntax then we will create a proto messge, which is similar to struct </br>
+a message contains fields, which each field consists of [ field type , field name = tag; ] </br>
+```
+syntax = "proto3";
 
+message Account{
+    uint32 id = 1;
+    string name = 2;
+    bool is_verified = 3;
+}
+```
 
-
-
-
+when we do not set any field then the field will not be serialized </br>
+we will not get any payload overhead for any empty data, though we can use some default value </br>
