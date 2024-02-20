@@ -1,7 +1,9 @@
 syntax = "proto3";
 
-option go_package = "/src/go";
-option java_package = "/src/java";
+
+// additionally we can set these option to directly tell where to compile
+option go_package = "/app/proto";
+// option java_package = "/src/java";
 // option py_package = "/src/python";
 
 message Address {

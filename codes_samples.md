@@ -1,5 +1,11 @@
 # Code samples written in GOLANG
 
+#### Allways remember to add or export this use your local golang module inside project
+```
+export GO111MODULE=on
+```
+
+
 #### basics
 - introduction
   - [hello world](./codes/basics/introduction/hello_world.go)
