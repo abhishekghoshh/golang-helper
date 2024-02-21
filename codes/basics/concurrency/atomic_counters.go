@@ -1,4 +1,4 @@
-package main
+package concurrency
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/atomic-counters
-func main() {
+func AtomicCounters() {
 	var ops uint64
 	var wg sync.WaitGroup
 
