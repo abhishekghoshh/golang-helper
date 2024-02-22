@@ -25,7 +25,7 @@ func squareSum(from, to int, ch chan int) {
 }
 
 // https://gobyexample.com/select
-func main() {
+func Selects() {
 	evenCh := make(chan int)
 	sqCh := make(chan int)
 

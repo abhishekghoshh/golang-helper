@@ -5,6 +5,12 @@ import (
 	"net/http"
 )
 
+// https://gobyexample.com/http-server
+func main() {
+	http.HandleFunc("/hello", hello)
+	http.HandleFunc("/headers", headers)
+	http.ListenAndServe(":8090", nil)
+}
 func hello(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, "hello\n")
 }
@@ -15,11 +21,4 @@ func headers(w http.ResponseWriter, req *http.Request) {
 			fmt.Fprintf(w, "%v: %v\n", name, h)
 		}
 	}
-}
-
-// https://gobyexample.com/http-server
-func main() {
-	http.HandleFunc("/hello", hello)
-	http.HandleFunc("/headers", headers)
-	http.ListenAndServe(":8090", nil)
 }

@@ -8,7 +8,7 @@ func addMessage(messages chan string) {
 }
 
 // https://gobyexample.com/channel-buffering
-func main() {
+func ChannelBuffering() {
 	messages := make(chan string, 2)
 	go addMessage(messages)
 	fmt.Println(<-messages)

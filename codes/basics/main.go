@@ -1,7 +1,5 @@
 package main
 
-import "basics/strings"
-
 func main() {
 	// introduction.HellowWorld()
 	// introduction.Variables()
@@ -9,8 +7,10 @@ func main() {
 	// introduction.Types()
 	// introduction.FlowControl()
 	// introduction.Functions()
+	// introduction.VariadicFunctions()
 	// introduction.Recursion()
 	// introduction.Defer()
+	// introduction.PanicAndRecover()
 	// introduction.Clousures()
 	// introduction.Pointers()
 	// introduction.Structs()
@@ -20,5 +20,15 @@ func main() {
 	// introduction.Readers()
 	// introduction.Generics()
 
-	strings.StringAndRunes()
+	// strings.StringAndRunes()
+	// strings.StringBuilers()
+
+	// collections.Arrays()
+	// collections.Slices()
+	// collections.Maps()
+	// collections.Ranges()
+	// collections.Sorting()
+	// collections.CustomSorting()
+	// collections.LinkedLists()
+	// collections.OrderedMaps()
 }

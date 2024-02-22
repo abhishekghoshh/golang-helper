@@ -17,7 +17,7 @@ func (c *Container) inc(name string) {
 }
 
 // https://gobyexample.com/mutexes
-func main() {
+func Mutexes() {
 	c := Container{
 		counters: map[string]int{"a": 0, "b": 0},
 	}

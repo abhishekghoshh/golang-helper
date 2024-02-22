@@ -3,6 +3,8 @@ package introduction
 import "fmt"
 
 /*
+Starting with version 1.18, Go has added support for generics, also known as type parameters.
+
 Go functions can be written to work on multiple types using type parameters.
 The type parameters of a function appear between brackets, before the function's arguments.
 	func Index[T comparable](s []T, x T) int
@@ -41,9 +43,12 @@ func Generics() {
 		2: "4",
 		4: "8",
 	}
+	// When invoking generic functions, we can often rely on type inference.
+	// Note that we don't have to specify the types for K and V when calling MapKeys - the compiler infers them automatically.
+	// type inferring
 	fmt.Println("keys:", MapKeys(m))
-
-	_ = MapKeys[int, string](m)
+	// we are manually giving the types, though it is not required
+	fmt.Println("keys:", MapKeys[int, string](m))
 
 	// Index works on a slice of ints
 	si := []int{10, 20, 15, -10}
@@ -80,6 +85,10 @@ func Equal[T comparable](a, b T) bool {
 	return a == b
 }
 
+// As an example of a generic function, MapKeys takes a map of any type and returns
+// a slice of its keys. This function has two type parameters - K and V;
+// K has the comparable constraint, meaning that we can compare values of this type with the == and != operators.
+// This is required for map keys in Go. V has the any constraint, meaning that it's not restricted in any way (any is an alias for interface{}).
 func MapKeys[K comparable, V any](m map[K]V) []K {
 	r := make([]K, 0, len(m))
 	for k := range m {

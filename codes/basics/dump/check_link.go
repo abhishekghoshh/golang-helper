@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func ChannelLinks() {
 	links := []string{
 		"http://google.com",
 		"http://facebook.com",

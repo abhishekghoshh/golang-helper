@@ -6,6 +6,12 @@ import (
 )
 
 /*
+
+var declares 1 or more variables. You can declare multiple variables at once. Go will infer the type of initialized variables.
+Variables declared without a corresponding initialization are zero-valued. For example, the zero value for an int is 0.
+The := syntax is shorthand for declaring and initializing a variable, e.g. for var f string = "apple" in this case.
+This syntax is only available inside functions.
+
 bool
 
 string
@@ -17,8 +23,6 @@ byte // alias for uint8
 
 rune // alias for int32
 
-	// represents a Unicode code point
-
 float32 float64
 
 complex64 complex128
@@ -29,6 +33,7 @@ When you need an integer value you should use int unless you have a specific rea
 
 Constants are declared like variables, but with the const keyword.
 Constants cannot be declared using the := syntax.
+
 */
 
 const Pi = 3.14

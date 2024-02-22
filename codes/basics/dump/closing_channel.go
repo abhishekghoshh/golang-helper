@@ -3,7 +3,7 @@ package concurrency
 import "fmt"
 
 // https://gobyexample.com/closing-channels
-func main() {
+func ClosingChannel() {
 	jobs := make(chan int, 5)
 	done := make(chan bool)
 

@@ -18,7 +18,7 @@ type writeOp struct {
 }
 
 // https://gobyexample.com/stateful-goroutines
-func main() {
+func StatefullGoRoutines() {
 	var readOps uint64
 	var writeOps uint64
 

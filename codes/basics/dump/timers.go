@@ -7,7 +7,7 @@ import (
 
 // TODO check it later
 // https://gobyexample.com/timers
-func main() {
+func Timers() {
 	timer1 := time.NewTimer(2 * time.Second)
 	<-timer1.C
 	fmt.Println("Timer 1 fired")

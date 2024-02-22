@@ -3,7 +3,7 @@ package concurrency
 import "fmt"
 
 // https://gobyexample.com/non-blocking-channel-operations
-func main() {
+func NonBlockingChannelOperation() {
 	messages := make(chan string)
 	signals := make(chan bool)
 

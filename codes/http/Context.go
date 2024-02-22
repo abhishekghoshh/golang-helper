@@ -6,6 +6,12 @@ import (
 	"time"
 )
 
+// https://gobyexample.com/context
+func main() {
+	http.HandleFunc("/hello", hello)
+	http.ListenAndServe(":8090", nil)
+}
+
 func hello(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
 	fmt.Println("server: hello handler started")
@@ -20,11 +26,4 @@ func hello(w http.ResponseWriter, req *http.Request) {
 		internalError := http.StatusInternalServerError
 		http.Error(w, err.Error(), internalError)
 	}
-}
-
-// https://gobyexample.com/context
-func main() {
-
-	http.HandleFunc("/hello", hello)
-	http.ListenAndServe(":8090", nil)
 }

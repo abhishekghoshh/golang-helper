@@ -4,6 +4,13 @@
 ## Official documentation
 - [proto 3](https://protobuf.dev/programming-guides/proto3/)
 - [Updating A Message Type](https://protobuf.dev/programming-guides/proto3/#updating)
+- [Protocol Buffers Well-Known Types](https://protobuf.dev/reference/protobuf/google.protobuf/#index)
+- [Protocol Buffer all options](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto)
+- [Protocol buffer style guide](https://protobuf.dev/programming-guides/style/)
+- some examples
+  - [Protocol Buffers - Code Example](https://github.com/protocolbuffers/protobuf/tree/main/examples)
+  - [Google Common Types](https://github.com/googleapis/googleapis/tree/master/google/type)
+  - [protobuf](https://github.com/protocolbuffers/protobuf/tree/main/src/google/protobuf)
 
 
 

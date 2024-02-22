@@ -9,7 +9,11 @@ export GO111MODULE=on
 
 #### Introduction
 - [Protocol Buffers Documentation](https://protobuf.dev/programming-guides/proto3/)
+- [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 - [Clément Jean personal blog](https://clement-jean.github.io/)
+- some examples
+  - [google spanner](https://github.com/googleapis/googleapis/blob/master/google/spanner/v1/spanner.proto)
+  - [google pub/sub](https://github.com/googleapis/googleapis/blob/master/google/pubsub/v1/pubsub.proto)
 
 
 #### rest vs gRPC

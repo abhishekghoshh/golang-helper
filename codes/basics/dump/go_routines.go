@@ -6,18 +6,19 @@ import (
 )
 
 // https://gobyexample.com/goroutines
-func out(from, to int) {
-	for i := from; i <= to; i++ {
-		fmt.Print(i)
+func GoRoutines() {
+	var out = func(from, to int) {
+		for i := from; i <= to; i++ {
+			fmt.Print(i)
+		}
 	}
-}
-func f(from string) {
-	for i := 0; i < 3; i++ {
-		fmt.Println(from, ":", i)
-		time.Sleep(10 * time.Millisecond)
+	var f = func(from string) {
+		for i := 0; i < 3; i++ {
+			fmt.Println(from, ":", i)
+			time.Sleep(10 * time.Millisecond)
+		}
 	}
-}
-func main() {
+
 	go out(0, 5)
 	go out(6, 10)
 	time.Sleep(time.Second)

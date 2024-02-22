@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/rate-limiting
-func main() {
+func RateLimitting() {
 
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {

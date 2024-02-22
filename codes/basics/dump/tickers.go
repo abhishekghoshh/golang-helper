@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/tickers
-func main() {
+func Tickers() {
 	ticker := time.NewTicker(500 * time.Millisecond)
 	done := make(chan bool)
 

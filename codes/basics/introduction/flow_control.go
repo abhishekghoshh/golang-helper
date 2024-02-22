@@ -23,7 +23,10 @@ At that point you can drop the semicolons: C's while is spelled for in Go.
 	}
 
 If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+for without a condition will loop repeatedly until you break out of the loop or return from the enclosing function.
+You can also continue to the next iteration of the loop.
 
+A statement can precede conditionals; any variables declared in this statement are available in the current and all subsequent branches.
 Like for, the if statement can start with a short statement to execute before the condition.
 
 	if v := math.Pow(x, n); v < lim {
@@ -33,6 +36,8 @@ Like for, the if statement can start with a short statement to execute before th
 
 Variables declared inside an if short statement are also available inside any of the else blocks.
 Variables declared by the statement are only in scope until the end of the if.
+
+Note that you don't need parentheses around conditions in Go, but that the braces are required.
 */
 func FlowControl() {
 
@@ -101,7 +106,21 @@ func FlowControl() {
 	default:
 		fmt.Println("Good evening.")
 	}
+	whatAmI := func(i interface{}) {
+		switch t := i.(type) {
+		case bool:
+			fmt.Println("I'm a bool")
+		case int:
+			fmt.Println("I'm an int")
+		default:
+			fmt.Printf("Don't know type %T\n", t)
+		}
+	}
+	whatAmI(true)
+	whatAmI(1)
+	whatAmI("hey")
 }
+
 func pow(x, n, lim float64) float64 {
 	if v := math.Pow(x, n); v < lim {
 		return v

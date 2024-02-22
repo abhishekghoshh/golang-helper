@@ -3,6 +3,10 @@ package introduction
 import "fmt"
 
 /*
+https://gobyexample.com/structs
+Structs are mutable.
+
+Access struct fields with a dot. You can also use dots with struct pointers - the pointers are automatically dereferenced.
 To access the field X of a struct when we have the struct pointer p we could write (*p).X.
 However, that notation is cumbersome, so the language permits us instead to write just p.X, without the explicit dereference.
 
@@ -52,6 +56,11 @@ That is, as a convenience, Go interprets the statement v.Scale(5) as (&v).Scale(
 There are two reasons to use a pointer receiver. As types are passed by value not reffrence
 The first is so that the method can modify the value that its receiver points to.
 The second is to avoid copying the value on each method call. This can be more efficient if the receiver is a large struct,
+
+
+Methods can be defined for either pointer or value receiver types.
+Go automatically handles conversion between values and pointers for method calls.
+You may want to use a pointer receiver type to avoid copying on method calls or to allow the method to mutate the receiving struct.
 */
 
 func Structs() {
@@ -82,6 +91,19 @@ func Structs() {
 	fmt.Println(nasim)
 	setName(nasim, "Nasim molla")
 	fmt.Println(nasim)
+
+	// If a struct type is only used for a single value,
+	// we don't have to give it a name. The value can have an anonymous struct type.
+	// This technique is commonly used for table-driven tests.
+
+	dog := struct {
+		name   string
+		isGood bool
+	}{
+		"Rex",
+		true,
+	}
+	fmt.Println(dog)
 }
 
 type Person struct {
@@ -99,10 +121,13 @@ type contactInfo struct {
 func setName(p Person, name string) {
 	p.name = name
 }
+
+// Go supports methods defined on struct types.
 func (p Person) welcome() {
 	fmt.Println("Welcome", p.name)
 }
 
+// Methods can be defined for either pointer or value receiver types.
 func (p *Person) increase(age int) {
 	p.age += age
 }
