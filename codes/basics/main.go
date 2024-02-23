@@ -1,5 +1,7 @@
 package main
 
+import "basics/concurrency"
+
 func main() {
 	// introduction.HellowWorld()
 	// introduction.Variables()
@@ -41,4 +43,11 @@ func main() {
 	// concurrency.ChannelBuffering()
 	// concurrency.ChannelSynchronization()
 	// concurrency.ChannelDirections()
+	// concurrency.Selects()
+	// concurrency.Timeouts()
+	// concurrency.NonBlockingChannelOperation()
+	// concurrency.ClosingChannel()
+	// concurrency.RangeOverChannels()
+	// concurrency.Timers()
+	concurrency.Tickers()
 }
