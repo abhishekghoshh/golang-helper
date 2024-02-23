@@ -29,6 +29,10 @@ export GO111MODULE=on
 - string
   - [string and runes](./codes/basics/strings/string_and_runes.go)
   - [string builders](./codes/basics/strings/string_builder.go)
+  - [string functions](./codes/basics/strings/string_functions.go)
+  - [string formatting](./codes/basics/strings/string_formatting.go)
+  - [regular expression](./codes/basics/strings/regular_expressions.go)
+  - [text templates](./codes/basics/strings/text_templates.go)
 - collection
   - [arrays](./codes/basics/collections/arrays.go)
   - [slices](./codes/basics/collections/slices.go)
@@ -38,3 +42,9 @@ export GO111MODULE=on
   - [custom sorting](./codes/basics/collections/custom_sorting.go)
   - [linked list](./codes/basics/collections/linked_lists.go)
   - [ordered map](./codes/basics/collections/order_maps.go)
+- concurrency
+  - [go routines](./codes/basics/concurrency/go_routines.go)
+  - [channels](./codes/basics/concurrency/channels.go)
+  - [channel buffering](./codes/basics/concurrency/channel_buffering.go)
+  - [Channel Synchronization](./codes/basics/concurrency/channel_synchronization.go)
+  - [Channel Directions](./codes/basics/concurrency/channel_directions.go)

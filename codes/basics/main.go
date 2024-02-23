@@ -22,6 +22,10 @@ func main() {
 
 	// strings.StringAndRunes()
 	// strings.StringBuilers()
+	// strings.Stringfunctions()
+	// strings.StringFormatting()
+	// strings.RegularExperssions()
+	// strings.TestTemplates()
 
 	// collections.Arrays()
 	// collections.Slices()
@@ -31,4 +35,10 @@ func main() {
 	// collections.CustomSorting()
 	// collections.LinkedLists()
 	// collections.OrderedMaps()
+
+	// concurrency.GoRoutines()
+	// concurrency.Channels()
+	// concurrency.ChannelBuffering()
+	// concurrency.ChannelSynchronization()
+	// concurrency.ChannelDirections()
 }
