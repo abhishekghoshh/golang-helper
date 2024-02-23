@@ -1,4 +1,4 @@
-package main
+package serializing
 
 import (
 	"encoding/json"
@@ -17,7 +17,7 @@ type response2 struct {
 }
 
 // https://gobyexample.com/json
-func main() {
+func WithJSON() {
 	bolB, _ := json.Marshal(true)
 	fmt.Println(string(bolB))
 

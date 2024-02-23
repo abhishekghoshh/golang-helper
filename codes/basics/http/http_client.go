@@ -1,4 +1,4 @@
-package main
+package http
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/http-client
-func main() {
+func HTTPClient() {
 
 	resp, err := http.Get("https://gobyexample.com")
 	if err != nil {

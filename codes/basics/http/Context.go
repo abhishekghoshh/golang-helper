@@ -1,4 +1,4 @@
-package main
+package http
 
 import (
 	"fmt"
@@ -7,12 +7,12 @@ import (
 )
 
 // https://gobyexample.com/context
-func main() {
-	http.HandleFunc("/hello", hello)
+func Context() {
+	http.HandleFunc("/hello", helloRoute)
 	http.ListenAndServe(":8090", nil)
 }
 
-func hello(w http.ResponseWriter, req *http.Request) {
+func helloRoute(w http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
 	fmt.Println("server: hello handler started")
 	defer fmt.Println("server: hello handler ended")

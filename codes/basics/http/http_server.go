@@ -1,4 +1,4 @@
-package main
+package http
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/http-server
-func main() {
+func HTTPServer() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/headers", headers)
 	http.ListenAndServe(":8090", nil)

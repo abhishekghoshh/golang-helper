@@ -1,4 +1,4 @@
-package main
+package http
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func (logWriter) Write(bs []byte) (int, error) {
 	return len(bs), nil
 }
 
-func main() {
+func CustomHTTPWritter() {
 	resp, err := http.Get("http://google.com")
 	if err != nil {
 		fmt.Println("Error:", err)

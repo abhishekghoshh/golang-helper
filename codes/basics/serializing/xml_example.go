@@ -1,4 +1,4 @@
-package main
+package serializing
 
 import (
 	"encoding/xml"
@@ -18,7 +18,7 @@ func (p Plant) String() string {
 }
 
 // https://gobyexample.com/xml
-func main() {
+func WithXML() {
 	coffee := &Plant{Id: 27, Name: "Coffee"}
 	coffee.Origin = []string{"Ethiopia", "Brazil"}
 
