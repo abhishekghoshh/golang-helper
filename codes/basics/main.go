@@ -1,6 +1,6 @@
 package main
 
-import "basics/concurrency"
+import "basics/commandline"
 
 func main() {
 	// introduction.HellowWorld()
@@ -49,5 +49,7 @@ func main() {
 	// concurrency.ClosingChannel()
 	// concurrency.RangeOverChannels()
 	// concurrency.Timers()
-	concurrency.Tickers()
+	// concurrency.Tickers()
+
+	commandline.GoCurl()
 }

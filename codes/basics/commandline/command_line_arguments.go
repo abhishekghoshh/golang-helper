@@ -1,4 +1,4 @@
-package main
+package commandline
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/command-line-arguments
-func main() {
+func CommandLineArguments() {
 
 	argsWithProg := os.Args
 	argsWithoutProg := os.Args[1:]

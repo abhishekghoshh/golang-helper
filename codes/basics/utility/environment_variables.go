@@ -1,4 +1,4 @@
-package main
+package commandline
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/environment-variables
-func main() {
+func EnvironmentVariables() {
 
 	os.Setenv("FOO", "1")
 	fmt.Println("FOO:", os.Getenv("FOO"))

@@ -1,4 +1,4 @@
-package main
+package commandline
 
 import (
 	"flag"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/command-line-subcommands
-func main() {
+func CommandLineSubCommands() {
 
 	fooCmd := flag.NewFlagSet("foo", flag.ExitOnError)
 	fooEnable := fooCmd.Bool("enable", false, "enable")

@@ -1,4 +1,4 @@
-package main
+package commandline
 
 import (
 	"flag"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/command-line-flags
-func main() {
+func CommandLineFlags() {
 
 	wordPtr := flag.String("word", "foo", "a string")
 
