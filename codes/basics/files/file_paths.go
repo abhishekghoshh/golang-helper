@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/file-paths
-func main() {
+func FilePaths() {
 
 	p := filepath.Join("dir1", "dir2", "filename")
 	fmt.Println("p:", p)

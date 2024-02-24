@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func PrintFile() {
 	f, err := os.Open(os.Args[1])
 	if err != nil {
 		fmt.Println("Error:", err)

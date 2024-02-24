@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"bufio"
@@ -7,14 +7,14 @@ import (
 	"os"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 // https://gobyexample.com/reading-files
-func main() {
+func ReadingFiles() {
+
+	var check = func(e error) {
+		if e != nil {
+			panic(e)
+		}
+	}
 
 	dat, err := os.ReadFile("data.txt")
 	check(err)

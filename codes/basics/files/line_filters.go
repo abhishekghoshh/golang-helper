@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 )
 
 // https://gobyexample.com/line-filters
-func main() {
+func LineFilters() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		ucl := strings.ToUpper(scanner.Text())

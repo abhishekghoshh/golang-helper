@@ -1,4 +1,4 @@
-package main
+package process
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/execing-processes
-func main() {
+func DoExecingProcess() {
 
 	binary, lookErr := exec.LookPath("ls")
 	if lookErr != nil {

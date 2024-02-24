@@ -1,21 +1,21 @@
-package main
+package files
 
 import (
 	"embed"
 )
 
-//go:embed folder/single_file.txt
+// go:embed folder/single_file.txt
 var fileString string
 
-//go:embed folder/single_file.txt
+// go:embed folder/single_file.txt
 var fileByte []byte
 
-//go:embed folder/single_file.txt
-//go:embed folder/*.hash
+// go:embed folder/single_file.txt
+// go:embed folder/*.hash
 var folder embed.FS
 
 // https://gobyexample.com/embed-directive
-func main() {
+func EmbeddedDirective() {
 
 	print(fileString)
 	print(string(fileByte))

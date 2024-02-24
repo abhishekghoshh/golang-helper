@@ -1,4 +1,4 @@
-package main
+package hashing
 
 import (
 	"crypto/sha256"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/sha256-hashes
-func main() {
+func SHA256() {
 	str := "sha256 this string"
 	hsh := sha256.New()
 	hsh.Write([]byte(str))

@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ func check(e error) {
 }
 
 // https://gobyexample.com/directories
-func main() {
+func Directories() {
 
 	err := os.Mkdir("subdir", 0755)
 	check(err)

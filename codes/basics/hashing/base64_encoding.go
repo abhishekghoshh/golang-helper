@@ -1,4 +1,4 @@
-package main
+package hashing
 
 import (
 	b64 "encoding/base64"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/base64-encoding
-func main() {
+func Base64Encoding() {
 
 	data := "abc123!?$*&()'-=@~"
 

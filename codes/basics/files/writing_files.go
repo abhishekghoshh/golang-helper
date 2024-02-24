@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"bufio"
@@ -6,14 +6,14 @@ import (
 	"os"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 // https://gobyexample.com/writing-files
-func main() {
+func WritingFiles() {
+
+	var check = func(e error) {
+		if e != nil {
+			panic(e)
+		}
+	}
 
 	d1 := []byte("hello\ngo\n")
 	err := os.WriteFile("newData.txt", d1, 0644)

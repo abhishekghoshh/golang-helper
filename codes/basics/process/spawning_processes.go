@@ -1,4 +1,4 @@
-package main
+package process
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 // https://gobyexample.com/spawning-processes
-func main() {
+func DoSpawningProcess() {
 
 	dateCmd := exec.Command("date")
 

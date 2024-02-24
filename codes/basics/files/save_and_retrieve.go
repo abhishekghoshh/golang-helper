@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func SaveAndRetrieve() {
 	//data := "{\"employee\":{\"name\":\"Abhishek Ghosh\",\"salary\":10000,\"married\":false}}"
 	//filename := "data.json"
 

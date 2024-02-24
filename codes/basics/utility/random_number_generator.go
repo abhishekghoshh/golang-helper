@@ -1,4 +1,4 @@
-package main
+package utility
 
 import (
 	cryptorand "crypto/rand"

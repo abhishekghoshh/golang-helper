@@ -1,4 +1,4 @@
-package main
+package files
 
 import (
 	"fmt"
@@ -6,14 +6,14 @@ import (
 	"path/filepath"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 // https://gobyexample.com/temporary-files-and-directories
-func main() {
+func TemporaryFilesAndDirectories() {
+	var check = func(e error) {
+		if e != nil {
+			panic(e)
+		}
+	}
+
 	f, err := os.CreateTemp("", "sample")
 	check(err)
 	fmt.Println("Temp file name:", f.Name())

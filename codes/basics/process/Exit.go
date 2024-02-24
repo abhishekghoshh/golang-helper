@@ -1,4 +1,4 @@
-package main
+package process
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // https://gobyexample.com/exit
-func main() {
+func DoExit() {
 	defer fmt.Println("!")
 	os.Exit(3)
 }

@@ -1,4 +1,4 @@
-package main
+package process
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 )
 
 // https://gobyexample.com/signals
-func main() {
+func DoSignals() {
 
 	sigs := make(chan os.Signal, 1)
 
