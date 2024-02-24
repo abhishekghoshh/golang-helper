@@ -74,5 +74,11 @@ export GO111MODULE=on
 - [range over channels](./basics/concurrency/range_over_channels.go)
 - [timers](./basics/concurrency/timers.go)
 - [tickers](./basics/concurrency/tickers.go)
+- [worker pool](./basics/concurrency/worker_pools.go)
+- [wait groups](./basics/concurrency/wait_groups.go)
+- [rate limitting](./basics/concurrency/rate_limiting.go)
+- [atomic counter](./basics/concurrency/atomic_counters.go)
+- [mutexes](./basics/concurrency/mutexes.go)
+- [stateful goroutines](./basics/concurrency/stateful_goroutines.go)
 
 </details>

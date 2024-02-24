@@ -1,7 +1,5 @@
 package main
 
-import "basics/commandline"
-
 func main() {
 	// introduction.HellowWorld()
 	// introduction.Variables()
@@ -50,6 +48,10 @@ func main() {
 	// concurrency.RangeOverChannels()
 	// concurrency.Timers()
 	// concurrency.Tickers()
-
-	commandline.GoCurl()
+	// concurrency.WorkerPools()
+	// concurrency.WaitGroups()
+	// concurrency.RateLimitting()
+	// concurrency.AtomicCounters()
+	// concurrency.Mutexes()
+	// concurrency.StatefullGoRoutines()
 }
