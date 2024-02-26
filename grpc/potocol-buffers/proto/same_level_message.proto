@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "/app/proto";
+
+message SameLevelMessageOne {
+  
+}
+
+enum SameLevelEnumOne {
+  ENUM_ONE_UNSPECIFIED = 0;
+}
+
+message MessageTwo {
+  SameLevelMessageOne one = 1;
+  SameLevelEnumOne two = 2;
+}

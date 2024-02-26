@@ -1,5 +1,5 @@
 PROTO_DIR = proto
-PROTO_GO_DIR = app/proto
+PROTO_GO_DIR = app/proto/imports
 
 ifeq ($(OS), Windows_NT)
 	OS = windows

@@ -82,3 +82,12 @@ export GO111MODULE=on
 - [stateful goroutines](./basics/concurrency/stateful_goroutines.go)
 
 </details>
+
+
+<details>
+    <summary><strong>serializing</strong></summary>
+
+- [json serializer/deserializer](./basics/serializing/json_example.go)
+- [xml serializer/deserializer](./basics/concurrency/stateful_goroutines.go)
+
+</details>

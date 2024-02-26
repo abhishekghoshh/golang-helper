@@ -3,8 +3,20 @@ syntax = "proto3";
 option go_package = "/app/proto";
 
 
+enum AccountType{
+    ACCOUNT_TYPE_UNSPECIFIED = 0;
+    ACCOUNT_TYPE_SAVINGS = 1;
+    ACCOUNT_TYPE_CREDIT = 2;
+    ACCOUNT_TYPE_BOTH = 3;
+}
+
 message Account{
     uint32 id = 1;
     string name = 2;
-    bool is_verified = 3;
+    bytes thumbnail = 3;
+    bool is_verified = 4;
+    float height = 5;
+    // repeated element for the array
+    repeated string phones = 6;
+    AccountType acountType = 7;
 }

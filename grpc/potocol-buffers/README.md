@@ -8,6 +8,8 @@
 - [Protocol Buffer all options](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto)
 - [Protocol buffer style guide](https://protobuf.dev/programming-guides/style/)
 - some examples
+  - [Clement-Jean/proto-course](https://github.com/Clement-Jean/proto-course)
+  - [Clement-Jean/proto-go-course](https://github.com/Clement-Jean/proto-go-course/tree/main)
   - [Protocol Buffers - Code Example](https://github.com/protocolbuffers/protobuf/tree/main/examples)
   - [Google Common Types](https://github.com/googleapis/googleapis/tree/master/google/type)
   - [protobuf](https://github.com/protocolbuffers/protobuf/tree/main/src/google/protobuf)

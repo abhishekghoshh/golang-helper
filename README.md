@@ -5,6 +5,14 @@
 - [my code samples](/codes_samples.md)
 - [gobyexample](https://gobyexample.com/)
 
+
+#### Some google I/O talks on golang
+- [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
+- [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
+  - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
+
+
+
 #### Style guide
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Google style guide for GO](https://google.github.io/styleguide/go/)
