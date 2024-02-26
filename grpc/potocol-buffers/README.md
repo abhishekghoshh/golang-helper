@@ -61,6 +61,9 @@ export PATH=$PATH:/$GO_PATH/bin
 source ~/.zshrc
 
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+go mod tidy
 ```
 For windows please check the documentation
 

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+
+message Success{
+    bytes mssg = 1;
+}
+
+message Error{
+    bytes mssg = 1;
+    repeated string stackTrace = 2;
+}
+
+message Response{
+    oneof response{
+        Success success = 1;
+        Error error = 2;
+    }
+    int32 code = 3;
+    map<string,string> headers = 4;
+}

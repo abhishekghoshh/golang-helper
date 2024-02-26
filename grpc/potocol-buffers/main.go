@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
-	"proto-example/app"
+	app "proto-example/app/proto"
 )
 
 func main() {
-	fmt.Println(app.NewAccount())
-	fmt.Println(app.NewAddress1())
+	fmt.Println(app.AddressWithPackage())
 }

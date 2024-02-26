@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "/app/proto";
+
+message PackagedMessage{
+    string name = 1;
+}

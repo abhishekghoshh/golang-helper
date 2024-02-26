@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "/app/proto/imports";
+
+import "street_without_package.proto";
+
+message Building {
+  string name = 1;
+  uint32 number = 2;
+  Street street = 3;
+}

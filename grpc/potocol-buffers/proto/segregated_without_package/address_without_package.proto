@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+
+option go_package = "/app/proto/imports";
+
+
+import "building_without_package.proto";
+import "city_without_package.proto";
+import "street_without_package.proto";
+
+message Address {
+  City city = 1;
+  Street street = 2;
+  Building building = 3;
+}
