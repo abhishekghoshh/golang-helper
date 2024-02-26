@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "/app/proto/import_pkg";
+
+package building;
+
+import "street.proto";
+
+message Building {
+  string name = 1;
+  uint32 number = 2;
+  street.Street street = 3;
+}

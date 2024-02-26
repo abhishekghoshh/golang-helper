@@ -7,12 +7,16 @@
 - [Protocol Buffers Well-Known Types](https://protobuf.dev/reference/protobuf/google.protobuf/#index)
 - [Protocol Buffer all options](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto)
 - [Protocol buffer style guide](https://protobuf.dev/programming-guides/style/)
+- [FAQ](https://protobuf.dev/reference/go/faq/)
 - some examples
   - [Clement-Jean/proto-course](https://github.com/Clement-Jean/proto-course)
   - [Clement-Jean/proto-go-course](https://github.com/Clement-Jean/proto-go-course/tree/main)
   - [Protocol Buffers - Code Example](https://github.com/protocolbuffers/protobuf/tree/main/examples)
   - [Google Common Types](https://github.com/googleapis/googleapis/tree/master/google/type)
   - [protobuf](https://github.com/protocolbuffers/protobuf/tree/main/src/google/protobuf)
+- **videos**
+  - [This is why gRPC was invented](https://www.youtube.com/watch?v=u4LWEXDP7_M)
+  - [Protobuf - How Google Changed Data Serialization FOREVER](https://www.youtube.com/watch?v=FR754e5xIwg)
 
 
 

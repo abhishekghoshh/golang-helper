@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(app.NewAccount())
+	fmt.Println(app.NewAddress1())
 }

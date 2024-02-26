@@ -1,5 +1,5 @@
 PROTO_DIR = proto
-PROTO_GO_DIR = app/proto/imports
+PROTO_GO_DIR = app/proto
 
 ifeq ($(OS), Windows_NT)
 	OS = windows
@@ -26,7 +26,7 @@ build: 	generate
 
 generate:
 	# protoc -I${PROTO_DIR} --go_opt=module=${PACKAGE} --go_out=. ${PROTO_DIR}/*.proto
-	protoc -I${PROTO_DIR} --go_out=. ${PROTO_DIR}/*.proto
+	protoc -I${PROTO_DIR} --go_out=. ${PROTO_DIR}/*.proto ${PROTO_DIR}/import_pkg/*.proto ${PROTO_DIR}/imports/*.proto ${PROTO_DIR}/nested/*.proto ${PROTO_DIR}/same_folder/*.proto
 
 bump: generate
 	go get -u ./...
