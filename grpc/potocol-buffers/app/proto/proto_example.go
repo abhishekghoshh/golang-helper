@@ -25,3 +25,7 @@ func AddressWithPackage() *with_pkg.Address {
 		Building: building,
 	}
 }
+
+func EmptyAddressWithPackage() *with_pkg.Address {
+	return &with_pkg.Address{}
+}
