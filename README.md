@@ -1,45 +1,39 @@
 # Golang Basics
 
-#### contents 
-- [basic](./basics/)
-- [design pattern](./design-pattern/)
-- [protocol buffers](./grpc/potocol-buffers/)
-- [grpc bacis](./grpc/grpc-basics/)
-- [projects](./projects/)
-  - [mysql-crud-with-jwt](./projects/crud-jwt/)
-  - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
-  - [go-cli](./projects/go-cli/)
-
-
-#### Resources
-- [my cheetsheet](/cheetsheet.md)
-- [my code samples](/codes_samples.md)
-- [gobyexample](https://gobyexample.com/)
-- [go101](https://go101.org/)
-- [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
-
-
-#### Some google I/O talks on golang
-- [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
-- [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
-  - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
-
-#### Some youtube videos for concurrency
-- [Concurrency in Go](https://www.youtube.com/watch?v=LvgVSSpwND8)
-- [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
-
-#### Some youtube channels
-- [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
-- [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
-
-#### Style guide
-- [Effective Go](https://go.dev/doc/effective_go)
-- [Google style guide for GO](https://google.github.io/styleguide/go/)
-  - [Why Google stores billions of lines of code in a single repository](https://dl.acm.org/doi/pdf/10.1145/2854146?trk=public_post_comment-text)
-  - [Style Guides and Rules](https://abseil.io/resources/swe-book/html/ch08.html#style_guides_and_rules)
-  - [Knowledge Sharing](https://abseil.io/resources/swe-book/html/ch03.html#readability_standardized_mentorship_thr)
-- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
-- [Golang style guide](https://developers.mattermost.com/contribute/more-info/server/style-guide/)
+#### Table of contents
+- **codes** 
+  - [basic](./basics/)
+  - [design pattern](./design-pattern/)
+  - [protocol buffers](./grpc/potocol-buffers/)
+  - [grpc bacis](./grpc/grpc-basics/)
+  - [projects](./projects/)
+    - [mysql-crud-with-jwt](./projects/crud-jwt/)
+    - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
+    - [go-cli](./projects/go-cli/)
+- **Resources**
+  - [my cheetsheet](/cheetsheet.md)
+  - [my code samples](/codes_samples.md)
+  - [gobyexample](https://gobyexample.com/)
+  - [go101](https://go101.org/)
+  - [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
+- **Some google I/O talks on golang**
+  - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
+  - [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
+    - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
+- **Some youtube videos for concurrency**
+  - [Concurrency in Go](https://www.youtube.com/watch?v=LvgVSSpwND8)
+  - [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
+- **Some youtube channels**
+  - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
+  - [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
+- **Style guide**
+  - [Effective Go](https://go.dev/doc/effective_go)
+  - [Google style guide for GO](https://google.github.io/styleguide/go/)
+    - [Why Google stores billions of lines of code in a single repository](https://dl.acm.org/doi/pdf/10.1145/2854146?trk=public_post_comment-text)
+    - [Style Guides and Rules](https://abseil.io/resources/swe-book/html/ch08.html#style_guides_and_rules)
+    - [Knowledge Sharing](https://abseil.io/resources/swe-book/html/ch03.html#readability_standardized_mentorship_thr)
+  - [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+  - [Golang style guide](https://developers.mattermost.com/contribute/more-info/server/style-guide/)
 
 
 Go is an open-source programming language that makes it easy to build simple, reliable, and efficient software.</br>
