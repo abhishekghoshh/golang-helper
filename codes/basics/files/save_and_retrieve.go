@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func SaveAndRetrieve() {
+func SaveRetrieveAndAppend() {
 	//data := "{\"employee\":{\"name\":\"Abhishek Ghosh\",\"salary\":10000,\"married\":false}}"
 	//filename := "data.json"
 
@@ -17,7 +17,7 @@ func SaveAndRetrieve() {
 
 }
 func saveToFile(filename, data string) error {
-	e := ioutil.WriteFile(filename, []byte(data), 0666)
+	e := os.WriteFile(filename, []byte(data), 0666)
 	if e == nil {
 		fmt.Println("data saved to file")
 	} else {
@@ -45,7 +45,7 @@ func appendToFile(filename, newData string) string {
 		panic(err)
 	}
 
-	data, err_ := ioutil.ReadFile(filename)
+	data, err_ := os.ReadFile(filename)
 	if err_ != nil {
 		fmt.Println(err)
 	}

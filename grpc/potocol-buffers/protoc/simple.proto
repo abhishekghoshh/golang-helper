@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+enum AddressType{
+  ADDRESS_TYPE_UNSPCIFIED = 0;
+  ADDRESS_TYPE_URBAN = 1;
+  ADDRESS_TYPE_VILLAGE = 2;
+}
+
+message Simple {
+  string buildingName = 1;
+  string streetName = 2;
+  string areaName = 3;
+  string cityName = 4;
+  string districtName = 5;
+  string stateName = 6;
+  string countryName = 7;
+  int32 pinCode = 8;
+  optional string googleLocation = 9;
+  repeated string landMarks  = 11;
+  map<string, string> otherInformations = 12;
+  AddressType addressType = 13;
+}

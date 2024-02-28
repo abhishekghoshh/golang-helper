@@ -1,0 +1,20 @@
+buildingName: "sample builing"
+streetName: "sample street"
+areaName: "sample area"
+cityName: "sample city"
+districtName: "sample sitrict"
+stateName: "sample state"
+countryName: "sample country"
+pinCode: 123456
+googleLocation: "sample google location"
+landMarks: "landmark 1"
+landMarks: "landmark 2"
+otherInformations {
+  key: "1"
+  value: "sample 1"
+}
+otherInformations {
+  key: "2"
+  value: "sample 2"
+}
+addressType: ADDRESS_TYPE_URBAN

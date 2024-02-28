@@ -1,10 +1,12 @@
 syntax = "proto3";
 
+option go_package = "proto-example/app/proto/sample";
 
-// additionally we can set these option to directly tell where to compile
-option go_package = "/app/proto";
-// option java_package = "/src/java";
-// option py_package = "/src/python";
+enum AddressType{
+  ADDRESS_TYPE_UNSPCIFIED = 0;
+  ADDRESS_TYPE_URBAN = 1;
+  ADDRESS_TYPE_VILLAGE = 2;
+}
 
 message FullAddress {
   string buildingName = 1;
@@ -18,4 +20,23 @@ message FullAddress {
   optional string googleLocation = 9;
   repeated string landMarks  = 11;
   map<string, string> otherInformations = 12;
+  AddressType addressType = 13;
+}
+
+
+
+message AddressRequest{
+  string name = 1;
+  string pan = 2;
+  string email = 3;
+  uint32 phone = 4;
+  FullAddress address = 5;
+}
+
+message AddressResponse{
+  uint32 id = 1;
+}
+
+service AddressService{
+  rpc Add(FullAddress) returns (AddressResponse);
 }

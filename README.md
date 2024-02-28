@@ -4,6 +4,8 @@
 - [my cheetsheet](/cheetsheet.md)
 - [my code samples](/codes_samples.md)
 - [gobyexample](https://gobyexample.com/)
+- [go101](https://go101.org/)
+- [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
 
 
 #### Some google I/O talks on golang
@@ -11,7 +13,13 @@
 - [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
   - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
 
+#### Some youtube videos for concurrency
+- [Concurrency in Go](https://www.youtube.com/watch?v=LvgVSSpwND8)
+- [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
 
+#### Some youtube channels
+- [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
+- [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
 
 #### Style guide
 - [Effective Go](https://go.dev/doc/effective_go)

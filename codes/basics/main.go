@@ -1,5 +1,9 @@
 package main
 
+import (
+	"basics/files"
+)
+
 func main() {
 	// introduction.HellowWorld()
 	// introduction.Variables()
@@ -14,11 +18,13 @@ func main() {
 	// introduction.Clousures()
 	// introduction.Pointers()
 	// introduction.Structs()
+	// introduction.TestCustomStructTagValidations()
 	// introduction.StructEmbedding()
 	// introduction.Interfaces()
 	// introduction.Errors()
 	// introduction.Readers()
 	// introduction.Generics()
+	// introduction.TestCustomDefaultParameterInFunctionArgument()
 
 	// strings.StringAndRunes()
 	// strings.StringBuilers()
@@ -54,4 +60,47 @@ func main() {
 	// concurrency.AtomicCounters()
 	// concurrency.Mutexes()
 	// concurrency.StatefullGoRoutines()
+
+	// serializing.TestJSONHandling()
+	// serializing.TestXMLHandling()
+
+	// times.Times()
+	// times.Epochs()
+	// times.TimeFormatting()
+
+	// utility.RandomNumberGenerator()
+	// utility.NumberParsing()
+	// utility.URLParsing()
+	// utility.SHA256Hashing()
+	// utility.Base64Encoding()
+	// utility.Reflections()
+
+	files.CatFile()
+	// files.ReadingFiles()
+	// files.WritingFiles()
+	// files.SaveRetrieveAndAppend()
+	// files.LineFilters()
+	// files.FilePaths()
+	// files.Directories()
+	// files.TemporaryFilesAndDirectories()
+	// files.EmbeddedDirective()
+
+	// testing file
+
+	// commandline.CommandLineArguments()
+	// commandline.CommandLineFlags()
+	// commandline.CommandLineSubCommands()
+	// commandline.EnvironmentVariables()
+
+	// loggings.Loggings()
+
+	// http.HTTPClient()
+	// http.HTTPServer()
+	// http.Context()
+	// http.CustomHTTPWritter()
+
+	// process.DoSpawningProcess()
+	// process.DoExecingProcess()
+	// process.DoSignals()
+	// process.DoExit()
 }

@@ -11,17 +11,29 @@ import (
 )
 
 func main() {
-	address := app.AddressWithPackage()
+	address := app.NewFullAddress()
 	// fmt.Println(address)
-	// DoFile(address)
-	DoJson(address)
+	DoFile(address)
+	// DoJson(address)
+	// DoOneOfTest()
+}
+
+func DoOneOfTest() {
+	isSuccess, err := app.IsSuccess(app.NewSuccessResponse())
+	fmt.Println("Is this a success reponse :", isSuccess, "has any error :", err)
+
+	isSuccess, err = app.IsSuccess(app.NewErrorResponse())
+	fmt.Println("Is this a success reponse :", isSuccess, "has any error :", err)
+
+	isSuccess, err = app.IsSuccess(app.DummyResponse())
+	fmt.Println("Is this a success reponse :", isSuccess, "has any error :", err)
 }
 
 func DoFile(message proto.Message) {
 	path := "./files/simple.bin"
 	fh.WriteToFile(path, message)
 
-	newMessageType := app.EmptyAddressWithPackage()
+	newMessageType := app.EmptyFullAddress()
 	fmt.Println("before reading :", newMessageType)
 
 	fh.ReadFromFile(path, newMessageType)

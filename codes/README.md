@@ -23,11 +23,13 @@ export GO111MODULE=on
 - [closures](./basics/introduction/colsures.go)
 - [pointers](./basics/introduction/pointers.go)
 - [structs](./basics/introduction/structs.go)
+- [custom struct tag validations](./basics/introduction/custom_struct_valiations.go)
 - [struct embedding](./basics/introduction/struct_embedding.go)
 - [interfaces](./basics/introduction/interfaces.go)
 - [errors](./basics/introduction/errors.go)
 - [readers](./basics/introduction/readers.go)
 - [generics](./basics/introduction/generics.go)
+- [custom default parameter in function argument](./basics/introduction/test_custom_default_parameters.go)
 
 </details>
 
@@ -90,4 +92,79 @@ export GO111MODULE=on
 - [json serializer/deserializer](./basics/serializing/json_example.go)
 - [xml serializer/deserializer](./basics/concurrency/stateful_goroutines.go)
 
+</details>
+
+
+<details>
+    <summary><strong>time</strong></summary>
+
+- [time](./basics/time/time.go)
+- [epoch](./basics/time/epoch.go)
+- [time formatting/parsing](./basics/time/time_formatting.go)
+</details>
+
+
+<details>
+    <summary><strong>utility</strong></summary>
+
+- [random numbers](./basics/utility/random_number_generator.go)
+- [number parsing](./basics/utility/number_parsing.go)
+- [url parsing](./basics/utility/url_parsing.go)
+- [sha256 hashing](./basics/utility/sha256.go)
+- [base64 encoding/decoding](./basics/utility/base64_encoding.go)
+- [reflections](./basics/utility/reflections.go)
+
+</details>
+
+
+<details>
+    <summary><strong>file handling</strong></summary>
+
+- [print file](./basics/files/cat_file.go)
+- [reading files](./basics/files/reading_files.go)
+- [reading files](./basics/files/reading_files.go)
+- [reading files](./basics/files/reading_files.go)
+- [reading files](./basics/files/reading_files.go)
+- [reading files](./basics/files/reading_files.go)
+- [reading files](./basics/files/reading_files.go)
+
+
+</details>
+
+
+<details>
+    <summary><strong>command line</strong></summary>
+
+- [command line arguments](./basics/commandline/command_line_arguments.go)
+- [command line flags](./basics/commandline/command_line_flags.go)
+- [command line sub commands](./basics/commandline/command_line_subcommands.go)
+- [environment variables](./basics/commandline/environment_variables.go)
+
+</details>
+
+
+<details>
+    <summary><strong>http</strong></summary>
+
+- [http client](./basics/http/http_client.go)
+- [http server](./basics/http/http_server.go)
+- [http context](./basics/http/context.go)
+- [custom http writter](./basics/http/custom_http_writter.go)
+</details>
+
+
+<details>
+    <summary><strong>logging</strong></summary>
+
+- [logging](./basics/loggings/logging.go)
+</details>
+
+
+<details>
+    <summary><strong>process</strong></summary>
+
+- [spawning process](./basics/process/spawning_processes.go)
+- [execing process](./basics/process/execing_process.go)
+- [signals](./basics/process/signals.go)
+- [exit](./basics/process/exit.go)
 </details>

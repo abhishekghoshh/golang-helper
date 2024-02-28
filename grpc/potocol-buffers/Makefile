@@ -1,5 +1,5 @@
-PROTO_DIR = proto/segregated_with_package
-PROTO_GO_DIR = app/proto/segregated_with_package
+PROTO_DIR = proto/enum
+PROTO_GO_DIR = app/proto
 
 ifeq ($(OS), Windows_NT)
 	OS = windows
@@ -25,6 +25,7 @@ build: 	generate
 	go build -o ${BIN} .
 
 generate:
+	# protoc -I${PROTO_DIR} --go_opt=module=${PACKAGE} --go_out=. --go-grpc_out=. ${PROTO_DIR}/*.proto
 	protoc -I${PROTO_DIR} --go_opt=module=${PACKAGE} --go_out=. ${PROTO_DIR}/*.proto
 
 bump: generate

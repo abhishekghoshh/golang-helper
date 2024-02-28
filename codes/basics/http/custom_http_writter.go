@@ -27,10 +27,10 @@ func CustomHTTPWritter() {
 	// so we can not directly print the response
 	// fmt.Println("response.body is", resp.Body)
 
-	bs := make([]byte, 99999)
-	n, err := resp.Body.Read(bs)
+	byteSlice := make([]byte, 99999)
+	n, err := resp.Body.Read(byteSlice)
 	fmt.Println("got", n, "bytes", " error is", err)
-	fmt.Print(string(bs))
+	fmt.Print(string(byteSlice))
 
 	fmt.Println(io.Copy(os.Stdout, resp.Body))
 

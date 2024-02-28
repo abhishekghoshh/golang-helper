@@ -12,6 +12,7 @@ export GO111MODULE=on
 - [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 - [Clément Jean personal blog](https://clement-jean.github.io/)
 - some examples
+  - [dreamsofcode-io/grpc](https://github.com/dreamsofcode-io/grpc)
   - [google spanner](https://github.com/googleapis/googleapis/blob/master/google/spanner/v1/spanner.proto)
   - [google pub/sub](https://github.com/googleapis/googleapis/blob/master/google/pubsub/v1/pubsub.proto)
 
@@ -21,6 +22,13 @@ export GO111MODULE=on
 - [gRPC vs REST: let the battle begin!](https://www.slideshare.net/borisovalex/grpc-vs-rest-let-the-battle-begin-81800634)
 - [Compare gRPC services with HTTP APIs](https://learn.microsoft.com/en-us/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
+#### tools for testing gRPC
+- [grpcui](https://github.com/fullstorydev/grpcui)
+- [grpcurl](https://github.com/fullstorydev/grpcurl)
+
+
+##### reverse proxy for gRPC [envoyproxy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_protocols/grpc)  </br>
+##### A JavaScript implementation of gRPC for browser clients [grpc-web](https://github.com/grpc/grpc-web)
 
 ## Udemy
 - [Complete Guide to Protocol Buffers 3](https://www.udemy.com/course/protocol-buffers/)

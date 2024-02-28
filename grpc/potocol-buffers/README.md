@@ -8,7 +8,7 @@
 - [Protocol Buffer all options](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto)
 - [Protocol buffer style guide](https://protobuf.dev/programming-guides/style/)
 - [FAQ](https://protobuf.dev/reference/go/faq/)
-- some examples
+- **some examples**
   - [Clement-Jean/proto-course](https://github.com/Clement-Jean/proto-course)
   - [Clement-Jean/proto-go-course](https://github.com/Clement-Jean/proto-go-course/tree/main)
   - [Protocol Buffers - Code Example](https://github.com/protocolbuffers/protobuf/tree/main/examples)
@@ -17,8 +17,12 @@
 - **videos**
   - [This is why gRPC was invented](https://www.youtube.com/watch?v=u4LWEXDP7_M)
   - [Protobuf - How Google Changed Data Serialization FOREVER](https://www.youtube.com/watch?v=FR754e5xIwg)
+  - [Why this is the Only Protobuf Feature You Shouldn't Use](https://www.youtube.com/watch?v=wOLs7x4l-Ys)
+  - [Game On! - Flatbuffers](https://www.youtube.com/watch?v=iQTxMkSJ1dQ)
 
-
+## Online articles 
+- [LinkedIn Adopts Protocol Buffers for Microservices Integration and Reduces Latency by up to 60%](https://www.infoq.com/news/2023/07/linkedin-protocol-buffers-restli/)
+  - [Reduce Latency By 60% With ProtoBufs!!! | Prime Reacts](https://www.youtube.com/watch?v=9IxE2UQqJCw)
 
 In order to perform code generation, you will need to install `protoc`  on your computer.</br>
 It is actually very easy, open a command line interface and type `brew install protobuf` </br>
@@ -104,12 +108,74 @@ a message contains fields, which each field consists of [ field type , field nam
 ```
 syntax = "proto3";
 
-message Account{
-    uint32 id = 1;
-    string name = 2;
-    bool is_verified = 3;
+// additionally we can set these option to directly tell where to compile
+option go_package = "/app/proto";
+option java_package = "/src/java";
+option py_package = "/src/python";
+
+message Address {
+  string buildingName = 1;
+  string streetName = 2;
+  string areaName = 3;
+  string cityName = 4;
+  string districtName = 5;
+  string stateName = 6;
+  string countryName = 7;
+  int32 pinCode = 8;
+  optional string googleLocation = 9;
+  repeated string landMarks  = 11;
+  map<string, string> otherInformations = 12;
 }
 ```
 
 when we do not set any field then the field will not be serialized </br>
 we will not get any payload overhead for any empty data, though we can use some default value </br>
+oneOf and map can not be repeated </br>
+google has some wellknown data types top use time time, duration, check the links sections for refference </br>
+we have many options to use inside a proto file, check the `FileOptions` message inside the [descriptor.proto](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto) </br>
+for naming convention check the style guide from the links </br>
+
+
+`proto.Message` is the interface that all proto structs are implementing, we can use that anywhere </br>
+
+
+## protoc
+
+
+### --decode_raw
+
+> Read an arbitrary protocol message from standard input and write the raw tag/value pairs in text format to standard output.  No PROTO_FILES should be given when using this flag.
+
+#### Example usage
+
+```shell
+cat simple.bin | protoc --decode_raw
+```
+
+### --decode
+
+> Read a binary message of the given type from standard input and write it in text format to standard output.  The message type must be defined in PROTO_FILES or their imports.
+
+#### Example usage
+
+```shell
+cat simple.bin | protoc --decode=Simple simple.proto > simple.txt
+```
+
+```shell
+cat simple.bin | protoc --decode=simple.Simple simple.proto > simple.txt
+```
+
+### --encode
+
+> Read a text-format message of the given type from standard input and write it in binary to standard output.  The message type must be defined in PROTO_FILES or their imports.
+
+#### Example usage
+
+```shell
+cat simple.txt | protoc --encode=Simple simple.proto > simple.pb
+```
+
+```shell
+cat simple.txt | protoc --encode=simple.Simple simple.proto > simple.pb
+```

@@ -2,15 +2,13 @@ package card
 
 import (
 	"fmt"
-	"io/ioutil"
 	"math/rand"
 	"os"
 	"strings"
 	"time"
 )
 
-// Create a new type of 'Card'
-// which is a slice of strings
+// Create a new type of 'Card' which is a slice of strings
 type Cards []string
 
 func NewCards() Cards {
@@ -56,11 +54,11 @@ func (cards Cards) ToString() string {
 	return strings.Join([]string(cards), ",")
 }
 func (cards Cards) SaveToFile(filename string) error {
-	return ioutil.WriteFile(filename, []byte(cards.ToString()), 0666)
+	return os.WriteFile(filename, []byte(cards.ToString()), 0666)
 }
 
 func NewCardsFromFile(filename string) Cards {
-	bs, err := ioutil.ReadFile(filename)
+	bs, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)
