@@ -5,8 +5,6 @@
 export GO111MODULE=on
 ```
 
-
-#### basics
 <details>
     <summary><strong>introduction</strong></summary>
 

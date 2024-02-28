@@ -1,5 +1,16 @@
 # Golang Basics
 
+#### contents 
+- [basic](./basics/)
+- [design pattern](./design-pattern/)
+- [protocol buffers](./grpc/potocol-buffers/)
+- [grpc bacis](./grpc/grpc-basics/)
+- [projects](./projects/)
+  - [mysql-crud-with-jwt](./projects/crud-jwt/)
+  - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
+  - [go-cli](./projects/go-cli/)
+
+
 #### Resources
 - [my cheetsheet](/cheetsheet.md)
 - [my code samples](/codes_samples.md)
@@ -41,7 +52,3 @@ How do we run GO projects in CMD :</br>
 - **go install** : Compiles and "installs" a package. 
 - **go get** : Downloads the raw source code of someone else's package
 - **go test** : Runs any tests associated with the current project
-
-
-### Codes
-- [basics](/codes/basic/)
