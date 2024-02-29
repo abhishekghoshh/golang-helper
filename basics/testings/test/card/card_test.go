@@ -1,7 +1,7 @@
-package test
+package card
 
 import (
-	c "cards/card"
+	c "basics/testings/src/card"
 	"testing"
 )
 
