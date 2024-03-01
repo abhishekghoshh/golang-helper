@@ -2,10 +2,12 @@ package card
 
 import (
 	c "basics/testings/src/card"
+	"fmt"
 	"testing"
 )
 
 func TestNewCards(t *testing.T) {
+	fmt.Println("THis is executed")
 	cards := c.NewCards()
 	l := len(cards)
 	if l != 32 {

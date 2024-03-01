@@ -21,6 +21,9 @@
 - **Some youtube videos**
   - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
   - [How GO Was Created - Less Is More | Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
+  - **GopherConAU**
+    - [GopherConAU 2023](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFsJqqs7olOAxxU-WJGlXS0)
+    - [GopherConAU 2019](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFJVoIf31_MeN67Pqj2NGrB)
   - **concurrency**
     - [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
       - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
@@ -54,6 +57,6 @@ How do we run GO projects in CMD :</br>
 - **go build** : Compiles a bunch of go source code files
 - **go run** : Compiles and executes one or two files
 - **go fmt** : Formats all the code in each file in the current directory
-- **go install** : Compiles and "installs" a package. 
+- **go install** : Compiles and "installs" a package/current porject in bin directory
 - **go get** : Downloads the raw source code of someone else's package
 - **go test** : Runs any tests associated with the current project

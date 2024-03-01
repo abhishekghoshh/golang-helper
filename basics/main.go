@@ -57,6 +57,8 @@ func main() {
 	// concurrency.Mutexes()
 	// concurrency.StatefullGoRoutines()
 
+	// concurrenypattern.CusomWorkerPoolExample1()
+
 	// serializing.TestJSONHandling()
 	// serializing.TestXMLHandling()
 
@@ -81,7 +83,7 @@ func main() {
 	// files.TemporaryFilesAndDirectories()
 	// files.EmbeddedDirective()
 
-	// testing file
+	// testing -> app_test.go
 
 	// commandline.CommandLineArguments()
 	// commandline.CommandLineFlags()
@@ -95,8 +97,14 @@ func main() {
 	// http.Context()
 	// http.CustomHTTPWritter()
 
+	// controllers.HttpBasicController()
+	// controllers.HttpMuxController()
+	// controllers.GorillaMuxController()
+
 	// process.DoSpawningProcess()
 	// process.DoExecingProcess()
 	// process.DoSignals()
 	// process.DoExit()
+
+	// di.DependencyInjection()
 }

@@ -85,6 +85,14 @@ export GO111MODULE=on
 
 
 <details>
+    <summary><strong>concurrency patterns</strong></summary>
+
+- [worker pool example 1](./concurrenypattern/custom_worker_pool_example_1.go)
+
+</details>
+
+
+<details>
     <summary><strong>serializing</strong></summary>
 
 - [json serializer/deserializer](./serializing/json_example.go)
@@ -161,10 +169,26 @@ export GO111MODULE=on
 
 
 <details>
+    <summary><strong>controllers</strong></summary>
+
+- [http basic controller](./controllers/http_basic_controller.go)
+- [http mux controller](./controllers/http_mux_controller.go)
+- [gorilla mux controller](./controllers/gorilla_mux_controller.go)
+</details>
+
+
+<details>
     <summary><strong>process</strong></summary>
 
 - [spawning process](./process/spawning_processes.go)
 - [execing process](./process/execing_process.go)
 - [signals](./process/signals.go)
 - [exit](./process/exit.go)
+</details>
+
+
+<details>
+    <summary><strong>depenency injection</strong></summary>
+
+- [manual dependency injection](./di/manual_dependency_injection.go)
 </details>
