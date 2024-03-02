@@ -21,6 +21,7 @@ export GO111MODULE=on
 - [REST vs gRPC](https://husobee.github.io/golang/rest/grpc/2016/05/28/golang-rest-v-grpc.html)
 - [gRPC vs REST: let the battle begin!](https://www.slideshare.net/borisovalex/grpc-vs-rest-let-the-battle-begin-81800634)
 - [Compare gRPC services with HTTP APIs](https://learn.microsoft.com/en-us/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
+- [What's the Difference Between gRPC and REST?](https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/)
 
 #### tools for testing gRPC
 - [grpcui](https://github.com/fullstorydev/grpcui)
@@ -32,7 +33,7 @@ export GO111MODULE=on
 
 
 #### Medium blogs
-- 
+- [Step by step making a Golang gRPC Server in 5 Minutes](https://blog.stackademic.com/step-by-step-making-a-golang-grpc-server-in-5-minutes-c8a36287ca36)
 
 ## Youtube
 

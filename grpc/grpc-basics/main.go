@@ -11,23 +11,29 @@ import (
 )
 
 const addr = "0.0.0.0:50051"
+const ssl = false
 
 func main() {
-	lis, err := net.Listen("tcp", addr)
+	// first we create a tcp listener
+	tcpListener, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalf("Failed to listen: %v\n", err)
 	}
-	defer lis.Close()
+	defer tcpListener.Close()
 	log.Printf("Listening at %s\n", addr)
 
+	// then we create a gRPC server
 	grpcServer := grpc.NewServer()
 	defer grpcServer.Stop()
 
+	// then we register our grpc controller with the grpc server
 	proto.RegisterGreetServiceServer(grpcServer, &server.GreetController{})
 
+	// this is only for the application running in dev
 	reflection.Register(grpcServer)
 
-	if err := grpcServer.Serve(lis); err != nil {
+	// now we attach the grpc server to that tcp listener
+	if err := grpcServer.Serve(tcpListener); err != nil {
 		log.Fatalf("Failed to serve: %v\n", err)
 	}
 
