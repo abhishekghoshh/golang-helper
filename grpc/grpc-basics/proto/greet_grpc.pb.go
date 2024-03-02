@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type GreetServiceClient interface {
 	Greet(ctx context.Context, in *GreetRequest, opts ...grpc.CallOption) (*GreetResponse, error)
 	GreetServerStreaming(ctx context.Context, in *GreetRequest, opts ...grpc.CallOption) (GreetService_GreetServerStreamingClient, error)
+	GrretClientStreaming(ctx context.Context, opts ...grpc.CallOption) (GreetService_GrretClientStreamingClient, error)
+	GreetBidirectionalStreaming(ctx context.Context, opts ...grpc.CallOption) (GreetService_GreetBidirectionalStreamingClient, error)
 }
 
 type greetServiceClient struct {
@@ -75,12 +77,79 @@ func (x *greetServiceGreetServerStreamingClient) Recv() (*GreetResponse, error) 
 	return m, nil
 }
 
+func (c *greetServiceClient) GrretClientStreaming(ctx context.Context, opts ...grpc.CallOption) (GreetService_GrretClientStreamingClient, error) {
+	stream, err := c.cc.NewStream(ctx, &GreetService_ServiceDesc.Streams[1], "/greet.GreetService/GrretClientStreaming", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &greetServiceGrretClientStreamingClient{stream}
+	return x, nil
+}
+
+type GreetService_GrretClientStreamingClient interface {
+	Send(*GreetRequest) error
+	CloseAndRecv() (*GreetResponse, error)
+	grpc.ClientStream
+}
+
+type greetServiceGrretClientStreamingClient struct {
+	grpc.ClientStream
+}
+
+func (x *greetServiceGrretClientStreamingClient) Send(m *GreetRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *greetServiceGrretClientStreamingClient) CloseAndRecv() (*GreetResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(GreetResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *greetServiceClient) GreetBidirectionalStreaming(ctx context.Context, opts ...grpc.CallOption) (GreetService_GreetBidirectionalStreamingClient, error) {
+	stream, err := c.cc.NewStream(ctx, &GreetService_ServiceDesc.Streams[2], "/greet.GreetService/GreetBidirectionalStreaming", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &greetServiceGreetBidirectionalStreamingClient{stream}
+	return x, nil
+}
+
+type GreetService_GreetBidirectionalStreamingClient interface {
+	Send(*GreetRequest) error
+	Recv() (*GreetResponse, error)
+	grpc.ClientStream
+}
+
+type greetServiceGreetBidirectionalStreamingClient struct {
+	grpc.ClientStream
+}
+
+func (x *greetServiceGreetBidirectionalStreamingClient) Send(m *GreetRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *greetServiceGreetBidirectionalStreamingClient) Recv() (*GreetResponse, error) {
+	m := new(GreetResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // GreetServiceServer is the server API for GreetService service.
 // All implementations must embed UnimplementedGreetServiceServer
 // for forward compatibility
 type GreetServiceServer interface {
 	Greet(context.Context, *GreetRequest) (*GreetResponse, error)
 	GreetServerStreaming(*GreetRequest, GreetService_GreetServerStreamingServer) error
+	GrretClientStreaming(GreetService_GrretClientStreamingServer) error
+	GreetBidirectionalStreaming(GreetService_GreetBidirectionalStreamingServer) error
 	mustEmbedUnimplementedGreetServiceServer()
 }
 
@@ -93,6 +162,12 @@ func (UnimplementedGreetServiceServer) Greet(context.Context, *GreetRequest) (*G
 }
 func (UnimplementedGreetServiceServer) GreetServerStreaming(*GreetRequest, GreetService_GreetServerStreamingServer) error {
 	return status.Errorf(codes.Unimplemented, "method GreetServerStreaming not implemented")
+}
+func (UnimplementedGreetServiceServer) GrretClientStreaming(GreetService_GrretClientStreamingServer) error {
+	return status.Errorf(codes.Unimplemented, "method GrretClientStreaming not implemented")
+}
+func (UnimplementedGreetServiceServer) GreetBidirectionalStreaming(GreetService_GreetBidirectionalStreamingServer) error {
+	return status.Errorf(codes.Unimplemented, "method GreetBidirectionalStreaming not implemented")
 }
 func (UnimplementedGreetServiceServer) mustEmbedUnimplementedGreetServiceServer() {}
 
@@ -146,6 +221,58 @@ func (x *greetServiceGreetServerStreamingServer) Send(m *GreetResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _GreetService_GrretClientStreaming_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GreetServiceServer).GrretClientStreaming(&greetServiceGrretClientStreamingServer{stream})
+}
+
+type GreetService_GrretClientStreamingServer interface {
+	SendAndClose(*GreetResponse) error
+	Recv() (*GreetRequest, error)
+	grpc.ServerStream
+}
+
+type greetServiceGrretClientStreamingServer struct {
+	grpc.ServerStream
+}
+
+func (x *greetServiceGrretClientStreamingServer) SendAndClose(m *GreetResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *greetServiceGrretClientStreamingServer) Recv() (*GreetRequest, error) {
+	m := new(GreetRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func _GreetService_GreetBidirectionalStreaming_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GreetServiceServer).GreetBidirectionalStreaming(&greetServiceGreetBidirectionalStreamingServer{stream})
+}
+
+type GreetService_GreetBidirectionalStreamingServer interface {
+	Send(*GreetResponse) error
+	Recv() (*GreetRequest, error)
+	grpc.ServerStream
+}
+
+type greetServiceGreetBidirectionalStreamingServer struct {
+	grpc.ServerStream
+}
+
+func (x *greetServiceGreetBidirectionalStreamingServer) Send(m *GreetResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *greetServiceGreetBidirectionalStreamingServer) Recv() (*GreetRequest, error) {
+	m := new(GreetRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // GreetService_ServiceDesc is the grpc.ServiceDesc for GreetService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -163,6 +290,17 @@ var GreetService_ServiceDesc = grpc.ServiceDesc{
 			StreamName:    "GreetServerStreaming",
 			Handler:       _GreetService_GreetServerStreaming_Handler,
 			ServerStreams: true,
+		},
+		{
+			StreamName:    "GrretClientStreaming",
+			Handler:       _GreetService_GrretClientStreaming_Handler,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "GreetBidirectionalStreaming",
+			Handler:       _GreetService_GreetBidirectionalStreaming_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
 		},
 	},
 	Metadata: "greet.proto",
