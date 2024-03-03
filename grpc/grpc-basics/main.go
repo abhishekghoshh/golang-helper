@@ -7,11 +7,35 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 )
 
 const addr = "0.0.0.0:50051"
-const ssl = false
+const clientAddress = "localhost:50051"
+const tls = true
+const interceptorEnbaled = true
+
+func addServerInterceptors(opts []grpc.ServerOption) []grpc.ServerOption {
+	if interceptorEnbaled {
+		opts = append(opts, grpc.ChainUnaryInterceptor(server.LogInterceptor()))
+		opts = append(opts, grpc.ChainUnaryInterceptor(server.AuthorizationHeaderInterceptor()))
+	}
+	return opts
+}
+func serverCredOptions(opts []grpc.ServerOption) []grpc.ServerOption {
+	if tls {
+		certFile := "ssl/server.crt"
+		keyFile := "ssl/server.pem"
+		creds, err := credentials.NewServerTLSFromFile(certFile, keyFile)
+
+		if err != nil {
+			log.Fatalf("Failed loading certificates: %v\n", err)
+		}
+		opts = append(opts, grpc.Creds(creds))
+	}
+	return opts
+}
 
 func main() {
 	// first we create a tcp listener
@@ -23,7 +47,11 @@ func main() {
 	log.Printf("Listening at %s\n", addr)
 
 	// then we create a gRPC server
-	grpcServer := grpc.NewServer()
+	opts := []grpc.ServerOption{}
+	opts = serverCredOptions(opts)
+	opts = addServerInterceptors(opts)
+
+	grpcServer := grpc.NewServer(opts...)
 	defer grpcServer.Stop()
 
 	// then we register our grpc controller with the grpc server

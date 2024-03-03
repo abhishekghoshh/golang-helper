@@ -4,7 +4,12 @@ import (
 	"context"
 	pb "grpc-basics/proto"
 	"io"
+	"log"
 	"strings"
+	"time"
+
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 )
 
 type GreetController struct {
@@ -12,6 +17,13 @@ type GreetController struct {
 }
 
 func (*GreetController) Greet(ctx context.Context, req *pb.GreetRequest) (*pb.GreetResponse, error) {
+	// we can also handle error and return to the client
+	if strings.TrimSpace(req.Name) == "" {
+		return nil, status.Errorf(
+			codes.InvalidArgument,
+			"Empty field : name",
+		)
+	}
 	return Greet(ctx, req)
 }
 
@@ -52,4 +64,15 @@ func (*GreetController) GreetBidirectionalStreaming(bidirectionalStreaming pb.Gr
 			return err
 		}
 	}
+}
+
+func (*GreetController) GreetWithTimeout(ctx context.Context, req *pb.GreetRequest) (*pb.GreetResponse, error) {
+	for i := 0; i < 3; i++ {
+		if ctx.Err() == context.DeadlineExceeded {
+			log.Println("The client canceled the request!")
+			return nil, status.Error(codes.Canceled, "The client canceled the request")
+		}
+		time.Sleep(1 * time.Second)
+	}
+	return Greet(ctx, req)
 }
