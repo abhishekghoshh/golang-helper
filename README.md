@@ -35,6 +35,9 @@
       - [One Billion Rows Challenge in Golang](https://www.bytesizego.com/blog/one-billion-row-challenge-go)
   - [GoLang: 10+ UNIQUE Concepts/Conventions that Beginners Should Know About!](https://www.youtube.com/watch?v=CK5rLpZk5A8)
   - [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
+  - [domain driven design](https://www.youtube.com/playlist?list=PLeoD63TPS-_ZofX56-vg8gJVXpDEpsIDW)
+  - [Anthony GG](https://www.youtube.com/@anthonygg_/playlists)
+  - [High Available Microservices With Apache Kafka In Golang](https://www.youtube.com/watch?v=-yVxChp7HoQ)
 - **Some youtube channels**
   - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
   - [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
