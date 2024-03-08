@@ -15,14 +15,20 @@
     - [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
     - [evrone/go-clean-template](https://github.com/evrone/go-clean-template)
     - [go-kit/kit](https://github.com/go-kit/kit)
+    - [go-kit/examples](https://github.com/go-kit/examples)
+    - [perkeep/perkeep](https://github.com/perkeep/perkeep)
     - [facebookarchive/grace](https://github.com/facebookarchive/grace)
     - [astaxie/beego](https://github.com/astaxie/beego)
+    - [gravityblast/fresh](https://github.com/gravityblast/fresh)
   - **blogs**
     - [Organizing a Go module](https://go.dev/doc/modules/layout)
     - [Golang project directory structure](https://stackoverflow.com/questions/46646559/golang-project-directory-structure)
     - [Go - Project Structure and Guidelines](https://dev.to/jinxankit/go-project-structure-and-guidelines-4ccm)
     - [Tips to Create a Proper Go Project Layout](https://www.developer.com/languages/go-project-layout/)
     - **medium**
+      - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
+        - [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+        - [Structuring Tests in Go](https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c)
       - [My Favourite Go Project Structure](https://martengartner.medium.com/my-favourite-go-project-setup-479563662834)
   - **youtube**
     - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
