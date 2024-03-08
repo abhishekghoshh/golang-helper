@@ -34,9 +34,11 @@ export GO111MODULE=on
 
 #### Medium blogs
 - [What Are gRPC & gRPC Web](https://medium.com/@nxenon/what-are-grpc-grpc-web-ecc9c3094c82)
+  - [Envoy and gRPC-Web: a fresh new alternative to REST](https://blog.envoyproxy.io/envoy-and-grpc-web-a-fresh-new-alternative-to-rest-6504ce7eb880)
 - [Step by step making a Golang gRPC Server in 5 Minutes](https://blog.stackademic.com/step-by-step-making-a-golang-grpc-server-in-5-minutes-c8a36287ca36)
 - [How To: Build a gRPC Server In Go](https://pascalallen.medium.com/how-to-build-a-grpc-server-in-go-943f337c4e05)
 - [gRPC Explained: Part 1 Introduction](https://medium.com/@dwivedi.ankit21/grpc-explained-part-1-introduction-6582dc4c7977)
+  - [gRPC Explained: Part 2 Protobuf](https://medium.com/@dwivedi.ankit21/grpc-explained-part-2-protobuf-19d3d7f26cfa)
 
 ## Youtube
 

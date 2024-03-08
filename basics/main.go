@@ -1,5 +1,7 @@
 package main
 
+import "basics/concurrenypattern"
+
 func main() {
 	// introduction.HellowWorld()
 	// introduction.Variables()
@@ -57,7 +59,7 @@ func main() {
 	// concurrency.Mutexes()
 	// concurrency.StatefullGoRoutines()
 
-	// concurrenypattern.CusomWorkerPoolExample1()
+	concurrenypattern.CusomWorkerPoolExample1()
 
 	// serializing.TestJSONHandling()
 	// serializing.TestXMLHandling()
