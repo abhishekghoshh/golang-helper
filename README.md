@@ -1,7 +1,8 @@
 # Golang Basics
 
-#### Table of contents
-- **codes** 
+### Table of contents
+
+### codes
   - [basic](./basics/)
   - [design pattern](./design-pattern/)
   - [protocol buffers](./grpc/potocol-buffers/)
@@ -10,30 +11,9 @@
     - [mysql-crud-with-jwt](./projects/crud-jwt/)
     - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
     - [go-cli](./projects/go-cli/)
-- **go project file structure**
-  - **repos**
-    - [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
-    - [evrone/go-clean-template](https://github.com/evrone/go-clean-template)
-    - [go-kit/kit](https://github.com/go-kit/kit)
-    - [go-kit/examples](https://github.com/go-kit/examples)
-    - [perkeep/perkeep](https://github.com/perkeep/perkeep)
-    - [facebookarchive/grace](https://github.com/facebookarchive/grace)
-    - [astaxie/beego](https://github.com/astaxie/beego)
-    - [gravityblast/fresh](https://github.com/gravityblast/fresh)
-  - **blogs**
-    - [Organizing a Go module](https://go.dev/doc/modules/layout)
-    - [Golang project directory structure](https://stackoverflow.com/questions/46646559/golang-project-directory-structure)
-    - [Go - Project Structure and Guidelines](https://dev.to/jinxankit/go-project-structure-and-guidelines-4ccm)
-    - [Tips to Create a Proper Go Project Layout](https://www.developer.com/languages/go-project-layout/)
-    - **medium**
-      - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
-        - [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
-        - [Structuring Tests in Go](https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c)
-      - [My Favourite Go Project Structure](https://martengartner.medium.com/my-favourite-go-project-setup-479563662834)
-  - **youtube**
-    - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
-    - [How I Structure New Projects In Golang](https://www.youtube.com/watch?v=dJIUxvfSg6A)
-- **Resources**
+
+
+### Resources
   - [my cheetsheet](/cheetsheet.md)
   - [my code samples](/codes_samples.md)
   - [gobyexample](https://gobyexample.com/)
@@ -65,7 +45,40 @@
   - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
   - [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
   - [Anthony GG](https://www.youtube.com/@anthonygg_/playlists)
-- **Style guide**
+
+
+
+### go project file structure
+  - **repos**
+    - [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
+    - [evrone/go-clean-template](https://github.com/evrone/go-clean-template)
+    - [go-kit/kit](https://github.com/go-kit/kit)
+    - [go-kit/examples](https://github.com/go-kit/examples)
+    - [perkeep/perkeep](https://github.com/perkeep/perkeep)
+    - [facebookarchive/grace](https://github.com/facebookarchive/grace)
+    - [astaxie/beego](https://github.com/astaxie/beego)
+    - [gravityblast/fresh](https://github.com/gravityblast/fresh)
+  - **blogs**
+    - [Organizing a Go module](https://go.dev/doc/modules/layout)
+    - [Golang project directory structure](https://stackoverflow.com/questions/46646559/golang-project-directory-structure)
+    - [Go - Project Structure and Guidelines](https://dev.to/jinxankit/go-project-structure-and-guidelines-4ccm)
+    - [Go Project Structure Best Practices](https://tutorialedge.net/golang/go-project-structure-best-practices/)
+    - [Tips to Create a Proper Go Project Layout](https://www.developer.com/languages/go-project-layout/)
+    - **medium**
+      - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
+        - [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+        - [Structuring Tests in Go](https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c)
+      - [My Favourite Go Project Structure](https://martengartner.medium.com/my-favourite-go-project-setup-479563662834)
+        - [I'll take pkg over internal](https://travisjeffery.com/b/2019/11/i-ll-take-pkg-over-internal/)
+      - [Getting Started with Go: Project Structure](https://medium.com/evendyne/getting-started-with-go-project-structure-ab8814ded9c3)
+      - [Package Organization in Go](https://medium.com/@leodahal4/package-organization-in-go-34efb1cd99a6)
+      - [Go REST API Boilerplate](https://medium.com/@bhadange.atharv/go-rest-api-boilerplate-c9d25f99acbe)
+  - **youtube**
+    - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
+    - [How I Structure New Projects In Golang](https://www.youtube.com/watch?v=dJIUxvfSg6A)
+
+
+### Style guide
   - [Effective Go](https://go.dev/doc/effective_go)
   - [Google style guide for GO](https://google.github.io/styleguide/go/)
     - [Why Google stores billions of lines of code in a single repository](https://dl.acm.org/doi/pdf/10.1145/2854146?trk=public_post_comment-text)
