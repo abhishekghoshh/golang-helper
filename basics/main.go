@@ -1,6 +1,6 @@
 package main
 
-import "basics/concurrenypattern"
+import "basics/strings"
 
 func main() {
 	// introduction.HellowWorld()
@@ -25,7 +25,7 @@ func main() {
 	// introduction.TestCustomDefaultParameterInFunctionArgument()
 
 	// strings.StringAndRunes()
-	// strings.StringBuilers()
+	strings.StringBuilers()
 	// strings.Stringfunctions()
 	// strings.StringFormatting()
 	// strings.RegularExperssions()
@@ -59,7 +59,7 @@ func main() {
 	// concurrency.Mutexes()
 	// concurrency.StatefullGoRoutines()
 
-	concurrenypattern.CusomWorkerPoolExample1()
+	// concurrenypattern.CusomWorkerPoolExample1()
 
 	// serializing.TestJSONHandling()
 	// serializing.TestXMLHandling()
