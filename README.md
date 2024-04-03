@@ -52,7 +52,7 @@
   - [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
     - [1brc](https://github.com/shraddhaag/1brc)
     - [One Billion Rows Challenge in Golang](https://www.bytesizego.com/blog/one-billion-row-challenge-go)
-  - [New Go Billion Row Challenge w/ Great Optimizations | Prime Reacts](https://www.youtube.com/watch?v=SZ1PDS7iRU8)
+  - [New Go Billion Row Challenge w/ Great Optimizations Prime Reacts](https://www.youtube.com/watch?v=SZ1PDS7iRU8)
     - [One Billion Row Challenge in Golang - From 95s to 1.96s](https://r2p.dev/b/2024-03-18-1brc-go/)
   
 - **context**
