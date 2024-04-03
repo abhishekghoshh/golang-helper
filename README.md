@@ -4,7 +4,6 @@
 
 ### My resources
 - [my cheetsheet](/cheetsheet.md)
-- [my code samples](/codes_samples.md)
 - [basic](./basics/)
 - [design pattern](./design-pattern/)
 - [protocol buffers](./grpc/potocol-buffers/)
