@@ -35,7 +35,7 @@
 
 ### Youtube videos
 - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
-- [How GO Was Created - Less Is More | Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
+- [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
 
 - **Data Structures**
   - [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
@@ -141,10 +141,13 @@
 
 ## Common go terminologies
 
-Go is an open-source programming language that makes it easy to build simple, reliable, and efficient software.</br>
-Go was designed at Google in 2007 to improve programming productivity in an era of multicore, networked machines and large codebases.</br>
-The language is often referred to as Golang because of its domain name, golang.org, but its proper name is Go.</br>
-How do we run GO projects in CMD :</br>
+Go is an open-source programming language that makes it easy to build simple, reliable, and efficient software.
+
+Go was designed at Google in 2007 to improve programming productivity in an era of multicore, networked machines and large codebases.
+
+The language is often referred to as Golang because of its domain name, golang.org, but its proper name is Go.
+
+How do we run GO projects in CMD :
 - **go build** : Compiles a bunch of go source code files
 - **go run** : Compiles and executes one or two files
 - **go fmt** : Formats all the code in each file in the current directory
