@@ -94,9 +94,3 @@ export GO111MODULE=on
 	- [tRPC, gRPC, GraphQL or REST: when to use what?](https://www.youtube.com/watch?v=veAb1fSp1Lk)
 	- [REST vs RPC vs GraphQL API - How do I pick the right API paradigm?](https://www.youtube.com/watch?v=hkXzsB8D_mo)
 	- [gRPC vs REST - KEY differences and performance TEST](https://www.youtube.com/watch?v=JjsT-i-ZEBc)
-
-
-
-## Udemy
-- [Complete Guide to Protocol Buffers 3](https://www.udemy.com/course/protocol-buffers/)
-- [gRPC Golang Master Class: Build Modern API & Microservices](https://www.udemy.com/course/grpc-golang/)
