@@ -1,4 +1,59 @@
-# Medium blogs about go
+# Other References
+
+
+
+## Youtube
+
+### [Anthony GG](https://www.youtube.com/@anthonygg_)
+- **general**
+  - [Important Tips On How To Write Idiomatic Code In Golang](https://www.youtube.com/watch?v=9cJHCoSxbn8)
+  - [How To Compose Typed Functions In Golang?!](https://www.youtube.com/watch?v=pR5nQ6N6-YA) **very useful in place of interface**
+  - [This Will Make Everyone Understand Golang Interfaces](https://www.youtube.com/watch?v=rH0bpx7I2Dk)
+  - [How To Refactor A Golang Project By Using Interfaces](https://www.youtube.com/watch?v=Ax7J_Ks0UWs)
+  - [Mastering Inheritance By Struct Embedding In Golang](https://www.youtube.com/watch?v=Gmlh0NrvzP0)
+  - [I Created GoFiber 7 Years Ago But Is It Faster?](https://www.youtube.com/watch?v=StN_twOfizQ)
+  - [The Power Of Struct Embedding And Interfaces In Golang](https://www.youtube.com/watch?v=fXZJu_JuH0A)
+  - [How To Use A Bytes Buffer In Golang And Make It Even Better?](https://www.youtube.com/watch?v=ENxfg9rS5dc)
+  - [Mastering And Taming NIL Pointers in Golang For Beginners](https://www.youtube.com/watch?v=MJfcZjbXGQA)
+  - [Golang Performance Hack That Reduces GC Overhead](https://www.youtube.com/watch?v=aThn7jvYvGI)
+  - [Why Golang's IO.READER Is More Important Than You Think](https://www.youtube.com/watch?v=ByhRhJXXcy4)
+- **concurrency**
+  - [Are Goroutines USELESS For Backend Development??](https://www.youtube.com/watch?v=3B16u3gxyug)
+  - [Buffered VS UnBuffered Channels In Golang](https://www.youtube.com/watch?v=HLGrvgbo-Yk)
+  - [How To Use Goroutines For Aggregating Data In Golang?!](https://www.youtube.com/watch?v=LGVRPFZr548)
+  - [How To Use The Context Package In Golang?](https://www.youtube.com/watch?v=kaZOXRqFPCw)
+  - [Golang Channels Or Wait Groups? Let Me Explain.](https://www.youtube.com/watch?v=2B-VAxCmhgA)
+  - [How You Should Use Mutexes And Atomic Values In Golang?!](https://www.youtube.com/watch?v=egIDsv1RO88)
+  - [How To Avoid Locks (Mutex) In Your Golang Programs?](https://www.youtube.com/watch?v=Ya5KRFrwPug)
+  - [10 Million Messages In 1 Second With Golang Actors](https://www.youtube.com/watch?v=aKz2xTVrYXc)
+  - [The Golang Function Nobody Talks About](https://www.youtube.com/watch?v=INcV8kNlDPM)
+- **server**
+  - [How To Build A Custom TCP Server In Golang!?](https://www.youtube.com/watch?v=qJQrrscB1-4)
+  - [How To Build A Chat And Data Feed With WebSockets In Golang?](https://www.youtube.com/watch?v=JuUAEYLkGbM)
+  - [How To Stream Large Files Over TCP In Golang](https://www.youtube.com/watch?v=82oFmY-Qeok)
+- **configuration patterns**
+  - [The Most Efficient Struct Configuration Pattern For Golang](https://www.youtube.com/watch?v=MDy7JQN5MN4)
+  - [I'm Starting To Like This Configuration Pattern In Go](https://www.youtube.com/watch?v=N0ZJt5VtvVE)
+  - [Another Amazing Use Case For The FOP Pattern In Go](https://www.youtube.com/watch?v=zDN9D_840cc)
+  - [The Power Of Golang's Decorator Pattern](https://www.youtube.com/watch?v=GipAZwKFgoA)
+  - [Mastering Dependency Injection In Golang](https://www.youtube.com/watch?v=UX4XjxWcDB4)
+- **microservices**
+  - [How To Build And Structure A Microservice In Golang?!](https://www.youtube.com/watch?v=sqj4UzN4OpU)
+  - [Introduction To The Actor Paradigm In Golang](https://www.youtube.com/watch?v=EXThuaEzxdc)
+  - [I Created My Own Actor Framework In Golang!?](https://www.youtube.com/watch?v=NuIaY74kCUs)
+  - [Another Approach To Microservices In Golang](https://www.youtube.com/watch?v=BlDL4mJCijA)
+  - [Microservice Registration And Discovery With Consul In Go](https://www.youtube.com/watch?v=OvVJRCEREto)
+  - [An Effective Way To Authorize Handlers In Golang](https://www.youtube.com/watch?v=MmPItr7-MdM)
+- **large videos**
+  - [High Available Microservices With Apache Kafka In Golang](https://www.youtube.com/watch?v=-yVxChp7HoQ)
+  - [Building Redis From Scratch In Golang - Learn Go Like A PRO](https://www.youtube.com/watch?v=v44bAtgEEUw)
+  - [Building Redis In Golang And NeoVim Setup With ThePrimeagen](https://www.youtube.com/watch?v=tpGEkK2QiTs)
+  - [How To Build A Complete Distributed File Storage In Golang](https://www.youtube.com/watch?v=bymQakvTY40)
+
+
+
+
+## Medium blogs
 
 - **medium blogs**
   - [Queue Handling in Golang (Qigo)](https://medium.com/@mirfarzam/queue-handling-in-golang-qigo-4bd8705300af)

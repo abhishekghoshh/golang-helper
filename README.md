@@ -1,8 +1,6 @@
 # Golang Basics
 
-## Table of contents
-
-### My resources
+## My resources
 - [my cheetsheet](/cheetsheet.md)
 - [basic](./basics/)
 - [design pattern](./design-pattern/)
@@ -12,47 +10,61 @@
   - [mysql-crud-with-jwt](./projects/crud-jwt/)
   - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
   - [go-cli](./projects/go-cli/)
+- [other references](./other-references.md)
 
 
-### online resources and tools
+## online resources and tools
 - [gobyexample](https://gobyexample.com/)
 - [go dev tutorial](https://go.dev/doc/tutorial/)
 - [Effective Go](https://go.dev/doc/effective_go)
 - [100go.co](https://100go.co/)
   - [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
 - [go101](https://go101.org/)
-- [live reloading](https://github.com/cosmtrek/air)
-- [mock generator](https://github.com/uber-go/mock)
-- **database-helper**
-  - [sqlc](https://docs.sqlc.dev/en/stable/index.html)
-  - [ORM library](https://gorm.io/)
-- [Go linter](https://github.com/golangci/golangci-lint)
-- [Dependency Injection](https://blog.matthiasbruns.com/golang-the-ultimate-guide-to-dependency-injection)
-  - [wire](https://github.com/google/wire/)
-  - [dig](https://github.com/uber-go/dig)
-  - [inject](https://github.com/facebookarchive/inject)
+- [Concurrency in Go](https://edu.anarcho-copy.org/Programming%20Languages/Go/Concurrency%20in%20Go.pdf)
+- [boot.dev](https://www.boot.dev/tracks/backend)
+- [codecrafters](https://app.codecrafters.io/catalog)
 
-### Youtube videos
-- [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
-- [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
+- **popular libraries**
+  - [live reloading](https://github.com/cosmtrek/air)
+  - [mock generator](https://github.com/uber-go/mock)
+  - **database-helper**
+    - [sqlx](https://github.com/jmoiron/sqlx)
+    - [pgx](https://github.com/jackc/pgx)
+    - [sqlc](https://docs.sqlc.dev/en/stable/index.html)
+    - [go-sqlbuilder](https://github.com/huandu/go-sqlbuilder)
+    - [GORM library](https://gorm.io/)
+    - [goprisma](https://goprisma.org/docs)
+  - [Go linter](https://github.com/golangci/golangci-lint)
+  - [Dependency Injection](https://blog.matthiasbruns.com/golang-the-ultimate-guide-to-dependency-injection)
+    - [wire](https://github.com/google/wire/)
+    - [dig](https://github.com/uber-go/dig)
+    - [inject](https://github.com/facebookarchive/inject)
 
-- **Data Structures**
-  - [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
+
+
+
+## Youtube videos
+- **introduction**
+  - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
+  - [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
 
 - **GopherConAU**
   - [GopherConAU 2023](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFsJqqs7olOAxxU-WJGlXS0)
   - [GopherConAU 2019](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFJVoIf31_MeN67Pqj2NGrB)
+
 - **concurrency**
   - [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
     - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
     - [Concurrency is not Parallelism by Rob Pike](https://www.youtube.com/watch?v=oV9rvDllKEg)
   - [Go Concurrency](https://www.youtube.com/playlist?list=PL7g1jYj15RUNqJStuwE9SCmeOKpgxC0HP)
   - [Concurrency in Go](https://www.youtube.com/watch?v=LvgVSSpwND8)
-  - [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
-    - [1brc](https://github.com/shraddhaag/1brc)
-    - [One Billion Rows Challenge in Golang](https://www.bytesizego.com/blog/one-billion-row-challenge-go)
-  - [New Go Billion Row Challenge w/ Great Optimizations Prime Reacts](https://www.youtube.com/watch?v=SZ1PDS7iRU8)
-    - [One Billion Row Challenge in Golang - From 95s to 1.96s](https://r2p.dev/b/2024-03-18-1brc-go/)
+
+  - **1 Billion Row Challenge**
+    - [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
+      - [1brc](https://github.com/shraddhaag/1brc)
+      - [One Billion Rows Challenge in Golang](https://www.bytesizego.com/blog/one-billion-row-challenge-go)
+    - [New Go Billion Row Challenge w/ Great Optimizations Prime Reacts](https://www.youtube.com/watch?v=SZ1PDS7iRU8)
+      - [One Billion Row Challenge in Golang - From 95s to 1.96s](https://r2p.dev/b/2024-03-18-1brc-go/)
   
 - **context**
   - [Golang Context Explained - How To Use With Timeout](https://www.youtube.com/watch?v=fXzzF5y6UEU)
@@ -60,6 +72,7 @@
   - [Understanding Contexts in Go in 5(-ish?) Minutes](https://www.youtube.com/watch?v=h2RdcrMLQAo)
   - [How To Use The Context Package In Golang?](https://www.youtube.com/watch?v=kaZOXRqFPCw)
   - [golang context package explained: the package that changed concurrency forever](https://www.youtube.com/watch?v=8omcakb31xQ)
+  - [Learning Golang Context!! Never Looked At It!](https://www.youtube.com/watch?v=VMonYfJlrc0)
 
 - **live-reloading**
   - [cosmtrek/air](https://github.com/cosmtrek/air)
@@ -70,15 +83,19 @@
 
 - **testing**
   - [Golang Testing (full tutorial)](https://www.youtube.com/watch?v=FjkSJ1iXKpg)
+  - [How To Test HTTP Handlers In Golang?!](https://www.youtube.com/watch?v=Ztk9d78HgC0)
 
 - **others**
   - [The standard library now has all you need for advanced routing in Go.](https://www.youtube.com/watch?v=H7tbjKFSg58)
   - [3 Golang Tips For Beginners I Wish I Knew Sooner](https://www.youtube.com/watch?v=PUPqnDYoMgU)
   - [7 Deadly Mistakes Beginner Go Developers Make (and how to fix them)](https://www.youtube.com/watch?v=biGr232TBwc)
   - [GoLang: 10+ UNIQUE Concepts/Conventions that Beginners Should Know About!](https://www.youtube.com/watch?v=CK5rLpZk5A8)
+
+- **other playlist**
+  - [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
+  - [DESIGN PATTERNS](https://www.youtube.com/playlist?list=PLfyLecA5DLOcUXmgk3BLDgWQvBoHbea2m)
   - [domain driven design](https://www.youtube.com/playlist?list=PLeoD63TPS-_ZofX56-vg8gJVXpDEpsIDW)
-  - [High Available Microservices With Apache Kafka In Golang](https://www.youtube.com/watch?v=-yVxChp7HoQ)
-  
+
 
 - **Some youtube channels**
   - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
@@ -88,7 +105,7 @@
 
 
 
-### go project file structure
+## go project file structure
 - **repos**
   - [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
   - [evrone/go-clean-template](https://github.com/evrone/go-clean-template)
@@ -108,7 +125,8 @@
     - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
       - [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
       - [Structuring Tests in Go](https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c)
-    - [My Favourite Go Project Structure](https://martengartner.medium.com/my-favourite-go-project-setup-479563662834)
+    - [My Favourite Go
+    -  Project Structure](https://martengartner.medium.com/my-favourite-go-project-setup-479563662834)
       - [I'll take pkg over internal](https://travisjeffery.com/b/2019/11/i-ll-take-pkg-over-internal/)
     - [Getting Started with Go: Project Structure](https://medium.com/evendyne/getting-started-with-go-project-structure-ab8814ded9c3)
     - [Package Organization in Go](https://medium.com/@leodahal4/package-organization-in-go-34efb1cd99a6)
@@ -116,6 +134,7 @@
 - **youtube**
   - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
   - [How I Structure New Projects In Golang](https://www.youtube.com/watch?v=dJIUxvfSg6A)
+  - [STOP! This Is How You Structure Golang Applications](https://www.youtube.com/watch?v=eSDYl-RuHjc)
 
 
 ### Style guide
