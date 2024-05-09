@@ -23,6 +23,7 @@
 - [Concurrency in Go](https://edu.anarcho-copy.org/Programming%20Languages/Go/Concurrency%20in%20Go.pdf)
 - [boot.dev](https://www.boot.dev/tracks/backend)
 - [codecrafters](https://app.codecrafters.io/catalog)
+- [codementor](https://www.codementor.io/mentorship/new)
 
 - **popular libraries**
   - [live reloading](https://github.com/cosmtrek/air)
@@ -85,6 +86,12 @@
   - [Golang Testing (full tutorial)](https://www.youtube.com/watch?v=FjkSJ1iXKpg)
   - [How To Test HTTP Handlers In Golang?!](https://www.youtube.com/watch?v=Ztk9d78HgC0)
 
+
+- **golang and htmx**
+  - [How to build a fullstack application with Go, Templ, and HTMX](https://dev.to/hackmamba/how-to-build-a-fullstack-application-with-go-templ-and-htmx-4444)
+  - [The HATE Stack - Simple and Efficient](https://www.youtube.com/watch?v=bti-bnGbyak)
+  - [FULL Introduction To HTMX Using Golang](https://www.youtube.com/watch?v=x7v6SNIgJpE)
+
 - **others**
   - [The standard library now has all you need for advanced routing in Go.](https://www.youtube.com/watch?v=H7tbjKFSg58)
   - [3 Golang Tips For Beginners I Wish I Knew Sooner](https://www.youtube.com/watch?v=PUPqnDYoMgU)
@@ -95,7 +102,6 @@
   - [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
   - [DESIGN PATTERNS](https://www.youtube.com/playlist?list=PLfyLecA5DLOcUXmgk3BLDgWQvBoHbea2m)
   - [domain driven design](https://www.youtube.com/playlist?list=PLeoD63TPS-_ZofX56-vg8gJVXpDEpsIDW)
-
 
 - **Some youtube channels**
   - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
