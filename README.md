@@ -113,6 +113,9 @@
 
 ## go project file structure
 - **repos**
+  - [Melkeydev/go-blueprint](https://github.com/Melkeydev/go-blueprint)
+    - [go-blueprint.dev](https://go-blueprint.dev/)
+    - [docs.go-blueprint.dev](https://docs.go-blueprint.dev/)
   - [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
   - [evrone/go-clean-template](https://github.com/evrone/go-clean-template)
   - [go-kit/kit](https://github.com/go-kit/kit)

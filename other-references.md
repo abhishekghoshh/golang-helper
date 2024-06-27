@@ -184,6 +184,7 @@
   - [Making A Dashboard With HTMX & Go](https://medium.com/@hhartleyjs/making-a-dashboard-with-htmx-go-50820d7ddedb)
   - [Working with Database: REST APIs in Go Fiber using GORM](https://blog.devgenius.io/working-with-database-rest-apis-in-go-fiber-using-gorm-1406e6773e15)
   - [A guide to making a Go web server without a framework](https://raphael-p.medium.com/a-guide-to-making-a-go-web-server-without-a-framework-1439a965f2b1)
+  - [Mastering DDD: Repository Design Patterns in Go](https://medium.com/@yohata/mastering-ddd-repository-design-patterns-in-go-2034486c82b3)
   - **list**
     - [JuiceFS](https://juicefs.medium.com/)
     - [AJ Pham](https://medium.com/@pthtantai97)
