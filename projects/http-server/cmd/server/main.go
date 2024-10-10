@@ -12,5 +12,5 @@ var (
 )
 
 func main() {
-	http.NewTcpServerWithGracefullShutdown(*host, *port)
+	http.NewTcpServer(*host, *port)
 }
