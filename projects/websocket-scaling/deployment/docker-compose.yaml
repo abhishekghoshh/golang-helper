@@ -1,0 +1,42 @@
+---
+version: "3.8"
+services:
+  chat-worker-1:
+    image: abhishek1009/group-chat:latest
+    container_name: chat-worker-1
+    environment:
+      - APP_NAME=chat-worker-1
+      - SERVER_ADDRESS=0.0.0.0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - chat-network
+    depends_on:
+      - redis
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: chat-server
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   ports:
+  #     - 9090:80
+  #   depends_on:
+  #     - redis
+  #   networks:
+  #     - chat-network
+  haproxy:
+    image: haproxy
+    container_name: chat-server 
+    ports:
+        - "8080:8080"
+    volumes:
+        - ./haproxy:/usr/local/etc/haproxy
+    networks:
+      - chat-network
+  redis:
+    image: redis:latest
+    container_name: redis
+    networks:
+      - chat-network
+networks:
+  chat-network:
