@@ -1,11 +1,12 @@
 ---
 version: "3.8"
 services:
+  # all the chat workers
   chat-worker-1:
     image: abhishek1009/group-chat:latest
     container_name: chat-worker-1
     environment:
-      - APP_NAME=chat-worker-1
+      - SERVER_NAME=chat-worker-1
       - SERVER_ADDRESS=0.0.0.0
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -13,6 +14,45 @@ services:
       - chat-network
     depends_on:
       - redis
+  chat-worker-2:
+    image: abhishek1009/group-chat:latest
+    container_name: chat-worker-2
+    environment:
+      - SERVER_NAME=chat-worker-2
+      - SERVER_ADDRESS=0.0.0.0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - chat-network
+    depends_on:
+      - redis
+
+  chat-worker-3:
+    image: abhishek1009/group-chat:latest
+    container_name: chat-worker-3
+    environment:
+      - SERVER_NAME=chat-worker-3
+      - SERVER_ADDRESS=0.0.0.0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - chat-network
+    depends_on:
+      - redis
+
+  chat-worker-4:
+    image: abhishek1009/group-chat:latest
+    container_name: chat-worker-4
+    environment:
+      - SERVER_NAME=chat-worker-4
+      - SERVER_ADDRESS=0.0.0.0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - chat-network
+    depends_on:
+      - redis
+  
   # nginx:
   #   image: nginx:latest
   #   container_name: chat-server
@@ -26,7 +66,12 @@ services:
   #     - chat-network
   haproxy:
     image: haproxy
-    container_name: chat-server 
+    container_name: chat-server
+    depends_on:
+      - chat-worker-1
+      - chat-worker-2
+      - chat-worker-3
+      - chat-worker-4
     ports:
         - "8080:8080"
     volumes:
