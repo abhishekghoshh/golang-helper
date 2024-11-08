@@ -1,6 +1,7 @@
 package server
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"time"
@@ -25,7 +26,9 @@ func New(serverName string, redis *redis.RedisServer) *ChatServer {
 var upgrader = websocket.Upgrader{}
 
 func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
-	subscriber := chatServer.redis.Subscribe()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	subscriber := chatServer.redis.Subscribe(ctx)
 
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -42,50 +45,55 @@ func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	notificationMessage := name + " has joined from " + chatServer.serverName
-	if err := chatServer.redis.Publish(notificationMessage); err != nil {
+	if err := chatServer.redis.Publish(ctx, notificationMessage); err != nil {
 		log.Println("error in publishing message", err)
 		return
 	}
 
-	ch := make(chan bool)
+	// currently we have only read channel
+	// so if there is any error in reading then it will close the channel as well as subscriber
+	// so the http request and write thread will be closed, this is one way
+	// we could also use a writing channel then writing thread will also able to close the reading thread
+	readCh := make(chan bool)
 
 	// incoming messge on a different thread
 	go func() {
+		defer func() {
+			subscriber.Close()
+			readCh <- true
+		}()
 		for {
 			_, msg, err := c.ReadMessage()
 			if err != nil {
-				log.Println("error in receiving message", err)
-				ch <- true
+				log.Println("closing the reading thread on error in receiving message", err)
 				return
 			}
 			sendingMessage := name + " : " + string(msg)
-			if err := chatServer.redis.Publish(sendingMessage); err != nil {
-				log.Println("error in publishing message", err)
-				ch <- true
+			if err := chatServer.redis.Publish(ctx, sendingMessage); err != nil {
+				log.Println("closing the reading thread on error in publishing message", err)
 				return
 			}
 		}
+
 	}()
 
 	// outgoing request on a different thread
 	go func() {
 		for {
-			msg, err := subscriber.ReceiveMessage()
+			msg, err := subscriber.ReceiveMessage(ctx)
 			if err != nil {
-				log.Println("error in reciving message from redis", err)
-				ch <- true
+				log.Println("closing the writing thread on error in reciving message from redis", err)
 				return
 			}
 			if err = c.WriteMessage(1, []byte(msg.Payload)); err != nil {
-				log.Println("error in returning response", err)
-				ch <- true
+				log.Println("closing the writing thread on error in returning response", err)
 				return
 			}
 		}
 	}()
 
 	// blocking call to hold the connection
-	<-ch
+	<-readCh
 }
 
 func (*ChatServer) randomUserName() string {
