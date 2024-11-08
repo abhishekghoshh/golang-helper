@@ -28,7 +28,9 @@ var upgrader = websocket.Upgrader{}
 func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
+
 	subscriber := chatServer.redis.Subscribe(ctx)
+	defer subscriber.Close()
 
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -59,7 +61,6 @@ func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 	// incoming messge on a different thread
 	go func() {
 		defer func() {
-			subscriber.Close()
 			readCh <- true
 		}()
 		for {
