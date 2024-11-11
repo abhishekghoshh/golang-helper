@@ -8,8 +8,12 @@ docker run -p 6379:6379 --name redis-local redis
 # run the golang main file
 go run cmd/chat/main.go 
 
+# make sure to change the image id and tag
 # to create a docker image
 make image
+
+# to push image
+make push_image
 
 # use docker compose to test the app with haproxy
 docker-compose up
@@ -35,6 +39,19 @@ docker-compose up
 backend all
     server s1 chat-worker-1:8080
 ```
+
+## deploy locally using minikube with ingress
+```
+# to enable ingress in minikube 
+minikube addons enable ingress
+
+# update /etc/hosts file and entry for the ingress host
+sudo echo "127.0.0.1	chat.local" >> /etc/hosts
+
+## run the kubernetes manifest file
+kubectl apply -f deployment/chat-worker-manifest.yaml
+```
+
 
 ## Live reloading
 ```

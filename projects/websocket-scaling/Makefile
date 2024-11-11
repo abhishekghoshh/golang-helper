@@ -20,5 +20,9 @@ test:
 
 image:
 	docker build -t $(IMAGE_NAME):$(DEFAULT_TAG) -f deployment/Dockerfile .
+
+push_image: image
+	docker image push $(IMAGE_NAME):$(DEFAULT_TAG)
+
 air:
 	air -c .air.toml

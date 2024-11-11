@@ -1,5 +1,6 @@
 server:
   name: ${SERVER_NAME:chat-server}
+  autoServerName: ${AUTO_SERVER_NAME:false}
   address: ${SERVER_ADDRESS:127.0.0.1}
   port: ${SERVER_PORT:8080}
 redis:

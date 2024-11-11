@@ -4,10 +4,9 @@ import (
 	"context"
 	"log"
 	"net/http"
-	"time"
 
 	"github.com/abhishekghoshh/group-chat/pkg/redis"
-	"github.com/goombaio/namegenerator"
+	"github.com/abhishekghoshh/group-chat/pkg/utils"
 	"github.com/gorilla/websocket"
 )
 
@@ -40,7 +39,7 @@ func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 	defer c.Close()
 
 	// genarating unique name for the user
-	name := chatServer.randomUserName()
+	name := utils.RandomUserName()
 
 	welcomeMessage := []byte("Hi " + name + ", Welcome to server : " + chatServer.serverName)
 	if err := c.WriteMessage(1, welcomeMessage); err != nil {
@@ -95,11 +94,4 @@ func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 
 	// blocking call to hold the connection
 	<-readCh
-}
-
-func (*ChatServer) randomUserName() string {
-	seed := time.Now().UTC().UnixNano()
-	nameGenerator := namegenerator.NewNameGenerator(seed)
-	name := nameGenerator.Generate()
-	return name
 }

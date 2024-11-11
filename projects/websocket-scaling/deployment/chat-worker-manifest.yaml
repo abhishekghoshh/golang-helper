@@ -1,0 +1,108 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-worker
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: chat-worker
+  template:
+    metadata:
+      labels:
+        app: chat-worker
+    spec:
+      containers:
+      - name: chat-worker
+        image: abhishek1009/group-chat:latest
+        imagePullPolicy: Always
+        env:
+        - name: AUTO_SERVER_NAME
+          value: "true"
+        - name: SERVER_ADDRESS
+          value: "0.0.0.0"
+        - name: REDIS_HOST
+          value: "redis.default.svc.cluster.local"
+        - name: REDIS_PORT
+          value: "6379"
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-worker
+spec:
+  selector:
+    app: chat-worker
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: ClusterIP
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  labels:
+    app: redis
+spec:
+  containers:
+  - name: redis
+    image: redis:latest
+    ports:
+    - containerPort: 6379
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+  type: ClusterIP
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chat-worker-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: chat.local
+    http:
+      paths:
+      - path: /chat
+        pathType: Prefix
+        backend:
+          service:
+            name: chat-worker
+            port:
+              number: 8080
+      - path: /health
+        pathType: Prefix
+        backend:
+          service:
+            name: chat-worker
+            port:
+              number: 8080
