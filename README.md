@@ -8,8 +8,12 @@
 - [grpc bacis](./grpc/grpc-basics/)
 - [projects](./projects/)
   - [mysql-crud-with-jwt](./projects/crud-jwt/)
-  - [blogpost-with-grpc-mongodb](./projects/blog-grpc/)
+  - [blogpost-with-grpc-mongodb](./projects/blogs/)
   - [go-cli](./projects/go-cli/)
+  - [http server](./projects/http-server/)
+  - [rate limiter](./projects/rate-limiter/)
+  - [redis](./projects/redis/)
+  - [websocke scalling](./projects/websocket-scaling/)
 - [other references](./other-references.md)
 
 
