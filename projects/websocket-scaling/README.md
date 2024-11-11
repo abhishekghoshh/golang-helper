@@ -15,6 +15,18 @@ make image
 # to push image
 make push_image
 
+# to create a docker image for arm processor
+make image_arm
+
+# to push image
+make push_image_arm
+
+# to create a docker image for amd process
+make image_amd
+
+# to push image
+make push_image_amd
+
 # use docker compose to test the app with haproxy
 docker-compose up
 
