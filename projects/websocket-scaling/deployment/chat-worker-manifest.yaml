@@ -86,21 +86,20 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: chat-worker-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
   - host: chat.local
     http:
       paths:
-      - path: /chat
-        pathType: Prefix
-        backend:
-          service:
-            name: chat-worker
-            port:
-              number: 8080
-      - path: /health
-        pathType: Prefix
+      - path: /api(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
           service:
             name: chat-worker
