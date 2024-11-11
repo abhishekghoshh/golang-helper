@@ -24,5 +24,17 @@ image:
 push_image: image
 	docker image push $(IMAGE_NAME):$(DEFAULT_TAG)
 
+image_arm:
+	docker build --build-arg TARGETARCH=arm64 --build-arg TARGETOS=linux -t $(IMAGE_NAME):arm-$(DEFAULT_TAG) -f deployment/Dockerfile-advanced .
+
+push_image_arm: image_arm
+	docker image push $(IMAGE_NAME):arm-$(DEFAULT_TAG)
+
+image_amd:
+	docker build --build-arg TARGETARCH=amd64 --build-arg TARGETOS=linux -t $(IMAGE_NAME):amd-$(DEFAULT_TAG) -f deployment/Dockerfile-advanced .
+
+push_image_amd: image_amd
+	docker image push $(IMAGE_NAME):amd-$(DEFAULT_TAG)
+
 air:
 	air -c .air.toml

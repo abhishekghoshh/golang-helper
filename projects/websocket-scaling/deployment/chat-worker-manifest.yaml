@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: chat-worker
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: chat-worker
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: chat-worker
-        image: abhishek1009/group-chat:latest
+        image: abhishek1009/group-chat:arm-latest
         imagePullPolicy: Always
         env:
         - name: AUTO_SERVER_NAME
