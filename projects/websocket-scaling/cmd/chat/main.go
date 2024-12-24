@@ -26,6 +26,7 @@ func main() {
 
 	http.HandleFunc("/chat", chatServer.Chat)
 	http.HandleFunc("/health", health)
+	http.Handle("/", http.FileServer(http.Dir("./static")))
 	log.Fatal(http.ListenAndServe(serverAddr, nil))
 }
 func health(w http.ResponseWriter, r *http.Request) {

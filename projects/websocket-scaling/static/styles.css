@@ -1,0 +1,54 @@
+.highlighted-message {
+    font-weight: bold;
+    color: #ff5722; /* Amber or any color of your choice */
+    background-color: #fff3e0; /* Light amber background */
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+    /* Styling for the collection-item avatar */
+.custom-message-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;    
+}
+
+/* Profile icon spacing */
+.custom-message-item .material-icons.circle {
+    margin-right: 15px;
+    font-size: 40px; /* Slightly larger profile icon */
+}
+
+/* Message content container */
+.custom-message-item .message-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sender name */
+.custom-message-item .sender-name {
+    font-size: 16px;
+    color: #424242; /* Neutral dark color for the sender name */
+    margin-bottom: 5px;
+}
+
+/* Message text */
+.custom-message-item .message-text {
+    font-size: 14px;
+    color: #616161; /* Lighter gray for the message text */
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Styling for the chat app title */
+.chat-app-title {
+  font-size: 28px; /* Slightly larger font size */
+  font-weight: 600; /* Semi-bold font */
+  color: #ff5722; /* Amber color to match the theme */
+  margin-top: 20px; /* Space above the title */
+  margin-bottom: 20px; /* Space below the title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  border-bottom: 2px solid #ff5722; /* Underline for emphasis */
+  padding-bottom: 10px; /* Space between text and underline */
+}

@@ -3,6 +3,10 @@
 ## Youtube
 - [Building a Redis clone from scratch in Gleam | Doing the Gleam + Redis challenge on CodeCrafters](https://www.youtube.com/watch?v=_lDjzVmWsWg)
 - [Simple Redis Server From Scratch In Golang - FULL PROJECT](https://www.youtube.com/watch?v=LMrxfWB6sbQ)
+- [Redis Internals](https://www.youtube.com/playlist?list=PLsdq-3Z1EPT0eElcdOON9fdaeaQjlyXDt)
+  - [arpitbhayani.me/redis-internals](https://arpitbhayani.me/redis-internals)
+  - [github.com/DiceDB/dice](https://github.com/DiceDB/dice)
+  - [dicedb.io](https://dicedb.io/)
 
 ## Blogs
 - [Writing a Redis clone in Go from scratch](https://mliezun.github.io/2023/04/08/redis-clone.html)

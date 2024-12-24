@@ -41,7 +41,7 @@ func (chatServer *ChatServer) Chat(w http.ResponseWriter, r *http.Request) {
 	// genarating unique name for the user
 	name := utils.RandomUserName()
 
-	welcomeMessage := []byte("Hi " + name + ", Welcome to server : " + chatServer.serverName)
+	welcomeMessage := []byte("Hi " + name + ", Welcome to server - " + chatServer.serverName)
 	if err := c.WriteMessage(1, welcomeMessage); err != nil {
 		return
 	}

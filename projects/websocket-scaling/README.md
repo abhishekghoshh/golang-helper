@@ -83,3 +83,6 @@ air -c .air.toml
 ## Resources
 - [Scaling Websockets with Redis, HAProxy and Node JS - High-availability Group Chat Application](https://www.youtube.com/watch?v=gzIcGhJC8hA)
   - [Source code](https://github.com/hnasr/javascript_playground/tree/master/ws-live-chat-system)
+- [Piyush Garg](#)
+  - [Build Scaleable Realtime Chat App with NextJS and NodeJS Tutorial](https://www.youtube.com/watch?v=CQQc8QyIGl0)
+  - [Build Scaleable Realtime Chat App with Kafka and Postgresql](https://www.youtube.com/watch?v=Rat7ORbBDN8)
