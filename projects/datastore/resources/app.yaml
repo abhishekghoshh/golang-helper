@@ -1,0 +1,13 @@
+server:
+  name: ${SERVER_NAME:datastore}
+  port: ${SERVER_PORT:8080}
+
+
+datastore:
+  postgres:
+    host: ${POSTGRESQL_HOST:127.0.0.1}
+    port: ${POSTGRES_PORT:5432}
+    user: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    db: ${POSTGRES_DB:postgres}
+    sslMode: ${POSTGRESQL_USE_SSL:disable}
