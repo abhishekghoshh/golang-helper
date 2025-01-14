@@ -3,19 +3,24 @@ package server
 import (
 	"net/http"
 
+	"github.com/abhishekghoshh/datastore/pkg/mongodb"
 	"github.com/gorilla/mux"
 )
 
 type MongoDBApi struct {
+	mongoDb *mongodb.MongoDb
 }
 
-func InitMongoDBApi(r *mux.Router) {
-	mongoApi := &MongoDBApi{}
-	r.HandleFunc("/mongo/persons", mongoApi.getAllPersons).Methods("GET")
-	r.HandleFunc("/mongo/person", mongoApi.getPersonsBy).Methods("GET")
-	r.HandleFunc("/mongo/person", mongoApi.addPerson).Methods("POST")
-	r.HandleFunc("/mongo/person/{personId}", mongoApi.updatePerson).Methods("PUT")
-	r.HandleFunc("/mongo/person/{personId}", mongoApi.deletePerson).Methods("DELETE")
+func NewMongoDbApi(mongoDb *mongodb.MongoDb) *MongoDBApi {
+	return &MongoDBApi{mongoDb}
+}
+
+func (api *MongoDBApi) Init(r *mux.Router) {
+	r.HandleFunc("/mongo/persons", api.getAllPersons).Methods("GET")
+	r.HandleFunc("/mongo/person", api.getPersonsBy).Methods("GET")
+	r.HandleFunc("/mongo/person", api.addPerson).Methods("POST")
+	r.HandleFunc("/mongo/person/{personId}", api.updatePerson).Methods("PUT")
+	r.HandleFunc("/mongo/person/{personId}", api.deletePerson).Methods("DELETE")
 }
 
 func (*MongoDBApi) getAllPersons(w http.ResponseWriter, r *http.Request) {

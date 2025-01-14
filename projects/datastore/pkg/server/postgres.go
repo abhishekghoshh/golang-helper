@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/abhishekghoshh/datastore/pkg/dto"
 	"github.com/abhishekghoshh/datastore/pkg/postgres"
 	"github.com/labstack/echo"
 )
@@ -39,20 +40,21 @@ func (*PostgresApi) getPersonsBy(c echo.Context) error {
 	return c.JSON(http.StatusOK, data)
 }
 func (api *PostgresApi) addPerson(c echo.Context) error {
-	var person postgres.Person
+	var person dto.Person
 	if err := c.Bind(&person); err != nil {
 		log.Println(err)
 		return c.JSON(http.StatusBadRequest, map[string]any{"stutus": "DataNotInserted", "error": err.Error()})
 	}
-	if _, err := api.db.Create(&person); err != nil {
+	p, err := api.db.Create(&person)
+	if err != nil {
 		log.Println(err)
 		return c.JSON(http.StatusBadRequest, map[string]any{"stutus": "DataNotInserted", "error": err.Error()})
 	}
 	data := map[string]any{
 		"status": "DataInserted",
 		"additionalData": map[string]any{
-			"userId":   person.ID,
-			"userName": person.UserName,
+			"userId":   p.ID,
+			"userName": p.UserName,
 		},
 	}
 	return c.JSON(http.StatusOK, data)

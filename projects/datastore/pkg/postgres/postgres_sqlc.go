@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/abhishekghoshh/datastore/pkg/dto"
 	_ "github.com/lib/pq"
 )
 
@@ -34,6 +35,6 @@ func (db *PostgresSqlcDB) Close() {
 	db.db.Close()
 }
 
-func (db *PostgresSqlcDB) Create(person *Person) (*Person, error) {
+func (db *PostgresSqlcDB) Create(person *dto.Person) (*dto.Person, error) {
 	return nil, nil
 }

@@ -14,6 +14,8 @@ func main() {
 	e.Use(middleware.Logger())
 	// creating an instance of the config
 	cfg := config.New()
+
+	// setting up the postgress connection and endpoints
 	var postgresCfg postgres.Config
 	cfg.Decode("datastore.postgres", &postgresCfg)
 	// opening the postgres connection
@@ -25,7 +27,10 @@ func main() {
 	defer postgresDB.Close()
 	server.NewPostgresApi(postgresDB).Init(e)
 
+	// setting up the mongodb connection and endpoints
+
 	// spinning up the server
 	e.Logger.SetLevel(log.INFO)
 	e.Logger.Fatal(e.Start(":" + cfg.GetString("server.port")))
+
 }

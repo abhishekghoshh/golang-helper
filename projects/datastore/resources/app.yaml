@@ -11,3 +11,6 @@ datastore:
     password: ${POSTGRES_PASSWORD:postgres}
     db: ${POSTGRES_DB:postgres}
     sslMode: ${POSTGRESQL_USE_SSL:disable}
+  mongodb:
+    host: ${MONGODB_HOST:127.0.0.1}
+    port: ${MONGODB_PORT:5432} 

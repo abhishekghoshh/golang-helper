@@ -1,7 +1,9 @@
 package postgres
 
+import "github.com/abhishekghoshh/datastore/pkg/dto"
+
 type PostgresDB interface {
-	Create(person *Person) (*Person, error)
+	Create(person *dto.Person) (*dto.Person, error)
 	Close()
 }
 type Config struct {
