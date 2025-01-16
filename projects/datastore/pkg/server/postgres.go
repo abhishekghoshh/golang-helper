@@ -4,16 +4,16 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/abhishekghoshh/datastore/pkg/db"
 	"github.com/abhishekghoshh/datastore/pkg/dto"
-	"github.com/abhishekghoshh/datastore/pkg/postgres"
 	"github.com/labstack/echo"
 )
 
 type PostgresApi struct {
-	db postgres.PostgresDB
+	db db.DB
 }
 
-func NewPostgresApi(postgresDB postgres.PostgresDB) *PostgresApi {
+func NewPostgresApi(postgresDB db.DB) Server {
 	return &PostgresApi{postgresDB}
 }
 

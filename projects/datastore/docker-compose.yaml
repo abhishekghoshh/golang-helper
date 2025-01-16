@@ -1,0 +1,89 @@
+---
+version: "3.8"
+services:
+  # all the datastore workers
+  datastore:
+    image: abhishek1009/datastore:latest
+    container_name: datastore
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]  # Adjust the health endpoint as necessary
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    build:
+      context: .
+    environment:
+      - SERVER_NAME=datastore
+      - SERVER_ADDRESS=0.0.0.0
+      # Redis connection
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      # postgres connection
+      - POSTGRESQL_HOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      # mongodb connection
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_DB=mongo
+    networks:
+      - datastore-network
+    depends_on:
+      - redis
+      - postgres
+      - mongo
+  haproxy:
+    image: haproxy
+    container_name: haproxy
+    depends_on:
+      - datastore
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./deployment/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    networks:
+      - datastore-network
+  redis:
+    image: redis:latest
+    container_name: redis
+    networks:
+      - datastore-network
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data 
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    networks:
+      - datastore-network
+    ports:
+      - "27017:27017"
+    environment: {}
+      # - MONGO_INITDB_ROOT_USERNAME=abhishek
+      # - MONGO_INITDB_ROOT_PASSWORD=abhishek
+    volumes:
+      - mongo_data:/data/db
+      - ./deployment/mongodb:/docker-entrypoint-initdb.d
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    networks:
+      - datastore-network
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+networks:
+  datastore-network:
+
+volumes:
+  redis_data: {}        # Define volume for Redis
+  mongo_data: {}        # Define volume for MongoDB
+  postgres_data: {}     # Define volume for PostgreSQL

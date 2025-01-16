@@ -3,13 +3,15 @@ package postgres
 import (
 	"fmt"
 	"log"
+	"strconv"
 
+	"github.com/abhishekghoshh/datastore/pkg/db"
 	"github.com/abhishekghoshh/datastore/pkg/dto"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-func NewGormConnection(config *Config) (PostgresDB, error) {
+func NewGormConnection(config *db.Config) (db.DB, error) {
 	dsn := fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
 		config.Host, config.Port, config.User, config.Password, config.Db, config.SSLMode,
@@ -89,17 +91,21 @@ func (PostgresGormDB) converToPerson(person *PersonGorm) *dto.Person {
 		for i := 0; i < len(person.Notes); i++ {
 			noteGorm := person.Notes[i]
 			notes = append(notes, dto.Note{
-				NoteId:  noteGorm.ID,
+				NoteId:  toString(noteGorm.ID),
 				Content: noteGorm.Content,
 			})
 		}
 	}
 	return &dto.Person{
-		ID:       person.ID,
+		ID:       toString(person.ID),
 		Name:     person.Name,
 		UserName: person.UserName,
 		Email:    person.Email,
 		Age:      person.Age,
 		Notes:    notes,
 	}
+}
+
+func toString(num uint) string {
+	return strconv.FormatUint(uint64(num), 10)
 }

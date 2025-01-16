@@ -1,7 +1,7 @@
 package dto
 
 type Person struct {
-	ID       uint   `json:"id"`
+	ID       string `json:"id"`
 	Name     string `json:"name,omitempty"`
 	UserName string `json:"userName,omitempty"`
 	Age      int64  `json:"age,omitempty"`
@@ -10,6 +10,6 @@ type Person struct {
 }
 
 type Note struct {
-	NoteId  uint   `json:"noteId"`
+	NoteId  string `json:"noteId"`
 	Content string `json:"content,omitempty"`
 }

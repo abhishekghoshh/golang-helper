@@ -1,16 +1,16 @@
-package postgres
+package db
 
 import "github.com/abhishekghoshh/datastore/pkg/dto"
 
-type PostgresDB interface {
+type DB interface {
 	Create(person *dto.Person) (*dto.Person, error)
 	Close()
 }
 type Config struct {
 	Host     string
 	Port     string
-	Password string
-	User     string
 	Db       string
+	User     string
+	Password string
 	SSLMode  string
 }

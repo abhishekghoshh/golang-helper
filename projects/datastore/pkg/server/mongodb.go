@@ -1,40 +1,59 @@
 package server
 
 import (
+	"log"
 	"net/http"
 
-	"github.com/abhishekghoshh/datastore/pkg/mongodb"
-	"github.com/gorilla/mux"
+	"github.com/abhishekghoshh/datastore/pkg/db"
+	"github.com/abhishekghoshh/datastore/pkg/dto"
+	"github.com/labstack/echo"
 )
 
 type MongoDBApi struct {
-	mongoDb *mongodb.MongoDb
+	db db.DB
 }
 
-func NewMongoDbApi(mongoDb *mongodb.MongoDb) *MongoDBApi {
-	return &MongoDBApi{mongoDb}
+func NewMongoDbApi(db db.DB) Server {
+	return &MongoDBApi{db}
 }
 
-func (api *MongoDBApi) Init(r *mux.Router) {
-	r.HandleFunc("/mongo/persons", api.getAllPersons).Methods("GET")
-	r.HandleFunc("/mongo/person", api.getPersonsBy).Methods("GET")
-	r.HandleFunc("/mongo/person", api.addPerson).Methods("POST")
-	r.HandleFunc("/mongo/person/{personId}", api.updatePerson).Methods("PUT")
-	r.HandleFunc("/mongo/person/{personId}", api.deletePerson).Methods("DELETE")
+func (api *MongoDBApi) Init(e *echo.Echo) {
+	e.GET("/mongo/persons", api.getAllPersons)
+	e.GET("/mongo/person/{personId}", api.getPersonsBy)
+	e.POST("/mongo/person", api.addPerson)
+	e.PUT("/mongo/person/{personId}", api.updatePerson)
+	e.DELETE("/mongo/person/{personId}", api.deletePerson)
 }
 
-func (*MongoDBApi) getAllPersons(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
+func (*MongoDBApi) getAllPersons(c echo.Context) error {
+	return nil
 }
-func (*MongoDBApi) getPersonsBy(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
+func (*MongoDBApi) getPersonsBy(c echo.Context) error {
+	return nil
 }
-func (*MongoDBApi) addPerson(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
+func (api *MongoDBApi) addPerson(c echo.Context) error {
+	var person dto.Person
+	if err := c.Bind(&person); err != nil {
+		log.Println(err)
+		return c.JSON(http.StatusBadRequest, map[string]any{"stutus": "DataNotInserted", "error": err.Error()})
+	}
+	p, err := api.db.Create(&person)
+	if err != nil {
+		log.Println(err)
+		return c.JSON(http.StatusBadRequest, map[string]any{"stutus": "DataNotInserted", "error": err.Error()})
+	}
+	data := map[string]any{
+		"status": "DataInserted",
+		"additionalData": map[string]any{
+			"userId":   p.ID,
+			"userName": p.UserName,
+		},
+	}
+	return c.JSON(http.StatusOK, data)
 }
-func (*MongoDBApi) updatePerson(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
+func (*MongoDBApi) updatePerson(c echo.Context) error {
+	return nil
 }
-func (*MongoDBApi) deletePerson(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
+func (*MongoDBApi) deletePerson(c echo.Context) error {
+	return nil
 }

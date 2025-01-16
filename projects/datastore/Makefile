@@ -19,7 +19,7 @@ test:
 	go test ./...
 
 image:
-	docker build -t $(IMAGE_NAME):$(DEFAULT_TAG) -f deployment/Dockerfile .
+	docker build -t $(IMAGE_NAME):$(DEFAULT_TAG) -f Dockerfile .
 
 push_image: image
 	docker image push $(IMAGE_NAME):$(DEFAULT_TAG)

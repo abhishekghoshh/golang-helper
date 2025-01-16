@@ -11,7 +11,7 @@ RUN go mod download
 COPY . .
 
 # build the go app
-RUN go build -o app /app/cmd/chat/
+RUN go build -o app /app/cmd/datastore/
 
 # New Stage
 FROM alpine:latest
