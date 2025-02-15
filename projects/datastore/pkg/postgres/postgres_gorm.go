@@ -16,7 +16,6 @@ func NewGormConnection(config *db.Config) (db.DB, error) {
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
 		config.Host, config.Port, config.User, config.Password, config.Db, config.SSLMode,
 	)
-	log.Printf("postgres connection string is %s", dsn)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return nil, err

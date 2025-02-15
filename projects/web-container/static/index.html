@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Terminal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/5.5.0/xterm.js" integrity="sha512-Gujw5GajF5is3nMoGv9X+tCMqePLL/60qvAv1LofUZTV9jK8ENbM9L+maGmOsNzuZaiuyc/fpph1KT9uR5w3CQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/xterm/5.5.0/xterm.css" integrity="sha512-AbNrj/oSHJaILgcdnkYm+DQ08SqVbZ8jlkJbFyyS1WDcAaXAcAfxJnCH69el7oVgTwVwyA5u5T+RdFyUykrV3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { background-color: white; color: white; }
+        #terminal { height: 95%; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+
+    <script>
+        const term = new Terminal({
+            cursorBlink: true,
+            fontSize: 14,
+            theme: {
+                background: '#000000', // Black terminal background
+                foreground: '#FFFFFF'  // White text
+            }
+        });
+        term.open(document.getElementById('terminal'));
+
+        const ws = new WebSocket("ws://localhost:8080/ws");
+        let inputBuffer = "";
+        let isCommandRunning = false;
+
+        function printPrompt() {
+            term.write("\r\n$ "); // Ensure new line + prompt
+            isCommandRunning = false;
+        }
+
+        term.write("Connected to Docker Terminal\r\n$ ");
+
+        ws.onmessage = function (event) {
+            const output = event.data.replace(/\n/g, "\r\n"); // Ensure proper newlines
+            term.write(output + "\r\n"); // Append newline after output
+        };
+
+        ws.onclose = () => printPrompt(); // Show prompt after execution
+
+        term.onData(data => {
+            if (isCommandRunning) return; // Prevent input while command is running
+
+            if (data === "\r") {  // Enter key pressed
+                if (inputBuffer.trim() === "clear") {
+                    term.clear();
+                    inputBuffer = "";
+                    printPrompt();
+                } else {
+                    term.write("\r\n"); // Ensure the command starts on a new line
+                    ws.send(inputBuffer.trim()); // Send command
+                    inputBuffer = "";
+                    isCommandRunning = true; // Prevent new input while running
+                }
+            } else if (data === "\u007F") {  // Backspace handling
+                if (inputBuffer.length > 0) {
+                    inputBuffer = inputBuffer.slice(0, -1);
+                    term.write("\b \b");
+                }
+            } else {
+                inputBuffer += data;
+                term.write(data);  // Echo input to terminal
+            }
+        });
+
+        ws.onclose = () => printPrompt(); // Show prompt after execution
+    </script>
+</body>
+</html>

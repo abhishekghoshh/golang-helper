@@ -1,5 +1,33 @@
 # We will cover different datastores here
 
 - postgres
+  - [lib/pq](https://github.com/lib/pq)
+  - [go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+  - [sqlc-dev/sqlc](https://github.com/sqlc-dev/sqlc)
+  - [database/sql](https://github.com/golang/go/tree/master/src/database/sql)
+    - [Building a simple app with Go and PostgreSQL](https://blog.logrocket.com/building-simple-app-go-postgresql/)
+    - [2025's Ultimate Guide to Using Golang PostgreSQL](https://hevodata.com/learn/golang-postgres/)
+  - [go-gorm/gorm](https://github.com/go-gorm/gorm)
+    - [AkhilSharma90/go-postgres-gorm](https://github.com/AkhilSharma90/go-postgres-gorm)
+  - [GORM Guides](https://gorm.io/docs/)
+  - [Getting Started on Golang Gorm](https://medium.com/@itskenzylimon/getting-started-on-golang-gorm-af49381caf3f)
+  - [Indexing in Postgres](https://medium.com/geekculture/indexing-in-postgres-db-4cf502ce1b4e)
 - redis
+  - [redis/go-redis](https://github.com/redis/go-redis)
+  - [go-redis guide (Go)](https://redis.io/docs/latest/develop/clients/go/)
+  - [Go Redis](https://redis.uptrace.dev/guide/go-redis.html)
+  - [Understand Redis data types](https://redis.io/docs/latest/develop/data-types/)
 - mongodb
+  - [mongo-go-driver](https://github.com/mongodb/mongo-go-driver)
+  - [MongoDB Go Driver](https://www.mongodb.com/docs/drivers/go/current/)
+  - [Go & MongoDB simple API](https://www.youtube.com/watch?v=N6wgreZRZjg)
+    - [arturfil/yt_go_mongo_todo](https://github.com/arturfil/yt_go_mongo_todo)
+- websocket
+  - [gorilla/websocket](https://github.com/gorilla/websocket/tree/main/examples)
+- SSE
+  - [Server Sent Event (SSE) with Go](https://medium.com/@rian.eka.cahya/server-sent-event-sse-with-go-10592d9c2aa1)
+  - [Server-side Events (SSE) : A deep dive into client-server architecture | Implementation in Golang](https://medium.com/@atarax/server-side-events-sse-a-deep-dive-into-client-server-architecture-implementation-in-golang-cc15628605fd)
+  - [How to Implement Server-Sent Events in Go](https://www.freecodecamp.org/news/how-to-implement-server-sent-events-in-go/)
+  - [Golang and Server-Sent Events (SSE)](https://dev.to/rafaelgfirmino/golang-and-sse-3l56)
+  - [lotusirous/sse.go](https://gist.github.com/lotusirous/2a40a23469a7b0f7870698bbe528ea1e)
+  - [r3labs/sse](https://github.com/r3labs/sse)

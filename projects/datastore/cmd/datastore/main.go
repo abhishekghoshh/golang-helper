@@ -1,8 +1,6 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/abhishekghoshh/datastore/pkg/config"
 	"github.com/abhishekghoshh/datastore/pkg/db"
 	"github.com/abhishekghoshh/datastore/pkg/mongodb"
@@ -43,20 +41,15 @@ func main() {
 	defer mongoDb.Close()
 	server.NewMongoDbApi(mongoDb).Init(e)
 
-	// spinning up the server
-	e.GET("/health", HealthCheck)
+	// setting up the SSE apis
+	server.NewSSEApi().Init(e)
+
+	// ser=tting up the Websocket connection
+	server.NewWebsocketApi().Init(e)
+
+	// spinning up the server with other apis
+	server.OthersApis().Init(e)
 	e.Logger.SetLevel(log.INFO)
 	e.Logger.Fatal(e.Start(":" + cfg.GetString("server.port")))
 
-}
-func HealthCheck(c echo.Context) error {
-	type HealthStatus struct {
-		Status string            `json:"status"`
-		Errors map[string]string `json:"errors,omitempty"`
-	}
-	health := HealthStatus{
-		Status: "UP",
-		Errors: make(map[string]string),
-	}
-	return c.JSON(http.StatusOK, health)
 }

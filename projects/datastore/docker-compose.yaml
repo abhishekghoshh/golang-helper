@@ -5,13 +5,14 @@ services:
   datastore:
     image: abhishek1009/datastore:latest
     container_name: datastore
+    build:
+      context: .
+      dockerfile: Dockerfile
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]  # Adjust the health endpoint as necessary
       interval: 10s
       timeout: 10s
       retries: 5
-    build:
-      context: .
     environment:
       - SERVER_NAME=datastore
       - SERVER_ADDRESS=0.0.0.0
@@ -28,6 +29,8 @@ services:
       - MONGODB_HOST=mongo
       - MONGODB_PORT=27017
       - MONGODB_DB=mongo
+    # volumes:
+    #   - ./:/app
     networks:
       - datastore-network
     depends_on:

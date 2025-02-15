@@ -1,6 +1,6 @@
 package main
 
-import "basics/strings"
+import "basics/concurrency"
 
 func main() {
 	// introduction.HellowWorld()
@@ -25,7 +25,7 @@ func main() {
 	// introduction.TestCustomDefaultParameterInFunctionArgument()
 
 	// strings.StringAndRunes()
-	strings.StringBuilers()
+	// strings.StringBuilers()
 	// strings.Stringfunctions()
 	// strings.StringFormatting()
 	// strings.RegularExperssions()
@@ -42,7 +42,7 @@ func main() {
 
 	// concurrency.GoRoutines()
 	// concurrency.Channels()
-	// concurrency.ChannelBuffering()
+	concurrency.ChannelBuffering()
 	// concurrency.ChannelSynchronization()
 	// concurrency.ChannelDirections()
 	// concurrency.Selects()

@@ -45,4 +45,37 @@ func WaitGroups() {
 	// Note that this approach has no straightforward way to propagate errors from workers.
 	// For more advanced use cases, consider using the errgroup package.
 
+	fmt.Print("Another producer consumer example\n")
+	////////////////////////////////////////
+	// We will mimic here a producer consumer pattern using wait groups
+	var wg1 sync.WaitGroup
+
+	readerCount := 5
+	channelBufferSize := 1
+	ch := make(chan int, channelBufferSize)
+
+	consumer := func(id int) {
+		defer wg1.Done()
+		for i := range ch {
+			time.Sleep(time.Millisecond)
+			fmt.Printf("Reader %d: %d\n", id, i)
+		}
+	}
+	// Start the consumers
+	go func() {
+		for i := 1; i <= readerCount; i++ {
+			wg1.Add(1)
+			go consumer(i)
+		}
+	}()
+
+	producer := func(count int) {
+		for i := 0; i < count; i++ {
+			time.Sleep(time.Millisecond)
+			ch <- i
+		}
+		close(ch)
+	}
+	producer(100)
+	wg1.Wait()
 }
