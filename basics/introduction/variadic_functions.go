@@ -22,7 +22,7 @@ If you already have multiple args in a slice, apply them to a variadic function 
 */
 
 func VariadicFunctions() {
-
+	// check spread operator also : https://www.youtube.com/watch?v=hXqwPsXXf8c
 	sum(1, 2)
 	sum(1, 2, 3)
 
