@@ -1,5 +1,7 @@
 # Golang Basics
 
+**Refactor everything out everything in docs and add md files there**
+
 
 ## Udemy courses
 
@@ -43,6 +45,7 @@
 - [gobyexample](https://gobyexample.com/)
 - [go dev tutorial](https://go.dev/doc/tutorial/)
 - [Effective Go](https://go.dev/doc/effective_go)
+- [Writing An Interpreter In Go](https://edu.anarcho-copy.org/Programming%20Languages/Go/writing%20an%20INTERPRETER%20in%20go.pdf)
 - [100go.co](https://100go.co/)
   - [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
 - [go101](https://go101.org/)
@@ -50,6 +53,9 @@
 - [boot.dev](https://www.boot.dev/tracks/backend)
 - [codecrafters](https://app.codecrafters.io/catalog)
 - [codementor](https://www.codementor.io/mentorship/new)
+- [Let's Go Further](https://lets-go-further.alexedwards.net/#packages)
+- [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
+
 
 ## popular libraries
 
@@ -63,9 +69,11 @@
 - [sqlx](https://github.com/jmoiron/sqlx)
 - [pgx](https://github.com/jackc/pgx)
 - [sqlc](https://docs.sqlc.dev/en/stable/index.html)
+  - [github.com/sqlc-dev/sqlc](https://github.com/sqlc-dev/sqlc)
 - [go-sqlbuilder](https://github.com/huandu/go-sqlbuilder)
 - [GORM library](https://gorm.io/)
 - [goprisma](https://goprisma.org/docs)
+- [pressly/goose](https://github.com/pressly/goose)
 
 ### Linter
 - [Go linter](https://github.com/golangci/golangci-lint)
@@ -76,13 +84,23 @@
   - [dig](https://github.com/uber-go/dig)
   - [inject](https://github.com/facebookarchive/inject)
 
-### Terminal helper
+### Authentication Manager
+- [Goth: Multi-Provider Authentication for Go](https://github.com/markbates/goth?tab=readme-ov-file)
+    - [The BEST OAuth Golang Tutorial for Authentication | Sign In With Google](https://www.youtube.com/watch?v=iHFQyd__2A0)
+
+### CLI helper
 - [charmbracelet/bubbletea](https://github.com/charmbracelet/bubbletea)
 - [charmbracelet/lipgloss](https://github.com/charmbracelet/lipgloss)
+- [spf13/cobra](https://github.com/spf13/cobra)
 
-## Version manager
+### Version manager
 - [Melkeydev/govm](https://github.com/Melkeydev/govm)
 
+### CICD
+- [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser)
+
+### Environment load
+- [github.com/joho/godotenv](https://github.com/joho/godotenv)
 
 
 
@@ -91,11 +109,33 @@
 ### introduction
   - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
   - [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
+  - [Everything I use to level-up my Go workflow (copy this)](https://www.youtube.com/watch?v=-h7pHwcdaXI)
 
 
 ### GopherConAU
 - [GopherConAU 2023](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFsJqqs7olOAxxU-WJGlXS0)
 - [GopherConAU 2019](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFJVoIf31_MeN67Pqj2NGrB)
+
+
+### Project Ideas
+- [Five of my favorite project ideas to learn Go.](https://www.youtube.com/watch?v=gXmznGEW9vo)
+  - [Effective Go](https://go.dev/doc/effective_go)
+  - [dreamsofcode-io/goprojects](https://github.com/dreamsofcode-io/goprojects)
+- [Everything that I like, dislike, and plan to change in my tech stack.](https://www.youtube.com/watch?v=XbN66h912NU)
+- [Coding a database proxy for fun](https://www.youtube.com/watch?v=DU7_MQmRDUs)
+
+
+### Database
+- [SQLc is the perfect tool for those who don't like ORMs](https://www.youtube.com/watch?v=VX6KzpjaPp8)
+
+
+### Protobuf and gRPC
+- [When RESTful architecture isn't enough...](https://www.youtube.com/watch?v=_4TPM6clQjM)
+  - [Dreams of Code gRPC](https://github.com/dreamsofcode-io/grpc)
+  - [acorn](https://www.acorn.io/)
+  - [gRPC UI](https://github.com/fullstorydev/grpcui)
+  - [gRPCurl](https://github.com/fullstorydev/grpcurl)
+- [Reduce Latency By 60% With ProtoBufs!!! | Prime Reacts](https://www.youtube.com/watch?v=9IxE2UQqJCw)
 
 
 ### concurrency
@@ -180,6 +220,7 @@
 - [gravityblast/fresh](https://github.com/gravityblast/fresh)
 
 
+
 ### blogs
 - [Organizing a Go module](https://go.dev/doc/modules/layout)
 - [Golang project directory structure](https://stackoverflow.com/questions/46646559/golang-project-directory-structure)
@@ -198,10 +239,11 @@
 - [Go REST API Boilerplate](https://medium.com/@bhadange.atharv/go-rest-api-boilerplate-c9d25f99acbe)
 
 ### youtube
-  - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
-  - [The BEST Tool to Structure Golang Projects](https://www.youtube.com/watch?v=1ZbQS6pOlSQ)
-  - [How I Structure New Projects In Golang](https://www.youtube.com/watch?v=dJIUxvfSg6A)
-  - [STOP! This Is How You Structure Golang Applications](https://www.youtube.com/watch?v=eSDYl-RuHjc)
+- [All You Need to Know to Structure your Golang Projects](https://www.youtube.com/watch?v=OVwUldzmVOg)
+- [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
+- [The BEST Tool to Structure Golang Projects](https://www.youtube.com/watch?v=1ZbQS6pOlSQ)
+- [How I Structure New Projects In Golang](https://www.youtube.com/watch?v=dJIUxvfSg6A)
+- [STOP! This Is How You Structure Golang Applications](https://www.youtube.com/watch?v=eSDYl-RuHjc)
 
 
 ### Style guide
