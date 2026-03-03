@@ -1,5 +1,8 @@
 let socket;
 
+// generate a random ID for typing messages
+let typing_id = Math.floor(Math.random() * 1000000);
+
 // Function to generate a random Materialize color class
 function getRandomColorClass() {
   const colors = [
@@ -38,6 +41,32 @@ $(document).ready(function () {
         // Split the message at the first colon
         const [sender, ...messageParts] = message.split(":");
         const actualMessage = messageParts.join(":").trim();
+
+        if (actualMessage.startsWith("INTERMEDIATE_MSG+")) {
+          // Handle intermediate typing message
+          const typingMessage = actualMessage.replace("INTERMEDIATE_MSG+", "").trim();
+          const [typingId, ...typingParts] = typingMessage.split("+");
+          const typingContent = typingParts.join("+").trim();
+          // if there is li with "typing-" + typing_id, then update its content, otherwise create a new li
+          if ($(`#typing-${typingId}`).length) {
+            $(`#typing-${typingId} .typing-message`).html(`<em>${sender} is typing: ${typingContent}</em>`);
+          } else {
+           // Optionally, you can display the typing message in a different style
+            const $typingMsg = $(`
+              <li class="collection-item typing-message-item" id="typing-${typingId}">
+                <div class="typing-message-content">
+                  <span class="typing-message"><em>${sender} is typing: ${typingContent}</em></span>
+                </div>
+              </li>
+            `);
+            $("#chat-box").append($typingMsg);
+          }
+          setTimeout(() => {
+            $(`#typing-${typingId}`).remove(); // Remove the typing message after 1 second
+            console.log(`Removed typing message for ${sender} with ID: ${typingId}`);
+          }, 5000);
+          return; // Skip further processing for intermediate messages
+        }
 
         // Assign a color to the sender if not already assigned
         if (!senderColors[sender]) {
@@ -89,7 +118,17 @@ $(document).ready(function () {
       if (message.trim() !== "") {
         socket.send(message);
         $(this).val(""); // Clear input
+        // if there is an intermediate typing message, remove it immediately after sending the message
+        $(`.typing-message-item`).remove();
+        typing_id = Math.floor(Math.random() * 1000000); // Generate a new typing ID for the next message
       }
+    }
+  });
+  // Send message on typing
+  $("#message-input").on("input", function () {
+    if (socket && socket.readyState === WebSocket.OPEN) {
+      const typingMessage = "INTERMEDIATE_MSG+"+typing_id+"+"+$(this).val();
+      socket.send(typingMessage);
     }
   });
 });

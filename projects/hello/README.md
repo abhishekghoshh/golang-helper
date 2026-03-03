@@ -2,6 +2,12 @@
 
 ## To run locally
 ```
+# go mod update dependencies
+go list -m -u all
+go get -u ./...
+go mod tidy
+go test ./...
+
 # start a redis instance in local using docker or directly install redis
 docker run -p 6379:6379 --name redis-local redis
 
@@ -81,14 +87,18 @@ air -c .air.toml
 ```
 
 ## Resources
+
 - [How To Build A Chat And Data Feed With WebSockets In Golang?](https://www.youtube.com/watch?v=JuUAEYLkGbM)
 - [Scaling Websockets with Redis, HAProxy and Node JS - High-availability Group Chat Application](https://www.youtube.com/watch?v=gzIcGhJC8hA)
   - [Source code](https://github.com/hnasr/javascript_playground/tree/master/ws-live-chat-system)
 - [Piyush Garg](#)
   - [Build Scaleable Realtime Chat App with NextJS and NodeJS Tutorial](https://www.youtube.com/watch?v=CQQc8QyIGl0)
   - [Build Scaleable Realtime Chat App with Kafka and Postgresql](https://www.youtube.com/watch?v=Rat7ORbBDN8)
+- [WebSocket: Build Real-Time Apps the Right Way (Golang)](https://www.youtube.com/watch?v=RAnSVwxy0_0) **This is little bit complex and not straight forward, use the code that I have already written**
+  - [huseyinbabal/websocket-demo](https://github.com/huseyinbabal/websocket-demo)
 
 ## WebRTC
+
 - [affonso-rafael/zoom-clone-golang](https://github.com/affonso-rafael/zoom-clone-golang)
   - [pion/webrtc](https://github.com/pion/webrtc)
 - [Full Stack Zoom Clone](https://medium.com/nerd-for-tech/full-stack-zoom-clone-943289af8f7d)
