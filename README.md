@@ -25,6 +25,7 @@
 
 
 ## My resources
+
 - [my cheetsheet](/cheetsheet.md)
 - [basic](./basics/)
 - [design pattern](./design-pattern/)
@@ -42,6 +43,7 @@
 
 
 ## online resources and tools
+
 - [gobyexample](https://gobyexample.com/)
 - [go dev tutorial](https://go.dev/doc/tutorial/)
 - [Effective Go](https://go.dev/doc/effective_go)
@@ -107,6 +109,7 @@
 ## Youtube videos
 
 ### introduction
+
   - [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
   - [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
   - [Everything I use to level-up my Go workflow (copy this)](https://www.youtube.com/watch?v=-h7pHwcdaXI)
@@ -118,11 +121,13 @@
 
 
 ### Project Ideas
+
 - [Five of my favorite project ideas to learn Go.](https://www.youtube.com/watch?v=gXmznGEW9vo)
   - [Effective Go](https://go.dev/doc/effective_go)
   - [dreamsofcode-io/goprojects](https://github.com/dreamsofcode-io/goprojects)
 - [Everything that I like, dislike, and plan to change in my tech stack.](https://www.youtube.com/watch?v=XbN66h912NU)
 - [Coding a database proxy for fun](https://www.youtube.com/watch?v=DU7_MQmRDUs)
+- [Build reverse proxy server in Go](https://dev.to/b0r/implement-reverse-proxy-in-gogolang-2cp4)
 
 
 ### Database
@@ -197,12 +202,15 @@
 
 
 ### Some youtube channels
+
 - [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
+- [Akhil Sharma](https://www.youtube.com/@AkhilSharmaTech/playlists)
 - [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
 - [Anthony GG](https://www.youtube.com/@anthonygg_/playlists)
 - [TheVimeagen](https://www.youtube.com/@TheVimeagen/videos)
 - [Flo Woelki](https://www.youtube.com/@FloWoelki/videos)
 - [codeHeim](https://www.youtube.com/@codeheim/playlists)
+- [HuseyinCodes](https://www.youtube.com/@huseyincodes)
 
 
 
@@ -224,6 +232,7 @@
 
 
 ### blogs
+
 - [Organizing a Go module](https://go.dev/doc/modules/layout)
 - [Golang project directory structure](https://stackoverflow.com/questions/46646559/golang-project-directory-structure)
 - [Go - Project Structure and Guidelines](https://dev.to/jinxankit/go-project-structure-and-guidelines-4ccm)
@@ -231,6 +240,7 @@
 - [Tips to Create a Proper Go Project Layout](https://www.developer.com/languages/go-project-layout/)
 
 ### medium
+
 - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
   - [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
   - [Structuring Tests in Go](https://medium.com/@benbjohnson/structuring-tests-in-go-46ddee7a25c)
@@ -241,6 +251,7 @@
 - [Go REST API Boilerplate](https://medium.com/@bhadange.atharv/go-rest-api-boilerplate-c9d25f99acbe)
 
 ### youtube
+
 - [All You Need to Know to Structure your Golang Projects](https://www.youtube.com/watch?v=OVwUldzmVOg)
 - [This Is The BEST Way To Structure Your GO Projects](https://www.youtube.com/watch?v=dxPakeBsgl4)
 - [The BEST Tool to Structure Golang Projects](https://www.youtube.com/watch?v=1ZbQS6pOlSQ)
