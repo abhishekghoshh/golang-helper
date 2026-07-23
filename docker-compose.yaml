@@ -1,0 +1,12 @@
+services:
+  golang-helper:
+    container_name: golang-helper
+    image: abhishek1009/golang-helper:latest
+    build:
+      context: .  # Set the build context to the docs directory
+      dockerfile: Dockerfile.docs  # Specify the Dockerfile to use
+    ports:
+      - "8000:8000"
+    # volume mount so that it will get the local changes automatically
+    volumes:
+      - ./:/home/abhishek/workspace/golang-helper  # Mounts the local docs directory to /docs in the container

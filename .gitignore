@@ -1,2 +1,4 @@
 test.go
+.commandcode/
 .DS_Store
+.cache
