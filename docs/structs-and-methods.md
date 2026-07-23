@@ -192,4 +192,84 @@ In production code, it's often better to use explicit fields over anonymous embe
 
 In most cases, the vast majority of time, we mostly use structs rather than maps. But it all depends on the nature and type of the application and the requirement of the project.
 
-**Note**: Small case means that is a private field or member, Capital case means that is a public field or member.
+**Note**: Lowercase names are private; Uppercase names are exported (public).
+
+## Complete Struct Example
+
+```go
+type Person struct {
+    name        string
+    age         int
+    contactInfo // embedded, same as contactInfo contactInfo
+}
+
+type contactInfo struct {
+    email   string
+    zipCode int
+}
+
+func (p Person) welcome() {
+    fmt.Println("Welcome", p.name)
+}
+
+func (p *Person) increase(age int) {
+    p.age += age
+}
+
+func (p Person) showAge() {
+    fmt.Println("age of", p.name, "is", p.age)
+}
+
+func main() {
+    abhishek := Person{name: "Abhishek", age: 25}
+    abhishek.welcome()
+    abhishek.increase(2)
+    abhishek.showAge()
+
+    nasim := Person{
+        name: "Nasim",
+        age:  20,
+        contactInfo: contactInfo{
+            email:   "nasim@test.com",
+            zipCode: 742101,
+        },
+    }
+
+    // anonymous struct (useful for table-driven tests)
+    dog := struct {
+        name   string
+        isGood bool
+    }{"Rex", true}
+}
+```
+
+## Custom Struct Tag Validation
+
+Build custom validation using struct tags and reflection.
+
+```go
+type Student struct {
+    Age  int    `validate:"min=18"`
+    Name string `validate:"required"`
+}
+
+func (s *Student) Validate() error {
+    val := reflect.Indirect(reflect.ValueOf(s))
+    for i := 0; i < val.NumField(); i++ {
+        tag := val.Type().Field(i).Tag.Get("validate")
+        if tag == "" { continue }
+        rules := strings.Split(tag, ",")
+        for _, rule := range rules {
+            parts := strings.Split(rule, "=")
+            key := parts[0]
+            switch key {
+            case "required":
+                // check if field is non-zero
+            case "min":
+                // check numeric minimum
+            }
+        }
+    }
+    return nil
+}
+```

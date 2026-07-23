@@ -168,3 +168,178 @@ func main() {
     fmt.Println(m)
 }
 ```
+
+## Complete Examples
+
+```go
+func main() {
+    // Array of 5 ints (fixed size)
+    var arr [5]int
+    arr[0] = 55
+
+    arr1 := [5]int{0, 2, 4, 6, 8}
+    fmt.Println(arr1[1])
+    fmt.Println(arr1[2:4]) // slice from array
+
+    // 2D array
+    var twoD [2][3]int
+    for i := 0; i < 2; i++ {
+        for j := 0; j < 3; j++ {
+            twoD[i][j] = i + j
+        }
+    }
+
+    // Slice: dynamically-sized
+    s := make([]string, 3)
+    s[0] = "a"; s[1] = "b"; s[2] = "c"
+    s = append(s, "d")
+    s = append(s, "e", "f")
+    fmt.Println("len:", len(s))
+
+    // Copy slice
+    c := make([]string, len(s))
+    copy(c, s)
+
+    // Slice operator: slice[low:high]
+    l := s[2:5]  // elements 2,3,4
+    l = s[:5]    // first 5 elements
+    l = s[2:]    // from index 2 to end
+
+    // Inline slice declaration
+    t := []string{"g", "h", "i"}
+
+    // 2D slice (inner slices can vary)
+    twoDSlice := make([][]int, 3)
+    for i := 0; i < 3; i++ {
+        innerLen := i + 1
+        twoDSlice[i] = make([]int, innerLen)
+        for j := 0; j < innerLen; j++ {
+            twoDSlice[i][j] = i + j
+        }
+    }
+}
+```
+
+## Sorting
+
+```go
+// sort package
+strs := []string{"c", "a", "b"}
+sort.Strings(strs)
+
+ints := []int{7, 2, 4}
+sort.Ints(ints)
+
+// slices package (generic)
+slices.Sort(strs)
+slices.Sort(ints)
+
+// check if sorted
+sort.IntsAreSorted(ints)
+slices.IsSorted(ints)
+
+// custom sorting with comparator
+cmpFn := func(a, b string) int {
+    return cmp.Compare(len(a), len(b))
+}
+slices.SortFunc(fruits, cmpFn)
+
+// custom sorting by implementing sort.Interface
+type Fruits []string
+func (f Fruits) Len() int            { return len(f) }
+func (f Fruits) Swap(i, j int)       { f[i], f[j] = f[j], f[i] }
+func (f Fruits) Less(i, j int) bool  { return len(f[i]) < len(f[j]) }
+sort.Sort(fruits)
+```
+
+## Linked List (Generic)
+
+```go
+type List[T any] struct {
+    head, tail *Node[T]
+}
+
+type Node[T any] struct {
+    val  T
+    next *Node[T]
+}
+
+func NewList[T any]() List[T] { return List[T]{} }
+
+func (lst *List[T]) Push(v T) {
+    node := &Node[T]{val: v}
+    if lst.tail == nil {
+        lst.head = node
+    } else {
+        lst.tail.next = node
+    }
+    lst.tail = node
+}
+
+func (lst *List[T]) GetAll() []T {
+    var elems []T
+    for e := lst.head; e != nil; e = e.next {
+        elems = append(elems, e.val)
+    }
+    return elems
+}
+```
+
+## Ordered Map (Generic)
+
+Preserves insertion order using a key slice alongside a map.
+
+```go
+type OrderedMap[K comparable, V any] struct {
+    store map[K]V
+    keys  []K
+}
+
+func NewOrderedMap[K comparable, V any]() *OrderedMap[K, V] {
+    return &OrderedMap[K, V]{store: map[K]V{}, keys: []K{}}
+}
+
+func (om *OrderedMap[K, V]) Set(key K, val V) {
+    if _, exists := om.store[key]; !exists {
+        om.keys = append(om.keys, key)
+    }
+    om.store[key] = val
+}
+
+func (om *OrderedMap[K, V]) Delete(key K) {
+    delete(om.store, key)
+    for i, k := range om.keys {
+        if k == key {
+            om.keys = append(om.keys[:i], om.keys[i+1:]...)
+            break
+        }
+    }
+}
+
+func (om *OrderedMap[K, V]) Iterator() func() (*int, *K, V) {
+    index := 0
+    return func() (_ *int, _ *K, _ V) {
+        if index > len(om.keys)-1 { return }
+        row := om.keys[index]
+        index++
+        return &[]int{index-1}[0], &row, om.store[row]
+    }
+}
+```
+
+## Queue
+
+```go
+type Queue struct { items []int }
+
+func (q *Queue) Enqueue(item int) {
+    q.items = append(q.items, item)
+}
+
+func (q *Queue) Dequeue() int {
+    if len(q.items) < 1 { return -1 }
+    item := q.items[0]
+    q.items = q.items[1:]
+    return item
+}
+```

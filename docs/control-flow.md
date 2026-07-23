@@ -125,3 +125,65 @@ fmt.Println(sum)
 ```
 
 The code above will calculate the sum of numbers from 1 to 1000. Note that with just the condition, for becomes similar to while loops available in other programming languages.
+
+## Complete Example
+
+```go
+func FlowControl() {
+    // Standard for loop
+    for i := 1; i <= 10; i++ {
+        fmt.Print(i, " ")
+    }
+
+    // while-style loop (omit init and post)
+    sum := 1
+    for sum < 1000 {
+        sum += sum
+    }
+    fmt.Println("sum is", sum)
+
+    // Infinite loop with break
+    num := 0
+    for {
+        if num == 10 { break }
+        num++
+    }
+
+    // if with short statement
+    fmt.Println(pow(3, 2, 10), pow(3, 3, 20))
+
+    // Switch on OS
+    switch os := runtime.GOOS; os {
+    case "darwin": fmt.Println("OS X.")
+    case "linux":  fmt.Println("Linux.")
+    default:       fmt.Printf("%s.\n", os)
+    }
+
+    // Switch without expression (clean if-else chains)
+    t := time.Now()
+    switch {
+    case t.Hour() < 12: fmt.Println("Good morning!")
+    case t.Hour() < 17: fmt.Println("Good afternoon.")
+    default:            fmt.Println("Good evening.")
+    }
+
+    // Type switch
+    whatAmI := func(i interface{}) {
+        switch t := i.(type) {
+        case bool:   fmt.Println("I'm a bool")
+        case int:    fmt.Println("I'm an int")
+        default:     fmt.Printf("Don't know type %T\n", t)
+        }
+    }
+    whatAmI(true)
+    whatAmI(1)
+    whatAmI("hey")
+}
+
+func pow(x, n, lim float64) float64 {
+    if v := math.Pow(x, n); v < lim {
+        return v
+    }
+    return lim
+}
+```

@@ -248,3 +248,304 @@ A `select` statement blocks until at least one of its cases can proceed. The def
 - [Concurrency in Go (Golang)](https://www.udemy.com/course/concurrency-in-go-golang)
   - [go-concurrency-exercises](https://github.com/andcloudio/go-concurrency-exercises)
 - [Working with Concurrency in Go (Golang)](https://www.udemy.com/course/working-with-concurrency-in-go-golang/)
+
+## Complete Concurrency Examples
+
+### Goroutines
+```go
+func GoRoutines() {
+    var out = func(from, to int) {
+        for i := from; i <= to; i++ {
+            fmt.Print(i, " ")
+        }
+    }
+
+    go out(0, 5)
+    go out(6, 10)
+    time.Sleep(time.Second) // wait for goroutines
+}
+```
+
+### Channel Buffering
+Buffered channels accept values without a corresponding receiver (up to capacity). Also useful for limiting concurrent goroutines.
+
+```go
+// Buffered channel
+messages := make(chan string, 2)
+messages <- "buffered"   // doesn't block
+messages <- "channel"    // doesn't block
+fmt.Println(<-messages)
+
+// Using buffered channels as a semaphore to limit goroutines
+eventLimiter := make(chan interface{}, 5)
+for event := range eventManager.Stream() {
+    eventLimiter <- true        // blocks if 5 goroutines are running
+    go func() {
+        process(event)
+        <-eventLimiter           // release slot
+    }()
+}
+```
+
+### Channel Directions
+Specify send-only (`chan<-`) or receive-only (`<-chan`) to enforce channel usage at compile time.
+
+```go
+var ping = func(pings chan<- string, names []string) {
+    for _, name := range names {
+        pings <- "Hi ping," + name
+    }
+    close(pings)
+}
+
+var pong = func(pings <-chan string, pongs chan<- string) {
+    for name := range pings {
+        pongs <- name + ", Hi pong"
+    }
+    close(pongs)
+}
+```
+
+### Channel Synchronization
+Use channels to synchronize goroutines without `WaitGroup`.
+
+```go
+var worker = func(n int, done chan bool) {
+    for i := 0; i < n; i++ {
+        fmt.Print(i, " ")
+    }
+    done <- true
+}
+
+done := make(chan bool, 1)
+go worker(5, done)
+<-done // block until worker signals completion
+```
+
+### Non-blocking Channel Operations
+Use `select` with `default` for non-blocking sends/receives.
+
+```go
+messages := make(chan string)
+
+// Non-blocking receive
+select {
+case msg := <-messages: fmt.Println("received", msg)
+default:                fmt.Println("no message received")
+}
+
+// Non-blocking send
+select {
+case messages <- "hi": fmt.Println("sent")
+default:               fmt.Println("no message sent")
+}
+```
+
+### Closing Channels
+Closed channels return zero value immediately. Use `val, more := <-ch` to detect closure.
+
+```go
+jobs := make(chan int, 5)
+done := make(chan bool)
+
+go func() {
+    for {
+        j, more := <-jobs
+        if more { fmt.Println("received job", j) }
+        else    { done <- true; return }
+    }
+}()
+
+for j := 1; j <= 6; j++ { jobs <- j }
+close(jobs)
+<-done
+```
+
+### Range Over Channels
+```go
+queue := make(chan string, 2)
+queue <- "one"; queue <- "two"
+close(queue)
+
+for elem := range queue {
+    fmt.Println(elem) // "one", "two"
+}
+```
+
+### Timers
+```go
+timer1 := time.NewTimer(2 * time.Second)
+<-timer1.C
+fmt.Println("Timer 1 fired")
+
+// Cancellable timer
+timer2 := time.NewTimer(time.Second)
+stop2 := timer2.Stop()
+if stop2 { fmt.Println("Timer 2 stopped") }
+```
+
+### Tickers
+```go
+ticker := time.NewTicker(500 * time.Millisecond)
+done := make(chan bool)
+
+go func() {
+    for {
+        select {
+        case <-done:       return
+        case t := <-ticker.C: fmt.Println("Tick at", t)
+        }
+    }
+}()
+
+time.Sleep(1600 * time.Millisecond)
+ticker.Stop()
+done <- true
+```
+
+### Worker Pools
+```go
+func worker(id int, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        fmt.Println("worker", id, "processing job", j)
+        time.Sleep(time.Second)
+        results <- j * 2
+    }
+}
+
+func main() {
+    const numJobs = 5
+    jobs := make(chan int, numJobs)
+    results := make(chan int, numJobs)
+
+    for w := 1; w <= 3; w++ {
+        go worker(w, jobs, results)
+    }
+
+    for j := 1; j <= numJobs; j++ { jobs <- j }
+    close(jobs)
+
+    for a := 1; a <= numJobs; a++ { <-results }
+}
+```
+
+### Wait Groups
+```go
+var wg sync.WaitGroup
+var worker = func(id int) {
+    fmt.Printf("Worker %d starting\n", id)
+    time.Sleep(time.Second)
+    fmt.Printf("Worker %d done\n", id)
+}
+
+for i := 1; i <= 5; i++ {
+    wg.Add(1)
+    go func(num int) {
+        defer wg.Done()
+        worker(num)
+    }(i)
+}
+wg.Wait()
+
+// Producer-consumer with WaitGroup
+ch := make(chan int, 1)
+consumer := func(id int) {
+    defer wg.Done()
+    for i := range ch {
+        fmt.Printf("Reader %d: %d\n", id, i)
+    }
+}
+for i := 1; i <= 5; i++ {
+    wg.Add(1)
+    go consumer(i)
+}
+for i := 0; i < 100; i++ { ch <- i }
+close(ch)
+wg.Wait()
+```
+
+### Rate Limiting
+```go
+requests := make(chan int, 5)
+for i := 1; i <= 5; i++ { requests <- i }
+close(requests)
+
+// Simple: 1 request per 200ms
+limiter := time.Tick(200 * time.Millisecond)
+for req := range requests {
+    <-limiter
+    fmt.Println("request", req, time.Now())
+}
+
+// Bursty: buffer of 3, refilled every 200ms
+burstyLimiter := make(chan time.Time, 3)
+for i := 0; i < 3; i++ { burstyLimiter <- time.Now() }
+go func() {
+    for t := range time.Tick(200 * time.Millisecond) {
+        burstyLimiter <- t
+    }
+}()
+```
+
+### Atomic Counters
+```go
+var ops atomic.Uint64
+var wg sync.WaitGroup
+
+for i := 0; i < 50; i++ {
+    wg.Add(1)
+    go func() {
+        for c := 0; c < 1000; c++ {
+            ops.Add(1) // thread-safe increment
+        }
+        wg.Done()
+    }()
+}
+wg.Wait()
+fmt.Println("ops:", ops.Load()) // exactly 50000
+```
+
+### Mutexes
+For complex state, use `sync.Mutex`.
+
+```go
+type Container struct {
+    mu       sync.Mutex
+    counters map[string]int
+}
+
+func (c *Container) inc(name string) {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+    c.counters[name]++
+}
+```
+
+### Stateful Goroutines (Channel-based state)
+Alternative to mutexes: a single goroutine owns the state, others communicate via channels.
+
+```go
+type readOp struct {
+    key  int
+    resp chan int
+}
+type writeOp struct {
+    key  int
+    val  int
+    resp chan bool
+}
+
+// State-owning goroutine
+go func() {
+    var state = make(map[int]int)
+    for {
+        select {
+        case read := <-reads:
+            read.resp <- state[read.key]
+        case write := <-writes:
+            state[write.key] = write.val
+            write.resp <- true
+        }
+    }
+}()
+```

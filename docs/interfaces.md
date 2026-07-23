@@ -160,3 +160,93 @@ Output:
 Interface Value: 0
 Boolean Value: false
 ```
+
+## Complete Interfaces Example
+
+```go
+type geometry interface {
+    area() float64
+    perim() float64
+}
+
+type rect struct{ width, height float64 }
+type circle struct{ radius float64 }
+
+func (r rect) area() float64   { return r.width * r.height }
+func (r rect) perim() float64  { return 2*r.width + 2*r.height }
+func (c circle) area() float64 { return math.Pi * c.radius * c.radius }
+func (c circle) perim() float64 { return 2 * math.Pi * c.radius }
+
+func measure(g geometry) {
+    fmt.Println(g, g.area(), g.perim())
+}
+
+// Interface composition
+type Bot interface { getReply() string }
+type Writer interface { write() }
+type BotWriter interface { Bot; Writer }
+
+type ChatGPT struct{}
+func (ChatGPT) getReply() string { return "Hi I'am ChatGPT" }
+func (c ChatGPT) write() { fmt.Println("Hi I am ChatGPT Writer") }
+
+// Nil interface vs nil concrete value
+type I interface { M() }
+type T struct { S string }
+
+func (t *T) M() {
+    if t == nil { fmt.Println("<nil>"); return }
+    fmt.Println(t.S)
+}
+
+type F float64
+func (f F) M() { fmt.Println(f) }
+
+func main() {
+    r := rect{width: 3, height: 4}
+    c := circle{radius: 5}
+    measure(r)
+    measure(c)
+
+    // Nil interface: calling method panics
+    var i I              // nil interface
+    // i.M()              // PANIC: nil interface
+
+    i = &T{"Hello"}
+    i.M()                // "Hello"
+
+    // Nil concrete value, non-nil interface
+    var t *T
+    i = t
+    i.M()                // "<nil>" (method handles nil receiver)
+
+    i = F(math.Pi)
+    i.M()                // 3.1415...
+
+    // Type assertions
+    var empty_i interface{} = "hello"
+    s := empty_i.(string)          // "hello"
+    s, ok := empty_i.(string)      // "hello", true
+    f, ok := empty_i.(float64)     // 0, false
+
+    // Type switch
+    do(21)     // "Twice 21 is 42"
+    do("hey")  // "\"hey\" is 3 bytes long"
+    do(true)   // "I don't know about type bool!"
+}
+
+func do(i interface{}) {
+    switch v := i.(type) {
+    case int:    fmt.Printf("Twice %v is %v\n", v, v*2)
+    case string: fmt.Printf("%q is %v bytes long\n", v, len(v))
+    default:     fmt.Printf("I don't know about type %T!\n", v)
+    }
+}
+```
+
+### Key Takeaways
+
+- A nil interface holds neither value nor type — calling methods on it panics
+- A non-nil interface holding a nil concrete value works if the method handles nil
+- Interface composition (embedding interfaces) lets you build larger contracts
+- Type switches are cleaner than chains of type assertions for multi-type handling

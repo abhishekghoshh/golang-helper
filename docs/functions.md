@@ -127,3 +127,147 @@ func main() {
 The variable x is declared outside of the functions, making it a global variable, which is accessible anywhere in the package.
 
 Global variables are often considered a bad practice. It is better to pass variables as function arguments.
+
+## Variadic Functions
+
+Variadic functions accept a variable number of trailing arguments. Use `func(args ...Type)` syntax and pass slices with `slice...`.
+
+```go
+func sum(nums ...int) {
+    total := 0
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+
+func main() {
+    sum(1, 2)           // individual args
+    sum(1, 2, 3)
+    nums := []int{1, 2, 3, 4}
+    sum(nums...)        // spread a slice
+}
+```
+
+## Recursion
+
+A function that calls itself. Closures can be recursive but must be declared with a typed `var` before definition.
+
+```go
+func fact(n int) int {
+    if n == 1 { return n }
+    return n * fact(n-1)
+}
+
+func main() {
+    fmt.Println("factorial of 7 is", fact(7)) // 5040
+
+    var fib func(n int) int
+    fib = func(n int) int {
+        if n < 2 { return n }
+        return fib(n-1) + fib(n-2)
+    }
+    fmt.Println("7th fibonacci is", fib(7)) // 13
+}
+```
+
+## Closures
+
+A closure is a function that references variables from its enclosing scope. Each closure captures its **own independent state**.
+
+```go
+func intSeq() func() int {
+    i := 0
+    return func() int {
+        i++
+        return i
+    }
+}
+
+func main() {
+    nextInt1 := intSeq()
+    fmt.Println(nextInt1()) // 1
+    fmt.Println(nextInt1()) // 2
+
+    nextInt2 := intSeq()    // new instance, independent state
+    fmt.Println(nextInt2()) // 1
+}
+```
+
+## Panic & Recover
+
+`panic` stops normal execution and begins unwinding. `recover` (called inside a deferred function) catches a panic. Use sparingly — Go favors explicit error returns.
+
+```go
+func main() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered from:", r)
+        }
+    }()
+    panic("This is a custom panic")
+    fmt.Println("Never reaches here")
+}
+```
+
+## Custom Default Parameters
+
+Go has no built-in default function parameters. Two workarounds:
+
+**1. Variadic arguments:**
+```go
+func greetWithDefault(names ...string) string {
+    if len(names) == 0 {
+        return greet("Abhishek Ghosh") // default
+    }
+    return greet(names[0])
+}
+```
+
+**2. Functional Options Pattern:**
+```go
+type GreetingOptions struct { Name string; Age int }
+type GreetingOption func(*GreetingOptions)
+
+func WithName(name string) GreetingOption {
+    return func(o *GreetingOptions) { o.Name = name }
+}
+func WithAge(age int) GreetingOption {
+    return func(o *GreetingOptions) { o.Age = age }
+}
+
+func GreetWithDefaultOptions(options ...GreetingOption) string {
+    opts := GreetingOptions{Name: "Abhishek Ghosh", Age: 25}
+    for _, o := range options { o(&opts) }
+    return Greet(opts)
+}
+
+// Usage: GreetWithDefaultOptions(WithName("Alice"), WithAge(20))
+```
+
+## Custom Types with Methods
+
+Methods can be declared on named types (not just structs).
+
+```go
+type color string
+
+func (c color) describe(description string) string {
+    return string(c) + " " + description
+}
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f < 0 { return float64(-f) }
+    return float64(f)
+}
+
+func main() {
+    c := color("Red")
+    fmt.Println(c.describe("is an awesome color"))
+
+    f := MyFloat(-math.Sqrt2)
+    fmt.Println(f.Abs()) // 1.414...
+}
+```
