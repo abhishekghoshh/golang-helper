@@ -65,11 +65,12 @@ A comprehensive Go (Golang) reference guide covering everything from basics to a
 - [Redis](./projects/redis/)
 - [WebSocket Scaling](./projects/websocket-scaling/)
 
-## Design Patterns
-
-- [Design Patterns](./design-pattern/)
-
 ## gRPC
 
-- [Protocol Buffers](./grpc/potocol-buffers/)
-- [gRPC Basics](./grpc/grpc-basics/)
+- [Overview](./grpc/) — Framework overview, tools, reverse proxy
+- [Protocol Buffers](./grpc/protocol-buffers/) — Proto3 syntax, scalar types, enums, oneof, nesting, imports, serialization
+- [gRPC Basics](./grpc/grpc-basics/) — Unary, server/client/bidirectional streaming, TLS, interceptors
+
+## Design Patterns
+
+- [Design Patterns](./design-pattern/) — 22 patterns: Singleton, Factory, Builder, Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy, Chain of Responsibility, Command, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor

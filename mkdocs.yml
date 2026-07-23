@@ -35,6 +35,12 @@ nav:
   - Popular Libraries: popular-libraries.md
   - Project Structure: project-structure.md
   - Links: links.md
+  - gRPC:
+    - Overview: grpc/index.md
+    - Protocol Buffers: grpc/protocol-buffers.md
+    - gRPC Basics: grpc/grpc-basics.md
+  - Design Patterns:
+    - Overview: design-pattern/index.md
 
 
 
