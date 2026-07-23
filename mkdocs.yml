@@ -3,6 +3,25 @@ site_url: https://abhishekghoshh.github.io/golang-helper
 
 nav:
   - Home: index.md
+  - Getting Started: getting-started.md
+  - Basics: basics.md
+  - Control Flow: control-flow.md
+  - Functions: functions.md
+  - Pointers: pointers.md
+  - Structs & Methods: structs-and-methods.md
+  - Arrays, Slices & Maps: arrays-slices-maps.md
+  - Concurrency: concurrency.md
+  - Interfaces: interfaces.md
+  - Modules: modules.md
+  - Bytes & Encoding: bytes-and-encoding.md
+  - Type Conversions: type-conversions.md
+  - Generics: generics.md
+  - File I/O: file-io.md
+  - Testing: testing.md
+  - Online Resources: online-resources.md
+  - Popular Libraries: popular-libraries.md
+  - Project Structure: project-structure.md
+  - Links: links.md
 
 
 

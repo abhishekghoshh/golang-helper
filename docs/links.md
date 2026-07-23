@@ -4,12 +4,69 @@
 
 ## Youtube
 
+### [Anthony GG](https://www.youtube.com/@anthonygg_)
+
+#### General
+
+- [Important Tips On How To Write Idiomatic Code In Golang](https://www.youtube.com/watch?v=9cJHCoSxbn8)
+- [How To Compose Typed Functions In Golang?!](https://www.youtube.com/watch?v=pR5nQ6N6-YA) **very useful in place of interface**
+- [This Will Make Everyone Understand Golang Interfaces](https://www.youtube.com/watch?v=rH0bpx7I2Dk)
+- [How To Refactor A Golang Project By Using Interfaces](https://www.youtube.com/watch?v=Ax7J_Ks0UWs)
+- [Mastering Inheritance By Struct Embedding In Golang](https://www.youtube.com/watch?v=Gmlh0NrvzP0)
+- [I Created GoFiber 7 Years Ago But Is It Faster?](https://www.youtube.com/watch?v=StN_twOfizQ)
+- [The Power Of Struct Embedding And Interfaces In Golang](https://www.youtube.com/watch?v=fXZJu_JuH0A)
+- [How To Use A Bytes Buffer In Golang And Make It Even Better?](https://www.youtube.com/watch?v=ENxfg9rS5dc)
+- [Mastering And Taming NIL Pointers in Golang For Beginners](https://www.youtube.com/watch?v=MJfcZjbXGQA)
+- [Golang Performance Hack That Reduces GC Overhead](https://www.youtube.com/watch?v=aThn7jvYvGI)
+- [Why Golang's IO.READER Is More Important Than You Think](https://www.youtube.com/watch?v=ByhRhJXXcy4)
+
+#### Concurrency
+
+- [Are Goroutines USELESS For Backend Development??](https://www.youtube.com/watch?v=3B16u3gxyug)
+- [Buffered VS UnBuffered Channels In Golang](https://www.youtube.com/watch?v=HLGrvgbo-Yk)
+- [How To Use Goroutines For Aggregating Data In Golang?!](https://www.youtube.com/watch?v=LGVRPFZr548)
+- [How To Use The Context Package In Golang?](https://www.youtube.com/watch?v=kaZOXRqFPCw)
+- [Golang Channels Or Wait Groups? Let Me Explain.](https://www.youtube.com/watch?v=2B-VAxCmhgA)
+- [How You Should Use Mutexes And Atomic Values In Golang?!](https://www.youtube.com/watch?v=egIDsv1RO88)
+- [How To Avoid Locks (Mutex) In Your Golang Programs?](https://www.youtube.com/watch?v=Ya5KRFrwPug)
+- [10 Million Messages In 1 Second With Golang Actors](https://www.youtube.com/watch?v=aKz2xTVrYXc)
+- [The Golang Function Nobody Talks About](https://www.youtube.com/watch?v=INcV8kNlDPM)
+
+#### Server
+
+- [How To Build A Custom TCP Server In Golang!?](https://www.youtube.com/watch?v=qJQrrscB1-4)
+- [How To Build A Chat And Data Feed With WebSockets In Golang?](https://www.youtube.com/watch?v=JuUAEYLkGbM)
+- [How To Stream Large Files Over TCP In Golang](https://www.youtube.com/watch?v=82oFmY-Qeok)
+
+#### Configuration Patterns
+
+- [The Most Efficient Struct Configuration Pattern For Golang](https://www.youtube.com/watch?v=MDy7JQN5MN4)
+- [I'm Starting To Like This Configuration Pattern In Go](https://www.youtube.com/watch?v=N0ZJt5VtvVE)
+- [Another Amazing Use Case For The FOP Pattern In Go](https://www.youtube.com/watch?v=zDN9D_840cc)
+- [The Power Of Golang's Decorator Pattern](https://www.youtube.com/watch?v=GipAZwKFgoA)
+- [Mastering Dependency Injection In Golang](https://www.youtube.com/watch?v=UX4XjxWcDB4)
+
+#### Microservices
+
+- [How To Build And Structure A Microservice In Golang?!](https://www.youtube.com/watch?v=sqj4UzN4OpU)
+- [Introduction To The Actor Paradigm In Golang](https://www.youtube.com/watch?v=EXThuaEzxdc)
+- [I Created My Own Actor Framework In Golang!?](https://www.youtube.com/watch?v=NuIaY74kCUs)
+- [Another Approach To Microservices In Golang](https://www.youtube.com/watch?v=BlDL4mJCijA)
+- [Microservice Registration And Discovery With Consul In Go](https://www.youtube.com/watch?v=OvVJRCEREto)
+- [An Effective Way To Authorize Handlers In Golang](https://www.youtube.com/watch?v=MmPItr7-MdM)
+
+#### Large Videos
+
+- [High Available Microservices With Apache Kafka In Golang](https://www.youtube.com/watch?v=-yVxChp7HoQ)
+- [Building Redis From Scratch In Golang - Learn Go Like A PRO](https://www.youtube.com/watch?v=v44bAtgEEUw)
+- [Building Redis In Golang And NeoVim Setup With ThePrimeagen](https://www.youtube.com/watch?v=tpGEkK2QiTs)
+- [How To Build A Complete Distributed File Storage In Golang](https://www.youtube.com/watch?v=bymQakvTY40)
 
 ### Projects
 
 - [Building a Massive Golang Microservices Project: GraphQL, gRPC, Docker, Postgres, and Elasticsearch!](https://www.youtube.com/watch?v=5UIh1dV7aZ8)
 - [Golang Full Courses](https://www.youtube.com/playlist?list=PLYEESps429vrFV0yiN_MCaDPhnYb0qRxK)
-- [Anthony GG](https://www.youtube.com/@anthonygg_/playlists)
+- [Anthony GG Playlists](https://www.youtube.com/@anthonygg_/playlists)
   - [High Available Microservices With Apache Kafka In Golang](https://www.youtube.com/watch?v=-yVxChp7HoQ)
   - [Solving A Golang Job Interview Assignment With Kafka](https://www.youtube.com/watch?v=32mroa09axA)
   - [Coding Kafka From Scratch In Golang](https://www.youtube.com/watch?v=R3gOacYojP0)
@@ -23,3 +80,264 @@
 - [Building a Concurrent Cinema Booking System in Golang](https://www.youtube.com/watch?v=CIIrR5daWL4)
 
 - [59 KILLER GOLANG Projects in 59 Different Videos ! [ Perfect For Beginners ]](https://www.youtube.com/playlist?list=PL5dTjWUk_cPYztKD7WxVFluHvpBNM28N9)
+
+
+## Udemy Courses
+
+- [REST based microservices API development in Golang](https://www.udemy.com/course/rest-based-microservices-api-development-in-go-lang)
+- [Learn the Why's and How's of concurrency in Go.](https://udemy.com/course/concurrency-in-go-golang)
+- [Working with Concurrency in Go (Golang)](https://www.udemy.com/course/working-with-concurrency-in-go-golang/)
+- [Complete Guide to Protocol Buffers 3](https://www.udemy.com/course/protocol-buffers/)
+- [gRPC Golang Master Class: Build Modern API & Microservices](https://www.udemy.com/course/grpc-golang/)
+- [Backend Master Class Golang + Postgres + Kubernetes + gRPC](https://udemy.com/course/backend-master-class-golang-postgresql-kubernetes/)
+- [Golang For DevOps And Cloud Engineers](https://udemy.com/course/golang-for-devops-and-cloud-engineers/)
+
+
+## YouTube Videos
+
+### Introduction
+
+- [Google I/O 2012 - Meet the Go Team](https://www.youtube.com/watch?v=sln-gJaURzk)
+- [How GO Was Created - Less Is More Prime Reacts](https://www.youtube.com/watch?v=4EMcm9vzlnI)
+- [Everything I use to level-up my Go workflow (copy this)](https://www.youtube.com/watch?v=-h7pHwcdaXI)
+
+### GopherConAU
+
+- [GopherConAU 2023](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFsJqqs7olOAxxU-WJGlXS0)
+- [GopherConAU 2019](https://www.youtube.com/playlist?list=PLN_36A3Rw5hFJVoIf31_MeN67Pqj2NGrB)
+
+### Project Ideas
+
+- [Five of my favorite project ideas to learn Go.](https://www.youtube.com/watch?v=gXmznGEW9vo)
+  - [Effective Go](https://go.dev/doc/effective_go)
+  - [dreamsofcode-io/goprojects](https://github.com/dreamsofcode-io/goprojects)
+- [Everything that I like, dislike, and plan to change in my tech stack.](https://www.youtube.com/watch?v=XbN66h912NU)
+- [Coding a database proxy for fun](https://www.youtube.com/watch?v=DU7_MQmRDUs)
+- [Build reverse proxy server in Go](https://dev.to/b0r/implement-reverse-proxy-in-gogolang-2cp4)
+
+### Database
+
+- [SQLc is the perfect tool for those who don't like ORMs](https://www.youtube.com/watch?v=VX6KzpjaPp8)
+
+### Protobuf and gRPC
+
+- [When RESTful architecture isn't enough...](https://www.youtube.com/watch?v=_4TPM6clQjM)
+  - [Dreams of Code gRPC](https://github.com/dreamsofcode-io/grpc)
+  - [acorn](https://www.acorn.io/)
+  - [gRPC UI](https://github.com/fullstorydev/grpcui)
+  - [gRPCurl](https://github.com/fullstorydev/grpcurl)
+- [Reduce Latency By 60% With ProtoBufs!!! | Prime Reacts](https://www.youtube.com/watch?v=9IxE2UQqJCw)
+
+### Concurrency
+
+- [Google I/O 2012 - Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)
+  - [Concurrency is not parallelism](https://go.dev/blog/waza-talk)
+  - [Concurrency is not Parallelism by Rob Pike](https://www.youtube.com/watch?v=oV9rvDllKEg)
+- [Go Concurrency](https://www.youtube.com/playlist?list=PL7g1jYj15RUNqJStuwE9SCmeOKpgxC0HP)
+- [Concurrency in Go](https://www.youtube.com/watch?v=LvgVSSpwND8)
+
+### 1 Billion Row Challenge
+
+- [Making It FAST - 1 Billion Row Challenge in Go](https://www.youtube.com/watch?v=cYng524S-MA)
+  - [1brc](https://github.com/shraddhaag/1brc)
+  - [One Billion Rows Challenge in Golang](https://www.bytesizego.com/blog/one-billion-row-challenge-go)
+- [New Go Billion Row Challenge w/ Great Optimizations Prime Reacts](https://www.youtube.com/watch?v=SZ1PDS7iRU8)
+  - [One Billion Row Challenge in Golang - From 95s to 1.96s](https://r2p.dev/b/2024-03-18-1brc-go/)
+
+### Context
+
+- [Golang Context Explained - How To Use With Timeout](https://www.youtube.com/watch?v=fXzzF5y6UEU)
+- [Learn Go context from code and its original blog post](https://www.youtube.com/watch?v=cXVI0vZFPkA)
+- [Understanding Contexts in Go in 5(-ish?) Minutes](https://www.youtube.com/watch?v=h2RdcrMLQAo)
+- [How To Use The Context Package In Golang?](https://www.youtube.com/watch?v=kaZOXRqFPCw)
+- [golang context package explained: the package that changed concurrency forever](https://www.youtube.com/watch?v=8omcakb31xQ)
+- [Learning Golang Context!! Never Looked At It!](https://www.youtube.com/watch?v=VMonYfJlrc0)
+
+### Live Reloading
+
+- [cosmtrek/air](https://github.com/cosmtrek/air)
+  - [This Package Makes It SO Much Easier To Write Golang Code](https://www.youtube.com/watch?v=erdDM_LmChs)
+  - [16 Golang - Live Reloading Go app](https://www.youtube.com/watch?v=txVO9DaETZA)
+  - [Live Reloading in Go / Golang - with Air](https://www.youtube.com/watch?v=ErVx9QyoBQI)
+  - [HOT Reloading The Browser With Templ, Tailwind, And Golang](https://www.youtube.com/watch?v=6Pj-Vlhp31Y)
+
+### Testing
+
+- [Golang Testing (full tutorial)](https://www.youtube.com/watch?v=FjkSJ1iXKpg)
+- [How To Test HTTP Handlers In Golang?!](https://www.youtube.com/watch?v=Ztk9d78HgC0)
+
+### Golang and HTMX
+
+- [How to build a fullstack application with Go, Templ, and HTMX](https://dev.to/hackmamba/how-to-build-a-fullstack-application-with-go-templ-and-htmx-4444)
+- [The HATE Stack - Simple and Efficient](https://www.youtube.com/watch?v=bti-bnGbyak)
+- [FULL Introduction To HTMX Using Golang](https://www.youtube.com/watch?v=x7v6SNIgJpE)
+
+### Others
+
+- [The standard library now has all you need for advanced routing in Go.](https://www.youtube.com/watch?v=H7tbjKFSg58)
+- [3 Golang Tips For Beginners I Wish I Knew Sooner](https://www.youtube.com/watch?v=PUPqnDYoMgU)
+- [7 Deadly Mistakes Beginner Go Developers Make (and how to fix them)](https://www.youtube.com/watch?v=biGr232TBwc)
+- [GoLang: 10+ UNIQUE Concepts/Conventions that Beginners Should Know About!](https://www.youtube.com/watch?v=CK5rLpZk5A8)
+
+### Other Playlists
+
+- [Data Structures in Golang Series](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
+- [DESIGN PATTERNS](https://www.youtube.com/playlist?list=PLfyLecA5DLOcUXmgk3BLDgWQvBoHbea2m)
+- [domain driven design](https://www.youtube.com/playlist?list=PLeoD63TPS-_ZofX56-vg8gJVXpDEpsIDW)
+
+### YouTube Channels
+
+- [Melkey](https://www.youtube.com/@MelkeyDev/playlists)
+- [Akhil Sharma](https://www.youtube.com/@AkhilSharmaTech/playlists)
+- [Mario Carrion](https://www.youtube.com/@MarioCarrion/playlists)
+- [Anthony GG](https://www.youtube.com/@anthonygg_/playlists)
+- [TheVimeagen](https://www.youtube.com/@TheVimeagen/videos)
+- [Flo Woelki](https://www.youtube.com/@FloWoelki/videos)
+- [codeHeim](https://www.youtube.com/@codeheim/playlists)
+- [HuseyinCodes](https://www.youtube.com/@huseyincodes)
+
+
+## Medium Blogs
+
+- [Queue Handling in Golang (Qigo)](https://medium.com/@mirfarzam/queue-handling-in-golang-qigo-4bd8705300af)
+- [Thoughts on Closures in Go](https://medium.com/@lordmoma/thoughts-on-closures-in-go-d4ba2d5e81ec)
+- [4 ways to create enums in Go](https://medium.isaacharrisholt.com/4-ways-to-create-enums-in-go-3b6b00b8ccc8)
+- [Go: Composition and Interfaces](https://medium.com/@chaewonkong/go-composition-and-interfaces-a4b4346f8565)
+- [Exploring Collections in Golang: A Comprehensive Guide](https://medium.com/hprog99/exploring-collections-in-golang-a-comprehensive-guide-93198d873de8)
+- [How To Write Modern HTTP Client in Go?](https://medium.com/@0x9ef/how-to-write-modern-http-client-in-go-6080d2e719fd)
+- [Go EP2: Define interfaces in the consumer package, not the producer.](https://medium.com/gitconnected/go-ep2-define-interfaces-in-the-consumer-package-not-the-producer-d3da505a7516)
+- [Understanding Value and Pointer Receivers in Golang](https://medium.com/the-bug-shots/understanding-value-and-pointer-receivers-in-golang-82dd73a3eef9)
+- [Decoupling Struct Tags in Golang](https://medium.com/@dpinoagustin/decompling-struct-tags-in-golang-7158d717c5b0)
+- [Go Concurrency Playground](https://mayankk-co.medium.com/go-concurrency-playground-bfd3f19ff8ee)
+- [Golang Fundamentals: Concurrency and Goroutines](https://medium.com/@nagarjun_nagesh/golang-fundamentals-concurrency-and-goroutines-2b8529f88f7e)
+- [Mastering Concurrency Patterns in Go](https://medium.com/@pengcheng1222/mastering-concurrency-in-go-practical-patterns-for-robust-software-76f8282f6a3c)
+- [Efficient Memory Usage in Go and Detailed Explanation of Pointers](https://okanexe.medium.com/efficient-memory-usage-in-go-and-detailed-explanation-of-pointers-1dd3344e21e9)
+- [Introducing Pipe: Unix-like Pipelines for Go](https://blog.stackademic.com/introducing-pipe-unix-like-pipelines-for-go-8108b2fa68f2)
+- [Understanding the Adapter Design Pattern in Go](https://medium.com/@sumitsagar_20050/understanding-the-adapter-design-pattern-in-go-2937d379372f)
+- [Dependency Injection Lost in Go?](https://medium.com/@lordmoma/dependency-injection-lost-in-go-77622fd23782)
+- [Understanding Dependency Injection and interface in Golang](https://medium.com/@samims/understanding-dependency-injection-and-interface-in-golang-2d1a326033e0)
+- [The Dependency Inversion Principle (DIP) in Golang](https://medium.com/@sumitsagar_20050/the-dependency-inversion-principle-dip-in-golang-fb0bdc503972)
+- [Golang-SOLID Principles- Dependency Inversion Principle (DIP)](https://medium.com/@quicktechlearn/golang-solid-principles-dependency-inversion-principle-dip-b76b897a4aa4)
+- [Golang Dependency Injection based on generics (samber/do, without code generation)](https://medium.com/@JoshuaTan/golang-dependency-injection-based-on-generics-samber-do-without-code-generation-42f8a2d0971c)
+- [Dependency Injection in Go](https://medium.com/@greeflas/dependency-injection-in-go-75443b310aed)
+- [Dependency Injection like a Pro in Golang](https://dsysd-dev.medium.com/dependency-injection-like-a-pro-in-golang-9c5d66491c4c)
+- [GO Myths we believe: Capacity](https://medium.com/@samolazov.herman/go-myths-we-believe-capacity-b8e9f27ac1fd)
+- [GO Myths we believe: Strings](https://medium.com/@samolazov.herman/go-myths-we-believe-strings-cad8d53e0c20)
+- [Clean Code with Golang](https://medium.com/@nagarjun_nagesh/clean-code-with-golang-54cf141d0f3e)
+- [Go Design Pattern — SOLID Principles](https://akhileshmj.medium.com/solid-principles-go-design-pattern-6af77d665b8e)
+- [Golang — Introducing Idiomatic Patterns](https://medium.com/@pengcheng1222/golang-introducing-idiomatic-patterns-950d08ec92df)
+- [Idiomatic Clean Architecture with Golang](https://medium.com/@ahmetildirim/idiomatic-clean-architecture-with-golang-691e0baca7f4)
+- [Mastering Go: In-Depth Analysis of Uber and Google's Coding Standards](https://laiyuanyuan-sg.medium.com/mastering-go-in-depth-analysis-of-uber-and-googles-coding-standards-3b3fb9391ee3)
+- [Golang Best Practices (Top 20)](https://medium.com/@golangda/golang-quick-reference-top-20-best-coding-practices-c0cea6a43f20)
+- [Navigating the Web: Golang's HTTP Best Practices](https://blog.stackademic.com/navigating-the-web-golangs-http-best-practices-d62027204bb9)
+- [Why GO is a cool choice for microservices?](https://medium.com/@golangda/what-makes-go-cool-for-microservices-2c98fc81920d)
+- [Top 5 Most Common Mistakes in Golang](https://weilson.medium.com/top-5-most-common-mistakes-in-golang-56be1be9d676)
+- [Organize Your Go Project Gracefully](https://laiyuanyuan-sg.medium.com/organize-your-go-project-gracefully-054b30b9f3be)
+- [Unveiling gonew: A Rapid Launchpad for Go Projects](https://laiyuanyuan-sg.medium.com/unveiling-gonew-a-rapid-launchpad-for-go-projects-5ddc71c4d3ac)
+- [Why is Go-Kit Perfect For Clean Architecture in Golang?](https://orenrose.medium.com/clean-architecture-in-golang-with-go-kit-e5b716a3b881)
+- [Best Practices in Go (Golang): Writing Clean, Efficient, and Maintainable Code](https://blog.stackademic.com/best-practices-in-go-golang-writing-clean-efficient-and-maintainable-code-dccf61542b57)
+- [Best Practices in Go (Golang) Development](https://medium.com/@techsolutionsx/best-practices-in-go-golang-development-60dcff128ffb)
+- [Streaming Server-Sent Events With Go](https://pascalallen.medium.com/streaming-server-sent-events-with-go-8cc1f615d561)
+- [How To: Build a Containerized Web App In Go](https://pascalallen.medium.com/how-to-build-a-containerized-web-app-in-go-73f42619a193)
+- [How To: Compile a WebAssembly Module From Go](https://pascalallen.medium.com/how-to-compile-a-webassembly-module-from-go-a9ed5f831582)
+- [Server Sent Event (SSE) with Go](https://medium.com/@rian.eka.cahya/server-sent-event-sse-with-go-10592d9c2aa1)
+- [How to Build a Stack from Scratch with Golang Generics](https://gozone.dev/how-to-build-a-stack-from-scratch-with-golang-generics-68c0929c38d4)
+- [Golang 1.22 Unleashes Advanced HTTP Routing: Direct from the Standard Library to Your Production Codebase](https://eloquentgopher.medium.com/golang-1-22-unleashes-advanced-http-routing-direct-from-the-standard-library-to-your-production-c252582ef650)
+- [Mastering io.Pipe in Go](https://medium.com/@0xgotznit/mastering-io-pipe-in-go-ca8686150b5e)
+- [Understanding sync.Cond and Atomic Operations in Go: When and How to Use Them](https://medium.com/@nagarjun_nagesh/understanding-sync-cond-and-atomic-operations-in-go-when-and-how-to-use-them-26f825b4093f)
+- [Introduction to Observability using OpenTelemetry in Golang](https://medium.com/@PouriaAsnaAshari/introduction-to-observability-using-opentelemetry-in-golang-726b4c364b3c)
+- [Circuit Breaker Implementation in GoLang](https://medium.com/goturkiye/circuit-breaker-implementation-in-golang-efdfa40e49dc)
+- [Transactions in Go application](https://medium.com/@serhii.koberniuk/transactions-in-go-application-701d5b1e1789)
+- [The Complete Guide to TCP/IP Connections in Golang](https://okanexe.medium.com/the-complete-guide-to-tcp-ip-connections-in-golang-1216dae27b5a)
+- [Elevating Your Application Monitoring: Golang's Logging Best Practices](https://blog.stackademic.com/elevating-your-application-monitoring-golangs-logging-best-practices-7107d57c1fc5)
+- [A Deep Look Into Golang Profile-Guided Optimization (PGO)](https://levelup.gitconnected.com/a-deep-look-into-golang-profile-guided-optimization-pgo-3d417b59a0c6)
+- [Sync Package: What Are New Features in Golang sync.Once?](https://medium.com/@relia/sync-package-what-are-new-features-in-golang-sync-once-0cb3b2d9fb23)
+- [Managing Goroutines with Gouroutine Pooling in Go (Worker Pool Pattern)](https://erfansahaf.medium.com/managing-goroutines-with-gouroutine-pooling-in-go-9b3596e23225)
+- [Stack and Heap memory in golang](https://medium.com/@quicktechlearn/stack-and-heap-memory-in-golang-eec3fb7ec113)
+- [Understanding Memory Allocation in Go (Golang): Stack vs. Heap](https://levelup.gitconnected.com/understanding-memory-allocation-in-go-golang-stack-vs-heap-813fcd5246db)
+- [Memory Optimization and Garbage Collector Management in Go](https://betterprogramming.pub/memory-optimization-and-garbage-collector-management-in-go-71da4612a960)
+- [Optimizing Golang Performance (1): Memory Related](https://medium.com/@matrixorigin-database/optimizing-golang-performance-1-memory-related-dafff15b955a)
+- [Our Go Cache Library Choices](https://medium.com/codex/our-go-cache-library-choices-406f2662d6b)
+- [Maps and memory leaks in Golang](https://towardsdev.com/maps-and-memory-leaks-in-golang-4638bdc952b9)
+- [Golang Command Line Tools Raised 6 Million Dollars](https://tomaszs2.medium.com/golang-command-line-tools-raised-6-million-dollars-b84392dd3af2)
+- [Implementing Rate Limiting in KrakenD In App GoLang](https://medium.com/@rohmatmret/implementing-rate-limiting-in-krakend-in-golang-2880f8444c03)
+- [Harnessing Golang Concurrency for Rapid Insertion of 1 Million Records into a Database](https://blog.stackademic.com/harnessing-golang-concurrency-for-rapid-insertion-of-1-million-records-into-a-database-523c3b9c0f29)
+- [Streaming large files in Go](https://medium.com/readytowork-org/streaming-large-files-in-go-b31b5d0fe9a)
+- [Write a Large Amount of Data to a CSV File with Go (Golang)](https://medium.com/@keigokida51/write-a-large-amount-of-data-to-a-csv-file-with-go-golang-b83ab042b0c9)
+- [Image Uploader in Golang with Echo Framework](https://blog.stackademic.com/image-uploader-in-golang-with-echo-framework-a8fdc63303cf)
+- [Golang: Streaming Large API Responses in Chunks to a File](https://levelup.gitconnected.com/golang-streaming-large-api-responses-in-chunks-to-a-file-ed2ab445bba3)
+- [Golang: Easy Fetch Millions of Data using Concurrent](https://budimanokky93.medium.com/golang-easy-fetch-millions-of-data-using-concurrent-80716595e674)
+- [Kafka Producers and Consumers With Golang](https://medium.com/@wahyubagus1910/kafka-producers-and-consumers-with-golang-863d920c723c)
+- [Effective Use of Redis with Golang: A Guide to Optimizing Performance and Scalability](https://blog.stackademic.com/effective-use-of-redis-with-golang-a-guide-to-optimizing-performance-and-scalability-be95166c571e)
+- [The Complete Guide to Payment System Integration using Golang for Backend Applications](https://okanexe.medium.com/the-complete-guide-to-payment-system-integration-using-golang-for-backend-applications-1e809b27b9ab)
+- [49 Go Projects You Should Know Megapack EP1](https://medium.com/@tomaszs2/49-go-projects-you-should-know-megapack-ep1-37655ed11399)
+- [7 Amazing Go-cli Projects on Github](https://levelup.gitconnected.com/7-amazing-go-cli-projects-on-github-97d514502e16)
+- [Building a Command Line Interface (CLI) tool in Golang: A step-by-step guide](https://medium.com/@mgm06bm/building-a-command-line-interface-cli-tool-in-golang-a-step-by-step-guide-44a7aad488e4)
+- [Creating An Role Based Authentication Server using GoLang And Fiber](https://blog.devops.dev/creating-an-role-based-authentication-server-using-golang-and-fiber-3367341cf7c5)
+- [Building REST APIs With Go 1.22 http.ServeMux](https://shijuvar.medium.com/building-rest-apis-with-go-1-22-http-servemux-2115f242f02b)
+- [Unlocking the Power of Functional Options Pattern in Go](https://matheuspolitano.medium.com/unlocking-the-power-of-functional-options-pattern-in-go-087478f57be9)
+- [Singleflight Concurrency Design Pattern In Golang](https://levelup.gitconnected.com/singleflight-concurrency-design-pattern-in-golang-f4ce5c1ce87e)
+- [How to implement clean architecture in Golang (EN)](https://medium.com/@rayato159/how-to-implement-clean-architecture-in-golang-en-f50d66378ebf)
+- [Clean Architecture with Golang](https://medium.com/nerd-for-tech/clean-architecture-with-golang-3fa1a1c2b6d6)
+- [Introduction to Kafka In Go](https://levelup.gitconnected.com/introduction-to-kafka-in-go-2a5755df504c)
+- [Kafka + (Producer & Consumer) In Local Docker with Go](https://medium.com/@wiraizkandar/kafka-producer-consumer-in-local-docker-with-go-02759d20fde6)
+- [Apache Kafka — Introduction and Golang Implementation](https://medium.com/@chilldenaya/apache-kafka-my-notes-and-learnings-about-message-broker-7d5a4af883f5)
+- [Server-side Events (SSE) : A deep dive into client-server architecture | Implementation in Golang](https://medium.com/@atarax/server-side-events-sse-a-deep-dive-into-client-server-architecture-implementation-in-golang-cc15628605fd)
+- [A comprehensive guide to Role Based Access Control (RBAC) | Introduction |Part 1](https://medium.com/@atarax/a-comprehensive-guide-on-role-based-access-control-rbac-introduction-part-1-a3a654b0e1c8)
+- [A comprehensive guide to Role Based Access Control (RBAC) | Demystifying Casbin | Part 2](https://medium.com/@atarax/a-comprehensive-guide-to-role-based-access-control-rbac-demystifying-casbin-part-2-4df3fae5b766)
+- [Golang -Data Streaming using Semaphore Pattern(Part 2)](https://medium.com/@swetha.alwaal/golang-data-streaming-using-semaphore-pattern-part-2-c83964327d75)
+- [OOP Patterns in Go: Methods, Interfaces and Type Embedding](https://nirdoshgautam.medium.com/oop-patterns-in-go-methods-interfaces-and-type-embedding-b56757d669c3)
+- [Golang — SOLID Principles — Single Responsibility Principle(SRP)](https://towardsdev.com/solid-principles-single-responsibility-principle-srp-eb729de7e84c)
+- [Drop pattern implementation in Go](https://medium.com/@alireza.stack/drop-pattern-implementation-in-go-e16471782ae8)
+- [Parallelism and Concurrency in Go: How It Works in Real Computing Systems. Part 1.](https://medium.com/@ninucium/parallelism-and-concurrency-in-go-how-it-works-in-real-computing-systems-part-1-a680443ad8bd)
+- [Redis Performance and Atomicity in Golang: Unleash the Power of Pipelines, Transactions, and Lua Scripts](https://itnext.io/redis-performance-and-atomicity-in-golang-unleash-the-power-of-pipelines-transactions-and-lua-f2f4779ef2ba)
+- [Interview Questions for a Go Developer. Part 12: Architecture](https://blog.devgenius.io/interview-questions-for-a-go-developer-part-12-architecture-3519a6bfdefa)
+- [Advanced GoLang Concepts: Channels, Context, and Interfaces. Part 2](https://medium.com/@wambuirebeka/advanced-golang-concepts-channels-context-and-interfaces-part-2-e24397f7edf9)
+- [Real-Time Trading App: Golang, Kafka, Websockets — Intro & Setup (PART-1)](https://kkamalesh117.medium.com/real-time-trading-app-golang-kafka-websockets-intro-setup-part-1-24e54d4d82f1)
+- [Making Real-Time Trading App with Golang, Kafka & Websockets: Setting up Kafka with Golang](https://medium.com/@mohanishp1/making-real-time-trading-app-with-golang-kafka-websockets-setting-up-kafka-with-golang-5a47e9b1bff8)
+- [Build DNS Server Using Golang](https://blog.stackademic.com/build-dns-server-using-golang-8a97db12a660)
+- [How I implement auth with Go](https://medium.com/@hhartleyjs/how-i-implement-auth-with-go-0ab5fd9c9e8f)
+- [Healing Unhealthy Goroutines in long running programs](https://medium.com/@souravchoudhary0306/healing-unhealthy-goroutines-in-long-running-programs-b2a2b56976e5)
+- [Managing Multiple Database Connections in Golang](https://chazool.medium.com/managing-multiple-database-connections-in-golang-dc90dcf6f569)
+- [Build TUI Applications Effortlessly with Bubble Tea in Golang](https://blog.stackademic.com/build-tui-applications-effortlessly-with-bubble-tea-edc402db41ae)
+- [Redis and Golang: Making Message Brokers Easy and Powerful!](https://medium.com/@abighimire07/redis-and-golang-making-messages-brokers-easy-and-powerful-57debf9235ac)
+- [Implementing Redis Caching in Go with Docker](https://medium.com/readytowork-org/implementing-redis-caching-in-go-with-docker-6d86ea9b5606)
+- [Unlocking Performance: Redis Integration in Go with the Fiber Framework](https://medium.com/@fikihalan/unlocking-performance-redis-integration-in-go-with-the-fiber-framework-2e405a9c134e)
+- [Golang Concurrency — Building a Simple Rate Limiter - Token Bucket algorithm](https://godoy-lucas-e.medium.com/golang-concurrency-building-a-simple-rate-limiter-token-bucket-algorithm-62de4f389039)
+- [Redis Rate Limiting in GO](https://medium.com/@bingolbalihasan/redis-rate-limiting-in-go-d342bab3d930)
+- [A Guide to Building a Realtime HTTP Audio Streaming Server in Go](https://medium.com/@icelain/a-guide-to-building-a-realtime-http-audio-streaming-server-in-go-24e78cf1aa2c)
+- [Using a Pipeline Pattern in Golang](https://tech.jotform.com/pipeline-go-pipeline-pattern-in-golang-5a51e5d811a)
+- [Using open telemetry in Golang](https://blog.devops.dev/using-open-telemetry-in-golang-ef282c236e77)
+- [Deploying a Golang RESTful API with Gin, SQLC, and PostgreSQL](https://medium.com/@sarahisdevs/deploying-a-golang-restful-api-with-gin-sqlc-and-postgresql-4082f651ce86)
+- [Asynchronous Data Processing in Microservices using Go and Message Queues](https://blog.stackademic.com/asynchronous-data-processing-in-microservices-using-go-and-message-queues-f3894aab75d6)
+- [Understanding Database Connection Pools and the PGX Library in Go](https://medium.com/@neelkanthsingh.jr/understanding-database-connection-pools-and-the-pgx-library-in-go-3087f3c5a0c)
+- [Streaming Video with Golang Fiber: A Practical Tutorial](https://pcpratheesh.medium.com/streaming-video-with-golang-fiber-a-practical-tutorial-a2170584ae9f)
+- [Real-Time Communication with Golang and Server-Sent Events (SSE) — A Practical Tutorial](https://blog.stackademic.com/real-time-communication-with-golang-and-server-sent-events-sse-a-practical-tutorial-1094b37e17f5)
+- [Golang Gin Framework with Websocket which consumes from RabbitMQ](https://medium.com/@tanngontn/golang-gin-framework-with-normal-websocket-and-websocket-with-producer-is-rabbitmq-guide-93cad7d290f7)
+- [Real-Time Trading App: Golang, Kafka, Websockets — Setting up Consumer & Websockets(PART-3)](https://kkamalesh117.medium.com/real-time-trading-app-golang-kafka-websockets-setting-up-consumer-websockets-part-3-08fe5c8fcafb)
+- [Simple Chatting Apps with Gorilla WebSocket Golang](https://waresix.engineering/simple-chatting-apps-with-gorilla-websocket-golang-57b7800cd107)
+- [Building a Producer-Consumer System in Golang with RabbitMQ— A Practical Tutorial](https://blog.stackademic.com/building-a-producer-consumer-system-in-golang-with-rabbitmq-a-practical-tutorial-d7f847b6ecd0)
+- [Building Scalable Micro-Services with Go (Golang) and Chi Framework](https://medium.com/@jitenderkmr/building-scalable-micro-services-with-go-golang-and-chi-framework-6db5f2f9ad28)
+- [Making A Login Page With HTMX + Go](https://medium.com/@hhartleyjs/making-a-login-page-with-htmx-go-5acbcc504426)
+- [Explaining Go + HTMX with examples](https://medium.com/@raphael-p/explaining-go-htmx-with-examples-b80718ee379d)
+- [Personal Blog with HTMX + Go Part 1 — Golang Templating Setup](https://medium.com/gravel-engineering/this-blogpost-also-posted-in-my-personal-blog-which-you-can-access-here-dd856c61001)
+- [Personal Blog With HTMX + Go Part 2 — Integrating TailwindCSS](https://medium.com/gravel-engineering/personal-blog-with-htmx-go-part-2-integrating-tailwindcss-412ebc4dcc97)
+- [Personal Blog With HTMX + Go Part 3 — Server Rendered Markdown](https://mwyndham.medium.com/personal-blog-with-htmx-go-part-3-server-rendered-markdown-75c80cc5f470)
+- [Create a Todo List with Go and HTMX](https://blog.stackademic.com/create-todo-list-with-go-and-htmx-9e4a5b5111b9)
+- [Making A Dashboard With HTMX & Go](https://medium.com/@hhartleyjs/making-a-dashboard-with-htmx-go-50820d7ddedb)
+- [Working with Database: REST APIs in Go Fiber using GORM](https://blog.devgenius.io/working-with-database-rest-apis-in-go-fiber-using-gorm-1406e6773e15)
+- [A guide to making a Go web server without a framework](https://raphael-p.medium.com/a-guide-to-making-a-go-web-server-without-a-framework-1439a965f2b1)
+- [Mastering DDD: Repository Design Patterns in Go](https://medium.com/@yohata/mastering-ddd-repository-design-patterns-in-go-2034486c82b3)
+
+### Writers to Follow
+
+- [JuiceFS](https://juicefs.medium.com/)
+- [AJ Pham](https://medium.com/@pthtantai97)
+- [ksandeeptech07](https://medium.com/@ksandeeptech07)
+
+## Medium Channels
+
+- [Abhinav](https://abhinavvsingh.medium.com/)
+- [Yashbatra](https://medium.com/@yashbatra11111)
+- [Archit Agarwal](https://medium.com/@architagr)
+- [Let's code](https://medium.com/@letsCodeDevelopers)

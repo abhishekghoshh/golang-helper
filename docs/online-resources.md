@@ -1,0 +1,15 @@
+# Online Resources
+
+- [gobyexample](https://gobyexample.com/)
+- [go dev tutorial](https://go.dev/doc/tutorial/)
+- [Effective Go](https://go.dev/doc/effective_go)
+- [Writing An Interpreter In Go](https://edu.anarcho-copy.org/Programming%20Languages/Go/writing%20an%20INTERPRETER%20in%20go.pdf)
+- [100go.co](https://100go.co/)
+  - [100-go-mistakes](https://github.com/teivah/100-go-mistakes)
+- [go101](https://go101.org/)
+- [Concurrency in Go](https://edu.anarcho-copy.org/Programming%20Languages/Go/Concurrency%20in%20Go.pdf)
+- [boot.dev](https://www.boot.dev/tracks/backend)
+- [codecrafters](https://app.codecrafters.io/catalog)
+- [codementor](https://www.codementor.io/mentorship/new)
+- [Let's Go Further](https://lets-go-further.alexedwards.net/#packages)
+- [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
